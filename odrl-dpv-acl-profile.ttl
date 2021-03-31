@@ -19,18 +19,18 @@ odrl-ac:
 
 :PersonalDataCategory a odrl:Asset, dpv:PersonalDataCategory .
 
-:Purpose
-    a odrl:RightOperand, dpv:Purpose, owl:NamedIndividual, skos:Concept ;
-    rdfs:isDefinedBy odrl-ac: ;
-    rdfs:label "Purpose for processing"@en ;
-    skos:definition "Indicates the purpose for carrying out the processing of personal data."@en ;
-    skos:note "Example: Academic research, access control or advertising."@en .
+#:Purpose
+#    a odrl:RightOperand, dpv:Purpose, owl:NamedIndividual, skos:Concept ;
+#    rdfs:isDefinedBy odrl-ac: ;
+#    rdfs:label "Purpose for processing"@en ;
+#    skos:definition "Indicates the purpose for carrying out the processing of personal data."@en ;
+#    skos:note "Example: Academic research, access control or advertising."@en .
 
-:Recipient
-    a odrl:RightOperand, dpv:Recipient, owl:NamedIndividual, skos:Concept ;
-    rdfs:isDefinedBy odrl-ac: ;
-    rdfs:label "Recipient of personal data"@en ;
-    skos:definition "Indicates the entities that receive the data subject's personal data."@en .
+#:Recipient
+#    a odrl:RightOperand, dpv:Recipient, owl:NamedIndividual, skos:Concept ;
+#    rdfs:isDefinedBy odrl-ac: ;
+#    rdfs:label "Recipient of personal data"@en ;
+#    skos:definition "Indicates the entities that receive the data subject's personal data."@en .
 
 :legalBasis
 	a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
@@ -38,9 +38,10 @@ odrl-ac:
 	rdfs:label "Property to specify the Legal Basis for processing"@en ;
 	skos:definition "Used to specify the GDPR legal basis for carrying out the processing of personal data."@en ;
 	skos:note "Example: Performance of a contract."@en .
-:LegalBasis
-    a odrl:RightOperand, dpv-gdpr:LegalBasis, owl:NamedIndividual, skos:Concept ;
-    rdfs:isDefinedBy odrl-ac: ;
-    rdfs:label "Legal Basis for processing"@en ;
-    skos:definition "A GDPR legal basis for carrying out the processing of personal data."@en ;
-    skos:note "Example: Performance of a contract."@en .
+
+#:LegalBasis
+#    a odrl:RightOperand, dpv-gdpr:LegalBasis, owl:NamedIndividual, skos:Concept ;
+#    rdfs:isDefinedBy odrl-ac: ;
+#    rdfs:label "Legal Basis for processing"@en ;
+#    skos:definition "A GDPR legal basis for carrying out the processing of personal data."@en ;
+#    skos:note "Example: Performance of a contract."@en .

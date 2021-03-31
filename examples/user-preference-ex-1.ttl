@@ -1,10 +1,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix vcard:<http://www.w3.org/2006/vcard/ns#> . 
+@prefix dpv: <http://www.w3.org/ns/dpv#> .
 @prefix odrl-ac: <https://example.com/odrl-ac> .
 
 :ex-1
+    rdfs:comment '''Beatriz gives permission to any controller to read her contact
+    information for the purpose of research and development of new services.''' ;
     a odrl:Policy ;
     odrl:permission [
         a odrl:Permission ;
@@ -14,6 +16,6 @@
         odrl:constraint [
             odrl:leftOperand odrl:purpose ;
             odrl:operator odrl:isA ;
-            odrl:rightOperand odrl-ac:SellProductsToDataSubject
+            odrl:rightOperand dpv:ResearchAndDevelopment
         ] 
     ] .
