@@ -4,6 +4,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
+@prefix dpv-gdpr: <http://www.w3.org/ns/dpv-gdpr#> .
 @prefix acl:  <http://www.w3.org/ns/auth/acl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
@@ -14,6 +15,7 @@ odrl-ac:
 	rdfs:label "ODRL access control profile profile"@en .
 
 :Access a odrl:Action, acl:Access .
+:Processing a odrl:Action, dpv:Processing .
 
 :PersonalDataCategory a odrl:Asset, dpv:PersonalDataCategory .
 
@@ -23,3 +25,22 @@ odrl-ac:
     rdfs:label "Purpose for processing"@en ;
     skos:definition "Indicates the purpose for carrying out the processing of personal data."@en ;
     skos:note "Example: Academic research, access control or advertising."@en .
+
+:Recipient
+    a odrl:RightOperand, dpv:Recipient, owl:NamedIndividual, skos:Concept ;
+    rdfs:isDefinedBy odrl-ac: ;
+    rdfs:label "Recipient of personal data"@en ;
+    skos:definition "Indicates the entities that receive the data subject's personal data."@en .
+
+:legalBasis
+	a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+	rdfs:isDefinedBy odrl-ac: ;
+	rdfs:label "Property to specify the Legal Basis for processing"@en ;
+	skos:definition "Used to specify the GDPR legal basis for carrying out the processing of personal data."@en ;
+	skos:note "Example: Performance of a contract."@en .
+:LegalBasis
+    a odrl:RightOperand, dpv-gdpr:LegalBasis, owl:NamedIndividual, skos:Concept ;
+    rdfs:isDefinedBy odrl-ac: ;
+    rdfs:label "Legal Basis for processing"@en ;
+    skos:definition "A GDPR legal basis for carrying out the processing of personal data."@en ;
+    skos:note "Example: Performance of a contract."@en .
