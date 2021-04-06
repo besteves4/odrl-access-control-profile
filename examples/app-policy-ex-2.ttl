@@ -5,7 +5,6 @@
 @prefix dpv-gdpr: <http://www.w3.org/ns/dpv-gdpr#> .
 @prefix odrl-ac: <https://example.com/odrl-ac> .
 
-#should we define it as odrl:Request https://www.w3.org/TR/odrl-vocab/#term-Request ?
 :ex-2
     rdfs:comment """Example app requests permission to use and store the email address and social network 
     information of users for the purpose of performing research and using consent as legal basis.""" ;
@@ -13,9 +12,9 @@
     odrl:permission [
         a odrl:Permission ;
         odrl:assignee <https://example-app.com> ;
-        odrl:target odrl-ac:EmailAddress, odrl-ac:SocialNetwork ;
+        odrl:target dpv:EmailAddress, dpv:SocialNetwork ;
         odrl:action [
-            rdf:value odrl-ac:Use, odrl-ac:Store ;
+            rdf:value dpv:Use, dpv:Store ;
             odrl:refinement [
                 odrl:and _:purposeConstraint, _:legalBasisConstraint ;
             ]
@@ -24,12 +23,12 @@
 
 _:purposeConstraint
     a odrl:Constraint ;
-    odrl:leftOperand odrl:purpose ;
+    odrl:leftOperand dpv:Purpose ;
     odrl:operator odrl:isA ;
     odrl:rightOperand dpv:ResearchAndDevelopment .
     
 _:legalBasisConstraint
     a odrl:Constraint ;
-    odrl:leftOperand odrl-ac:legalBasis ;
+    odrl:leftOperand dpv:LegalBasis ;
     odrl:operator odrl:eq ;
     odrl:rightOperand dpv-gdpr:A6-1-a-explicit-consent .

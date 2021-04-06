@@ -11,10 +11,10 @@
     odrl:permission [
         a odrl:Permission ;
         odrl:assigner <https://beatriz.com/profile/card#me> ;
-        odrl:target odrl-ac:Contact ;
-        odrl:action odrl-ac:Read ;
+        odrl:target dpv:Contact ;
+        odrl:action acl:Read ;
         odrl:constraint [
-            odrl:leftOperand odrl:purpose ;
+            odrl:leftOperand dpv:Purpose ;
             odrl:operator odrl:isA ;
             odrl:rightOperand dpv:ResearchAndDevelopment
         ] 
