@@ -5,18 +5,19 @@
 @prefix acl:  <http://www.w3.org/ns/auth/acl#> .
 @prefix odrl-ac: <https://example.com/odrl-ac> .
 
-:policy-1
+:policy-2
     rdfs:comment '''Beatriz, as identified by her WebID https://beatriz.databox.me/profile/card#me, 
-    permits read access operations over her contact data for the purpose of research and development.''' ;
+    prohibits the sharing of a resource stored on her Pod, located at 
+    https://beatriz.databox.me/docs/file1, with any third parties.''' ;
     a odrl:Policy ;
-    odrl:permission [
-        a odrl:Permission ;
+    odrl:prohibition [
+        a odrl:Prohibition ;
         odrl:assigner <https://beatriz.databox.me/profile/card#me> ;
-        odrl:target dpv:Contact ;
-        odrl:action acl:Read ;
+        odrl:target <https://beatriz.databox.me/docs/file1> ;
+        odrl:action dpv:Share ;
         odrl:constraint [
-            odrl:leftOperand dpv:Purpose ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:ResearchAndDevelopment
-        ] 
+                odrl:leftOperand dpv:Recipient ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand dpv:ThirdParty
+        ]
     ] .

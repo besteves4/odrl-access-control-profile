@@ -12,24 +12,16 @@
 
 odrl-ac:
 	a owl:Ontology ;
-	rdfs:label "ODRL access control profile"@en .
+	rdfs:label "ODRL access control policies profile"@en .
 
-#:Access a odrl:Action, acl:Access .
 acl:Access rdfs:subClassOf odrl:Action .
 
-#:Processing a odrl:Action, dpv:Processing .
 dpv:Processing rdfs:subClassOf odrl:Action .
 
-#:PersonalDataCategory a odrl:Asset, dpv:PersonalDataCategory .
 dpv:PersonalDataCategory rdfs:subClassOf odrl:Asset .
 
 dpv:Purpose rdfs:subClassOf odrl:purpose .
 
 dpv:Recipient rdfs:subClassOf odrl:recipient .
 
-dpv:LegalBasis
-	a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
-	rdfs:isDefinedBy odrl-ac: ;
-	rdfs:label "Constraint to specify the Legal Basis for processing"@en ;
-	skos:definition "Used to specify the GDPR legal basis for carrying out the processing of personal data."@en ;
-	skos:note "Example: Performance of a contract."@en .
+dpv:LegalEntity rdfs:subClassOf odrl:Party .

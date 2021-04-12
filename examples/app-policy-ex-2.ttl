@@ -5,30 +5,29 @@
 @prefix dpv-gdpr: <http://www.w3.org/ns/dpv-gdpr#> .
 @prefix odrl-ac: <https://example.com/odrl-ac> .
 
-:ex-2
-    rdfs:comment """Example app requests permission to use and store the email address and social network 
-    information of users for the purpose of performing research and using consent as legal basis.""" ;
+:app-2
+    rdfs:comment """App 2, as identified by their URL https://example-app-2.com, 
+    requests permission to collect and produce a copy of the health records, 
+    medical prescriptions and health history of users for the purpose of performing 
+    academic research and make the anonymised information available to the scientific community.""" ;
     a odrl:Policy ;
+    odrl:assignee <https://example-app-2.com> ;
+    odrl:target dpv:HealthRecord, dpv:Prescription, dpv:HealthHistory ;
     odrl:permission [
         a odrl:Permission ;
-        odrl:assignee <https://example-app.com> ;
-        odrl:target dpv:EmailAddress, dpv:SocialNetwork ;
-        odrl:action [
-            rdf:value dpv:Use, dpv:Store ;
-            odrl:refinement [
-                odrl:and _:purposeConstraint, _:legalBasisConstraint ;
-            ]
+        odrl:action dpv:Collect, dpv:Copy ;
+        odrl:constraint [
+        odrl:leftOperand dpv:Purpose ;
+            odrl:operator odrl:isA ;
+            odrl:rightOperand dpv:AcademicResearch 
+        ]
+    ] ;
+    odrl:permission [
+        a odrl:Permission ;
+        Odrl:action dpv:Anonymise, dpv:MakeAvailable ;
+        odrl:constraint [
+            odrl:leftOperand dpv:Recipient ;
+            odrl:operator odrl:isA ;
+            odrl:rightOperand dpv:ThirdParty
         ]
     ] .
-
-_:purposeConstraint
-    a odrl:Constraint ;
-    odrl:leftOperand dpv:Purpose ;
-    odrl:operator odrl:isA ;
-    odrl:rightOperand dpv:ResearchAndDevelopment .
-    
-_:legalBasisConstraint
-    a odrl:Constraint ;
-    odrl:leftOperand dpv:LegalBasis ;
-    odrl:operator odrl:eq ;
-    odrl:rightOperand dpv-gdpr:A6-1-a-explicit-consent .
