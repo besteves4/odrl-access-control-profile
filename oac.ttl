@@ -1,0 +1,24 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dpv: <http://www.w3.org/ns/dpv#> .
+@prefix acl:  <http://www.w3.org/ns/auth/acl#> .
+
+@prefix odrl-ac: <https://example.com/odrl-ac> .
+
+odrl-ac:
+	a owl:Ontology ;
+	rdfs:label "ODRL access control policies profile"@en .
+
+acl:Access rdfs:subClassOf odrl:Action .
+
+dpv:Processing rdfs:subClassOf odrl:Action .
+
+dpv:PersonalDataCategory rdfs:subClassOf odrl:Asset .
+
+dpv:Purpose rdfs:subClassOf odrl:purpose .
+
+dpv:Recipient rdfs:subClassOf odrl:recipient .
+
+dpv:LegalEntity rdfs:subClassOf odrl:Party .
