@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>dfn{cursor:pointer}
+    .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+    .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+    .dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+    .dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+    .dfn-panel *{margin:0}
+    .dfn-panel b{display:block;color:#000;margin-top:.25em}
+    .dfn-panel ul a[href]{color:#333}
+    .dfn-panel>div{display:flex}
+    .dfn-panel a.self-link{font-weight:700;margin-right:auto}
+    .dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+    .dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+    .dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+    .dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+    .dfn-panel a[href]:hover{border-bottom-width:1px}
+    .dfn-panel ul{padding:0}
+    .dfn-panel li{margin-left:1em}
+    .dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+  </style>
+  <link rel="preconnect" crossorigin="anonymous" href="https://www.w3.org/" class="removeOnSave">
+  <link rel="preload" as="script" href="./odrl-dpv-acl-profile_files/fixup.js.transferir" class="removeOnSave">
+  <link rel="preload" as="style" href="./odrl-dpv-acl-profile_files/base.css" class="removeOnSave">
+  <link rel="stylesheet" href="./odrl-dpv-acl-profile_files/base.css" class="removeOnSave">
+  
+  <title>ODRL Profile for Access Control in Solid</title>		
+	
+	<link rel="stylesheet" href="./odrl-dpv-acl-profile_files/localstyle.css">
+	<script src="./odrl-dpv-acl-profile_files/jquery.min.js.transferir" type="text/javascript"></script>
+		
+	<style id="respec-ui-styles" class="removeOnSave">
+    .respec-modal .close-button{position:absolute;z-index:inherit;padding:.2em;font-weight:700;cursor:pointer;margin-left:5px;border:none;background:0 0}
+    #respec-ui{position:fixed;display:flex;flex-direction:row-reverse;top:20px;right:20px;width:202px;text-align:right;z-index:9000}
+    #respec-pill,.respec-info-button{background:#fff;height:2.5em;color:#787878;border:1px solid #ccc;box-shadow:1px 1px 8px 0 rgba(100,100,100,.5)}
+    .respec-info-button{border:none;opacity:.75;border-radius:2em;margin-right:1em;min-width:3.5em}
+    .respec-info-button:focus,.respec-info-button:hover{opacity:1;transition:opacity .2s}
+    #respec-pill:disabled{font-size:2.8px;text-indent:-9999em;border-top:1.1em solid rgba(40,40,40,.2);border-right:1.1em solid rgba(40,40,40,.2);border-bottom:1.1em solid rgba(40,40,40,.2);border-left:1.1em solid #fff;transform:translateZ(0);animation:respec-spin .5s infinite linear;box-shadow:none}
+    #respec-pill:disabled,#respec-pill:disabled:after{border-radius:50%;width:10em;height:10em}
+    @keyframes respec-spin{
+    0%{transform:rotate(0)}
+    100%{transform:rotate(360deg)}
+    }
+    .respec-hidden{visibility:hidden;opacity:0;transition:visibility 0s .2s,opacity .2s linear}
+    .respec-visible{visibility:visible;opacity:1;transition:opacity .2s linear}
+    #respec-pill:focus,#respec-pill:hover{color:#000;background-color:#f5f5f5;transition:color .2s}
+    #respec-menu{position:absolute;margin:0;padding:0;font-family:sans-serif;background:#fff;box-shadow:1px 1px 8px 0 rgba(100,100,100,.5);width:200px;display:none;text-align:left;margin-top:32px;font-size:.8em}
+    #respec-menu:not([hidden]){display:block}
+    #respec-menu li{list-style-type:none;margin:0;padding:0}
+    .respec-save-buttons{display:grid;grid-template-columns:repeat(auto-fill,minmax(47%,2fr));grid-gap:.5cm;padding:.5cm}
+    .respec-save-button:link{padding-top:16px;color:#f0f0f0;background:#2a5aa8;justify-self:stretch;height:1cm;text-decoration:none;text-align:center;font-size:inherit;border:none;border-radius:.2cm}
+    .respec-save-button:link:hover{color:#fff;background:#2a5aa8;padding:0;margin:0;border:0;padding-top:16px}
+    .respec-save-button:link:focus{background:#193766}
+    #respec-pill:focus,#respec-ui button:focus,.respec-option:focus{outline:0;outline-style:none}
+    #respec-pill-error{background-color:red;color:#fff}
+    #respec-pill-warning{background-color:orange;color:#fff}
+    .respec-error-list,.respec-warning-list{margin:0;padding:0;list-style:none;font-family:sans-serif;background-color:#fffbe6;font-size:.85em}
+    .respec-error-list>li,.respec-warning-list>li{padding:.4em .7em}
+    .respec-warning-list>li::before{content:"⚠️";padding-right:.5em}
+    .respec-error-list p,.respec-warning-list p{padding:0;margin:0}
+    .respec-warning-list li{color:#5c3b00;border-bottom:thin solid #fff5c2}
+    .respec-error-list,.respec-error-list li{background-color:#fff0f0}
+    .respec-error-list li::before{content:"💥";padding-right:.5em}
+    .respec-error-list li{padding:.4em .7em;color:#5c3b00;border-bottom:thin solid #ffd7d7}
+    .respec-error-list li>p{margin:0;padding:0;display:inline-block}
+    .respec-error-list li>p:first-child,.respec-warning-list li>p:first-child{display:inline}
+    .respec-error-list>li li,.respec-warning-list>li li{margin:0;list-style:disc}
+    #respec-overlay{display:block;position:fixed;z-index:10000;top:0;left:0;height:100%;width:100%;background:#000}
+    .respec-show-overlay{transition:opacity .2s linear;opacity:.5}
+    .respec-hide-overlay{transition:opacity .2s linear;opacity:0}
+    .respec-modal{display:block;position:fixed;z-index:11000;margin:auto;top:10%;background:#fff;border:5px solid #666;min-width:20%;width:79%;padding:0;max-height:80%;overflow-y:auto;margin:0 -.5cm}
+    @media screen and (min-width:78em){
+    .respec-modal{width:62%}
+    }
+    .respec-modal h3{margin:0;padding:.2em;text-align:center;color:#000;background:linear-gradient(to bottom,#eee 0,#eee 50%,#ccc 100%);font-size:1em}
+    .respec-modal .inside div p{padding-left:1cm}
+    #respec-menu button.respec-option{background:#fff;padding:0 .2cm;border:none;width:100%;text-align:left;font-size:inherit;padding:1.2em 1.2em}
+    #respec-menu button.respec-option:hover,#respec-menu button:focus{background-color:#eee}
+    .respec-cmd-icon{padding-right:.5em}
+    #respec-ui button.respec-option:last-child{border:none;border-radius:inherit}
+    .respec-button-copy-paste{position:absolute;height:28px;width:40px;cursor:pointer;background-image:linear-gradient(#fcfcfc,#eee);border:1px solid #90b8de;border-left:0;border-radius:0 0 3px 0;-webkit-user-select:none;user-select:none;-webkit-appearance:none;top:0;left:127px}
+    @media print{
+    #respec-ui{display:none}
+    }
+    .respec-iframe{width:100%;min-height:550px;height:100%;overflow:hidden;padding:0;margin:0;border:0}
+    .respec-iframe:not(.ready){background:url(https://respec.org/xref/loader.gif) no-repeat center}
+    .respec-iframe+a[href]{font-size:.9rem;float:right;margin:0 .5em .5em;border-bottom-width:1px}</style><style id="respec-mainstyle">@keyframes pop{
+    0%{transform:scale(1,1)}
+    25%{transform:scale(1.25,1.25);opacity:.75}
+    100%{transform:scale(1,1)}
+    }
+    .hljs{background:0 0!important}
+    a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
+    dfn{font-weight:700}
+    a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+    a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+    a.bibref{text-decoration:none}
+    .respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+    .respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+    @supports not (text-decoration:red wavy underline){
+    .respec-offending-element:not(pre){display:inline-block}
+    .respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+    }
+    #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+    cite .bibref{font-style:normal}
+    code{color:#c63501}
+    th code{color:inherit}
+    a[href].orcid{padding-left:4px;padding-right:4px}
+    a[href].orcid>svg{margin-bottom:-2px}
+    .toc a,.tof a{text-decoration:none}
+    a .figno,a .secno{color:#000}
+    ol.tof,ul.tof{list-style:none outside none}
+    .caption{margin-top:.5em;font-style:italic}
+    table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+    .simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+    .simple th a{color:#fff;padding:3px 5px;text-align:left}
+    .simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+    .simple td{padding:3px 10px;border-top:1px solid #ddd}
+    .simple tr:nth-child(even){background:#f0f6ff}
+    .section dd>p:first-child{margin-top:0}
+    .section dd>p:last-child{margin-bottom:0}
+    .section dd{margin-bottom:1em}
+    .section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+    #issue-summary>ul{column-count:2}
+    #issue-summary li{list-style:none;display:inline-block}
+    details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+    details.respec-tests-details>*{padding-right:2em}
+    details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+    details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+    details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+    details.respec-tests-details>li{padding-left:1em}
+    a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+    h2,h3,h4,h5,h6{position:relative}
+    aside.example .marker>a.self-link{color:inherit}
+    h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+    h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
+    @media (max-width:767px){
+    dd{margin-left:0}
+    h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
+    }
+    @media print{
+    .removeOnSave{display:none}
+    }</style><link rel="dns-prefetch" crossorigin="anonymous" href="https://api.specref.org/" class="removeOnSave"><link rel="preconnect" crossorigin="anonymous" href="https://respec.org/" class="removeOnSave"><link rel="preload" as="script" href="https://www.w3.org/Tools/respec/respec-highlight" class="removeOnSave"><link rel="stylesheet" href="./odrl-dpv-acl-profile_files/cg-draft"><meta name="description" content="This document presents a new profile called ODRLData Usage Control (DUC) that extends from ODRL core vocabulary and expresion focused on data processing
+                    over big data systems"><style>.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+    .hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+    .hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+    .hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+    .hljs-literal{color:#0b76c5}
+    .hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+    .hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+    .hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+    .hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+    .hljs-emphasis{font-style:italic}
+    .hljs-strong{font-weight:700}
+    .hljs-link{text-decoration:underline}</style><style class="removeOnSave">var:hover{text-decoration:underline;cursor:pointer}
+    var.respec-hl{color:var(--color,#000);background-color:var(--bg-color);box-shadow:0 0 0 2px var(--bg-color)}
+    var.respec-hl-c1{--bg-color:#f4d200}
+    var.respec-hl-c2{--bg-color:#ff87a2}
+    var.respec-hl-c3{--bg-color:#96e885}
+    var.respec-hl-c4{--bg-color:#3eeed2}
+    var.respec-hl-c5{--bg-color:#eacfb6}
+    var.respec-hl-c6{--bg-color:#82ddff}
+    var.respec-hl-c7{--bg-color:#ffbcf2}
+    @media print{
+    var.respec-hl{background:0 0;color:#000;box-shadow:unset}}
+  </style>
+  <style>
+    var{position:relative;cursor:pointer}
+    var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+    var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+    var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+    var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+  </style><!-- Support ReSpec's development - https://opencollective.com/respec -->
+  <meta name="monetization" class="removeOnSave" content="$ilp.uphold.com/DwJmxPHHi8K3">
+  <script id="initialUserConfig" type="application/json">
+    {
+      "shortName": "profile-accesscontrol",
+      "editors": [
+        {
+          "name": "Beatriz Esteves",
+          "url": "https://besteves4.github.io/",
+          "company": "Ontology Engineering Group, Universidad Politécnica de Madrid",
+          "companyURL": "https://oeg.fi.upm.es/",
+          "mailto": "beatriz.gesteves@upm.es"
+        },
+        {
+          "name": "Harshvardhan J. Pandit",
+          "url": "https://harshp.com/",
+          "company": "ADAPT Centre, Trinity College Dublin",
+          "companyURL": "https://tcd.ie/",
+          "mailto": "pandith@tcd.ie"
+        },
+        {
+          "name": "Víctor Rodríguez-Doncel",
+          "url": "http://cosasbuenas.es/",
+          "company": "Ontology Engineering Group, Universidad Politécnica de Madrid",
+          "companyURL": "https://oeg.fi.upm.es/",
+          "mailto": "vrodriguez@fi.upm.es"
+        }
+      ],
+      "group": "odrl",
+      "wgPublicList": "public-odrl",
+      "inlineCSS": true,
+      "noIDLIn": true,
+      "noLegacyStyle": false,
+      "noRecTrack": true,
+      "lint": true,
+      "github": {
+        "repoURL": "https://github.com/besteves4/odrl-dpv-acl-profile",
+        "branch": "master"
+      },
+      "publishISODate": "2021-04-16T00:00:00.000Z",
+      "generatedSubtitle": ""
+    }
+  </script>
+</head>
+<body class="h-entry informative toc-sidebar">
+  <p id="toc-nav">
+    <a id="toc-jump" href="https://w3c.github.io/odrl/profile-bigdata/#toc">
+      <span aria-hidden="true">↑</span> <span>Jump to Table of Contents</span>
+    </a>
+    <a id="toc-toggle" href="https://w3c.github.io/odrl/profile-bigdata/#toc">
+      <span aria-hidden="true">←</span> <span>Collapse Sidebar</span>
+    </a>
+  </p>
+  <div class="head">
+    <h1 id="title" class="title">ODRL Profile for Access Control in Solid</h1>
+    <h2>
+      Release
+      <time class="dt-published" datetime="2021-04-12">12 April 2021</time>
+    </h2>
+    <dl>
+      <dt>Latest editor's draft:</dt>
+      <dd>
+        <a href="https://w3c.github.io/odrl/">https://w3c.github.io/odrl/</a>
+      </dd>
+      <dt>Editors:</dt>
+      <dd class="p-author h-card vcard">
+        <a class="ed_mailto u-email email p-name" href="mailto:beatriz.gesteves@upm.es">Beatriz Esteves</a>
+        (<a class="p-org org h-org h-card" href="https://oeg.fi.upm.es/">Ontology Engineering Group, Universidad Politécnica de Madrid</a>)
+      </dd>
+      <dd class="p-author h-card vcard">
+        <a class="ed_mailto u-email email p-name" href="mailto:pandith@tcd.ie">Harshvardhan J. Pandit</a>
+        (<a class="p-org org h-org h-card" href="https://tcd.ie/">ADAPT Centre, Trinity College Dublin</a>)
+      </dd>
+      <dd class="p-author h-card vcard">
+        <a class="ed_mailto u-email email p-name" href="mailto:vrodriguez@fi.upm.es">Víctor Rodríguez-Doncel</a>
+        (<a class="p-org org h-org h-card" href="https://oeg.fi.upm.es/">Ontology Engineering Group, Universidad Politécnica de Madrid</a>)
+      </dd>
+      <dt>Participate:</dt>
+      <dd>
+        <a href="https://github.com/besteves4/odrl-dpv-acl-profile">GitHub profile</a>
+      </dd>
+      <dd>
+        <a href="https://github.com/besteves4/odrl-dpv-acl-profile/issues">File a bug</a>
+      </dd>
+      <dd>
+        <a href="https://github.com/besteves4/odrl-dpv-acl-profile/commits/main">Commit history</a>
+      </dd>
+      <dd>
+        <a href="https://github.com/besteves4/odrl-dpv-acl-profile/pulls">Pull requests</a>
+      </dd>
+    </dl>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Abstract</h2>
+    <p>
+      This document presents a new profile, the ODRL Profile for Access Control in Solid, that extends Solid's ACL mechanism
+      by using the ODRL Vocabulary and Expression specification to define ‘sticky policies’ that express permissions and / or 
+      prohibitions associated with data stored in a Solid pod and utilises DPV as a controlled vocabulary for invoking privacy 
+      and data protection-specific terms.
+    </p>
+    <p>
+      In particular, the introduced elements will serve one of these purposes:
+    </p>
+    <p class="tab">
+      (i) define actions supporting enforcement of current ACL verbs,
+    </p>
+    <p class="tab">
+      (ii) define data protection-related actions and restrictions defined in GDPR,
+    </p>
+    <p class="tab">
+      (iii) any vocabulary element needed to support policy patterns that can be anticipated to be common, and
+    </p>
+    <p class="tab">
+      (iv) elements necessary to support the authorization reasoning decision.
+    </p>
+  </section>
+
+<!--   <section id="sotd" class="introductory">
+    <h2>Status of This Document</h2>
+    <p>
+      This specification was published by the
+      <a href="https://www.w3.org/community/odrl/">ODRL Community Group</a>. It is not a W3C Standard nor is it
+      on the W3C Standards Track.
+      
+            Please note that under the
+            <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>
+            there is a limited opt-out and other conditions apply.
+      Learn more about
+      <a href="https://www.w3.org/community/">W3C Community and Business Groups</a>.
+    </p>
+    <p>
+    <a href="https://github.com/w3c/odrl/issues/">GitHub Issues</a> are preferred for
+          discussion of this specification.
+    Alternatively, you can send comments to our mailing list.
+          Please send them to
+          <a href="mailto:public-odrl@w3.org">public-odrl@w3.org</a>
+          (<a href="mailto:public-odrl-request@w3.org?subject=subscribe">subscribe</a>,
+          <a href="https://lists.w3.org/Archives/Public/public-odrl/">archives</a>).
+    </p>
+  </section> -->
+  <nav id="toc">
+    <h2 class="introductory" id="table-of-contents">Table of Contents</h2>
+    <ol class="toc">
+      <li class="tocline">
+        <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#ack">
+          <bdi class="secno">1. </bdi>Acknowledgments
+        </a>
+      </li>
+      <li class="tocline">
+        <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#intro">
+          <bdi class="secno">2. </bdi>Introduction
+        </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#orsd">
+              <bdi class="secno">2.1 </bdi>Ontology Requirement Specification Document
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#conventions">
+              <bdi class="secno">2.2 </bdi>Document Conventions
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#spec">
+          <bdi class="secno">3. </bdi>Profile specification
+        </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-query">
+              <bdi class="secno">4.1 </bdi>Query
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-write">
+              <bdi class="secno">4.2 </bdi>Publish
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-train">
+              <bdi class="secno">4.3 </bdi>Train
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-evaluate">
+              <bdi class="secno">4.4 </bdi>Evaluate
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-anonymize">
+              <bdi class="secno">4.5 </bdi>Anonymize
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-anonymize">
+              <bdi class="secno">4.6 </bdi>Transform
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#party">
+          <bdi class="secno">5. </bdi>Party Functions
+        </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Provider">
+              <bdi class="secno">5.1 </bdi>Provider
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Consumer">
+              <bdi class="secno">5.2 </bdi>Consumer
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Controller">
+              <bdi class="secno">5.3 </bdi>Controller
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Broker">
+              <bdi class="secno">5.4 </bdi>Broker
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline">
+        <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#references">
+          <bdi class="secno">A. </bdi>References
+        </a>
+        <ol class="toc">
+          <li class="tocline">
+            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#informative-references">
+              <bdi class="secno">A.1 </bdi>Informative references
+            </a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="ack">
+      <h2 id="x1-acknowledgments">
+        <bdi class="secno">1. </bdi>Acknowledgments
+        <a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#ack"></a>
+      </h2>
+      <p>
+        This research has been supported by European Union’s Horizon 2020 research and innovation programme under 
+        the Marie Skłodowska-Curie grant agreement No 813497 (PROTECT) and `Datos 4.0 Retos y Soluciones' 
+        (TIN2016-78011-C4-3-R). Harshvardhan J. Pandit is funded by the Irish Research Council Government of Ireland 
+        Postdoctoral Fellowship Grant#GOIPD/2020/790; European Union's Horizon 2020 research and innovation programme 
+        under NGI TRUST Grant#825618 for Project#3.40 Privacy-as-Expected: Consent Gateway; and by the ADAPT SFI 
+        Centre for Digital Media Technology which is funded by Science Foundation Ireland through the SFI Research 
+        Centres Programme and is co-funded under the European Regional Development Fund (ERDF) through Grant#13/RC/2106_P2.
+      </p>
+  </section>
+
+  <section id="intro">
+    <h2 id="x2-introduction">
+      <bdi class="secno">2. </bdi>Introduction
+      <a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#intro"></a>
+    </h2>
+    <p>
+      Solid is a specification[cite: https://solidproject.org/TR/protocol] for decentralised personal data stores (called `Pods') 
+      that uses linked data and Web standards to achieve user control and interoperability. The access to data stored within 
+      Solid Pods is governed by the Web Access Control (WAC) specification [cite: https://solid.github.io/web-access-control-spec/]
+      which uses IRIs to represent resources and agents, and stores authorisation statements within Access Control Lists (ACL) 
+      defined per resource or inherited from the parent resource. Therefore, in Solid, the user controlling the ACL is the entity responsible 
+      for deciding who has access to the data.
+    </p>
+    <p>
+      Given that Solid provides a way for personal data to be stored and managed by individuals, it is important to consider the impact 
+      and application of data protection and privacy laws such as the European General Data Protection Regulation (GDPR)[cite: https://eur-lex.europa.eu/eli/reg/2016/679/] 
+      that define specific concepts and obligations for how personal data can be collected, stored, used, and shared. In addition, 
+      such laws also specify various rights and the legal basis used to justify using the data and the conditions for their validity. 
+      In particular, GDPR's Articles 13 and 14 require controllers to provide information such as identity, purpose, personal data 
+      categories, legal basis, and recipients where they collect personal data directly or indirectly from individuals.
+    </p>
+    <p>
+      Applied to Solid, this information can be presented using conventional methods, such as a notice provided on the data requester's 
+      website, and the resulting authorisation decision made by the individual stored within the ACL. However, for individuals to control 
+      their data practices, the Solid pod must contain this information as well so that the individual has the opportunity to:
+    </p>
+    <p class="tab">
+      (i) inspect their personal data within an environment under their control; 
+    </p>
+    <p class="tab">
+      (ii) store it for accountability purposes; 
+    </p>
+    <p class="tab">
+      (iii) determine their data sharing preferences; and 
+    </p>
+    <p class="tab">
+      (iv) be assisted in expressing and enforcing their data sharing preferences. 
+    </p>
+    <p>
+      To achieve these goals, the following requirements motivate our approach to extend Solid’s existing ACL mechanism 
+      using the ODRL Vocabulary and Expression specification to define ‘sticky policies’ that express permissions and / or 
+      prohibitions associated with data stored in a Solid pod and utilises DPV as a controlled vocabulary for invoking privacy 
+      and data protection-specific terms.
+    </p>
+    <p class="tab">
+      R1. Support specifying user preferences as policies.
+    </p>
+    <p class="tab">
+      R2. Incorporate vocabulary specifying or aligned to legal concepts.
+    </p>
+    <p class="tab">
+      R3. Support specifying permissions and prohibitions at arbitrary granularity.
+    </p>
+    <p class="tab">
+      R4. Support identifying and resolving conflicts based on scope.
+    </p>
+    <p class="tab">
+      R5. Record (store) policies used to authorise access.
+    </p>
+    <p class="tab">
+      R6. Support querying policies and authorisations for introspection of data use.
+    </p>
+
+    <section id="orsd">
+      <h3 id="x2-1-document-orsd">
+        <bdi class="secno">2.1 </bdi>Ontology Requirement Specification Document
+        <a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#orsd"></a>
+      </h3>
+
+      <table class="center">
+        <tr>
+          <th colspan=2 class="table-top">
+            ODRL Profile for Access Control in Solid
+          </th>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            1. Purpose
+          </th>
+        </tr>
+        <tr>
+          <td colspan=2 class="table-cell">
+            The purpose of this profile of ODRL is to support policies 
+            determining the access control to personal data stored in Solid pods.
+          </td>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            2. Scope
+          </th>
+        </tr>
+        <tr>
+          <td colspan=2 class="table-cell">
+            The scope of this profile is limited to the definition of an ODRL Profile 
+            for Access Control in Solid. In particular, the introduced elements will 
+            serve one of these purposes: (i) define actions supporting enforcement 
+            of current ACL verbs, (ii) define data protection-related actions and restrictions 
+            defined in GDPR, (iii) any vocabulary element to support policy patterns that can 
+            be anticipated to be common, and (iv) elements necessary to support the authorization 
+            reasoning decision.
+          </td>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            3. Implementation Language
+          </th>
+        </tr>
+        <tr>
+          <td colspan=2 class="table-cell">
+            OWL
+          </td>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            4. Intended End-Users
+          </th>
+        </tr>
+        <tr>
+          <td colspan=2 class="table-cell">
+            Developers of Solid servers and Solid clients.
+          </td>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            5. Intended Uses
+          </th>
+        </tr>
+        <tr>
+          <td colspan=2 class="table-cell">
+            Use 1. Declaration of a policy by an individual storing personal data in a pod.<br>
+            Use 2. Request of data made by a person or application to gain access to the data in different modalities.<br>
+            Use 3. Contextual elements to be considered in the authorization decision.<br>
+            Use 4. Explanation of the authorization decision.
+          </td>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            6. Ontology Requirements
+          </th>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            a. Non-Functional Requirements
+          </th>
+        </tr>
+        <tr>
+          <td colspan=2 class="table-cell">
+            NFR 1. The ontology shall be published online with standard documentation.
+          </td>
+        </tr>
+        <tr>
+          <th colspan=2 class="table-title">
+            b. Functional Requirements: Groups of Competency Question
+          </th>
+        </tr>
+        <tr>
+          <th class="table-title">
+            CQG1. Related to authorization
+          </th>
+          <th class="table-title">
+            CQG2. Related to GDPR
+          </th>
+        </tr>
+        <tr>
+          <td class="table-cell">
+            CQ1. Which actions are to be authorized?<br>
+            CQ2. Which requirements are to be authorized?<br>
+            CQ3. Who are the parties intervening in policy?<br>
+            CQ4. Which is the priority of a certain policy?<br>
+            CQ5. Which are the contextual elements to be considered in the authorization decision?
+          </td>
+          <td class="table-cell">
+            CQ6. Which obligations and requirements, and information about personal data and its processing are necessary?<br>
+            CQ7. Which is the legal identification of the policy parties?
+          </td>
+        </tr>
+      </table>
+
+    </section>
+
+    <section id="conventions">
+      <h3 id="x2-2-document-conventions">
+        <bdi class="secno">2.2 </bdi>Document Conventions
+        <a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#conventions"></a>
+      </h3>
+
+        <table class="def">
+            <tbody>
+              <tr>
+                <th>Prefix</th>
+                <th>Namespace</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>odrl</td>
+                <td>http://www.w3.org/ns/odrl/2/</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-odrl-vocab" title="ODRL Vocabulary &amp; Expression 2.2">odrl-vocab<!---0.910070%--></a></cite><!---0.910070%-->] [<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-odrl-model" title="ODRL Information Model 2.2">odrl-model<!---0.910070%--></a></cite><!---0.910070%-->]</td>
+              </tr>
+              <tr>
+                <td>rdf</td>
+                <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-rdf11-concepts" title="RDF 1.1 Concepts and Abstract Syntax">rdf11-concepts<!---0.910070%--></a></cite><!---0.910070%-->]</td>
+              </tr>
+              <tr>
+                <td>rdfs</td>
+                <td>http://www.w3.org/2000/01/rdf-schema#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-rdf-schema" title="RDF Schema 1.1">rdf-schema<!---0.910070%--></a></cite><!---0.910070%-->]</td>
+              </tr>
+                  <tr>
+                <td>owl</td>
+                <td>http://www.w3.org/2002/07/owl#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-owl2-overview" title="OWL 2 Web Ontology Language Document Overview (Second Edition)">owl2-overview<!---0.910070%--></a></cite><!---0.910070%-->]</td>
+              </tr>
+              <tr>
+                <td>dpv</td>
+                <td>http://www.w3.org/ns/dpv#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-dpv" title="Data Privacy Vocabulary (DPV) version 0.2">dpv</a></cite>]</td>
+              </tr>
+              <tr>
+                <td>acl</td>
+                <td>http://www.w3.org/ns/auth/acl#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-acl" title="Basic Access Control ontology">acl</a></cite>]</td>
+              </tr>
+              <tr>
+                <td>odrl-ac</td>
+                <td>https://example.com/odrl-ac</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="https://w3c.github.io/odrl/profile-bigdata/#bib-odrl-ac" title="ODRL Profile for Access Control in Solid">odrl-ac</a></cite>]</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </section>
+  </section>
+
+  <section id="spec">
+    <h2 id="x3-spec">
+      <bdi class="secno">3. </bdi>Profile specification
+      <a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#spec"></a>
+    </h2>
+    <p>
+      For the class Action (http://www.w3.org/ns/odrl/2/Action), used with Rules, these instances are defined.
+    </p>
+      <section id="query">
+          <h3 id="x4-4-1-accept-query"><bdi class="secno">4.1<!---0.910070%--> </bdi>Query<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-query"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To query some data asset.</td></tr>
+              <tr><th>Label:</th> <td>duc:Query</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/acceptQuery">http://www.w3.org/ns/odrl/2/acceptQuery</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="publish">
+          <h3 id="x4-4-1-accept-write"><bdi class="secno">4.2<!---0.910070%--> </bdi>Publish<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-write"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To write or publish some data.</td></tr>
+              <tr><th>Label:</th> <td>duc:Publish</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/acceptPublish">http://www.w3.org/ns/odrl/2/acceptPublish</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="train">
+          <h3 id="x4-4-1-accept-train"><bdi class="secno">4.3<!---0.910070%--> </bdi>Train<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-train"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To train a machine learning model.</td></tr>
+              <tr><th>Label:</th> <td>duc:Train</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/acceptTrain">http://www.w3.org/ns/odrl/2/acceptTrain</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="evaluate">
+          <h3 id="x4-4-1-accept-evaluate"><bdi class="secno">4.4<!---0.910070%--> </bdi>Evaluate<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-evaluate"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To evaluate a machine learning model.</td></tr>
+              <tr><th>Label:</th> <td>duc:Evaluate</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/acceptEvaluate">http://www.w3.org/ns/odrl/2/acceptEvaluate</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="anonymize">
+          <h3 id="x4-4-1-accept-anonymize"><bdi class="secno">4.5<!---0.910070%--> </bdi>Anonymize<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-anonymize"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To anonymize the incoming data.</td></tr>
+              <tr><th>Label:</th> <td>duc:Anonymize</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/acceptAnonymize">http://www.w3.org/ns/odrl/2/acceptAnonymize</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="transform">
+          <h3 id="x4-4-1-accept-anonymize"><bdi class="secno">4.6<!---0.910070%--> </bdi>Transform<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-anonymize"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To transform, clean or filter data.</td></tr>
+              <tr><th>Label:</th> <td>duc:Transform</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/acceptTransform">http://www.w3.org/ns/odrl/2/acceptTransforme</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="aggregate_by_consumer">
+          <h3 id="x4-4-1-accept-aggregate-consumer"><bdi class="secno">4.7<!---0.910070%--> </bdi>Aggregate_by_consumer<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-aggregate-consumer"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>The consumer has to aggregate the data before perform another operation.</td></tr>
+              <tr><th>Label:</th> <td>duc:AggregateByConsumer</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/AggregateByConsumer">http://www.w3.org/ns/odrl/2/AggregateByConsumer</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="aggregate_by_provider">
+          <h3 id="x4-4-1-accept-aggregate-provider"><bdi class="secno">4.8<!---0.910070%--> </bdi>Aggregate_by_provider<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-aggregate-provider"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>The provider has to aggregate the data before publish it.</td></tr>
+              <tr><th>Label:</th> <td>duc:AggregateByProvider</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/AggregateByProvider">http://www.w3.org/ns/odrl/2/AggregateByProvider</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="remove_subscription">
+          <h3 id="x4-4-1-remove"><bdi class="secno">4.9<!---0.910070%--> </bdi>Remove_subscription<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-remove"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To remove the subscription.</td></tr>
+              <tr><th>Label:</th> <td>duc:RemoveSubscription</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/RemoveSubscription">http://www.w3.org/ns/odrl/2/RemoveSubscription</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+      <section id="kill_job">
+          <h3 id="x4-4-1-remove"><bdi class="secno">4.10<!---0.910070%--> </bdi>Kill_job<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-remove"></a></h3>
+          <table class="def propdef">
+              <tbody><tr><th>Definition:</th> <td>To kill the current executing job.</td></tr>
+              <tr><th>Label:</th> <td>duc:KillJob</td></tr>
+              <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/KillJob">http://www.w3.org/ns/odrl/2/KillJob</a></td></tr>
+              <tr><th>Included In:</th> <td><a href="http://www.w3.org/ns/odrl/2/use">http://www.w3.org/ns/odrl/2/use</a></td></tr>
+              </tbody>
+          </table>
+      </section>
+  </section>
+
+      <section id="party">
+          <!--OddPage--><h2 id="x5-party-functions"><bdi class="secno">5.<!---0.910070%--> </bdi>Party Functions<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#party"></a></h2>
+          <p>For the class Party (http://www.w3.org/ns/odrl/2/Party), used with Rules, these instances are defined.
+          </p>
+          <section id="provider">
+              <h3 id="x4-4-1-accept-Provider"><bdi class="secno">5.1<!---0.910070%--> </bdi>Provider<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Provider"></a></h3>
+              <table class="def propdef">
+                  <tbody><tr><th>Definition:</th> <td>The Party is the issuer of the Rule.</td></tr>
+                  <tr><th>Label:</th> <td>duc:Provider</td></tr>
+                  <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/Provider">http://www.w3.org/ns/odrl/2/Provider</a></td></tr>
+                  <tr><th>Parent property:</th> <td><a href="http://www.w3.org/ns/odrl/2/function">function</a></td></tr>
+                  <tr><th>Domain:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">Policy</a>, <a href="http://www.w3.org/ns/odrl/2/Rule">Rule</a></td></tr>
+                  <tr><th>Range:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">Party</a></td></tr>
+                  </tbody></table>
+          </section>
+          <section id="consumer">
+              <h3 id="x4-4-1-accept-Consumer"><bdi class="secno">5.2<!---0.910070%--> </bdi>Consumer<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Consumer"></a></h3>
+              <table class="def propdef">
+                  <tbody><tr><th>Definition:</th> <td>The Party is the recipient of the Rule.</td></tr>
+                  <tr><th>Label:</th> <td>duc:Consumer</td></tr>
+                  <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/Consumer">http://www.w3.org/ns/odrl/2/Consumer</a></td></tr>
+                  <tr><th>Parent property:</th> <td><a href="http://www.w3.org/ns/odrl/2/function">function</a></td></tr>
+                  <tr><th>Domain:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">Policy</a>, <a href="http://www.w3.org/ns/odrl/2/Rule">Rule</a></td></tr>
+                  <tr><th>Range:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">Party</a></td></tr>
+                  </tbody></table>
+          </section>
+          <section id="controller">
+              <h3 id="x4-4-1-accept-Controller"><bdi class="secno">5.3<!---0.910070%--> </bdi>Controller<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Controller"></a></h3>
+              <table class="def propdef">
+                  <tbody><tr><th>Definition:</th> <td>The Party is monitoring the application of the Rule.</td></tr>
+                  <tr><th>Label:</th> <td>duc:Controller</td></tr>
+                  <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/Controller">http://www.w3.org/ns/odrl/2/Controller</a></td></tr>
+                  <tr><th>Parent property:</th> <td><a href="http://www.w3.org/ns/odrl/2/function">function</a></td></tr>
+                  <tr><th>Domain:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">Policy</a>, <a href="http://www.w3.org/ns/odrl/2/Rule">Rule</a></td></tr>
+                  <tr><th>Range:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">Party</a></td></tr>
+                  </tbody></table>
+          </section>
+          <section id="broker">
+              <h3 id="x4-4-1-accept-Broker"><bdi class="secno">5.4<!---0.910070%--> </bdi>Broker<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-Broker"></a></h3>
+              <table class="def propdef">
+                  <tbody><tr><th>Definition:</th> <td>The Party that acts as a broker of the data.</td></tr>
+                  <tr><th>Label:</th> <td>duc:Broker</td></tr>
+                  <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/odrl/2/Broker">http://www.w3.org/ns/odrl/2/Broker</a></td></tr>
+                  <tr><th>Parent property:</th> <td><a href="http://www.w3.org/ns/odrl/2/function">function</a></td></tr>
+                  <tr><th>Domain:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">Policy</a>, <a href="http://www.w3.org/ns/odrl/2/Rule">Rule</a></td></tr>
+                  <tr><th>Range:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">Party</a></td></tr>
+                  </tbody></table>
+          </section>
+
+      </section>
+
+
+  <section id="examples">
+  <!--OddPage--><h2 id="x6-examples"><bdi class="secno">6.<!---0.910070%--> </bdi>Examples<a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#examples"></a></h2>
+          <h3 id="x2-how-to-represent-an-obligation">Machine Learning (ML) example<a class="self-link respec-offending-element" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a><a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#x2-how-to-represent-an-obligation"></a></h3>
+          <p>Company A wants to share a dataset to Company B.
+              Company A only allows Company B to use the data for generating a ML model.
+              Company B can not transfer any data to internal or external parties.
+          </p>
+          <div class="example"><div class="example-title marker"><span>Example</span></div>
+              <pre id="eg2" class="hljs" aria-busy="false" aria-live="polite"><code class="hljs json" aria-busy="false">{
+                "@context": "http://www.w3.org/ns/odrl.jsonld",
+                "@type": "Agreement",
+                "uid": "http://example.com/policy:1010",
+                "duc:provider": "http://oem.com/ids#me",
+                  "permission": : [{
+                      "duc:consumer": "http://supplier.com/"",
+                  "target": "http://oem.com/ids/inventory/dataset-1",
+                  "action": "duc:train"",
+                  }],
+
+                "obligation": [{
+                  "@type": "Duty",
+                  "target": "http://oem.com/ids/inventory/dataset-1",
+                  "action": "inform",
+                  "consequence": [{
+                  "target": "http://oem.com/ids/inventory/dataset-1",
+                      "action":[{
+                          "rdf:value": { "@id": "duc:KillJob" },
+                          "refinement": [{
+                              "leftOperand": "recipient",
+                              "operator": "eq",
+                              "rightOperand": {
+                                  "@value": "flinkid00",
+                                  "@type": "http://orion.fiware.org/Job"
+                                  }
+                              }]
+                          }]
+                      }]
+                  }],
+                  "prohibition": [{
+                  "assignee": "http://supplier.com/",
+                  "target" : "http://oem.com/ids/inventory/dataset-1",
+                  "action": "print"
+                  }]
+              }</code></pre></div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+<section id="references" class="appendix"><!--OddPage--><h2 id="a-references"><bdi class="secno">A.<!---0.910070%--> </bdi>References<!---0.910070%--><a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#references"></a></h2><section id="informative-references">
+  <h3 id="a-1-informative-references"><bdi class="secno">A.1<!---0.910070%--> </bdi>Informative references<!---0.910070%--><a class="self-link" aria-label="§" href="https://w3c.github.io/odrl/profile-bigdata/#informative-references"></a></h3>
+  <dl class="bibliography"><dt id="bib-dcterms">[dcterms<!---0.910070%-->]</dt><dd><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"><cite>DCMI Metadata Terms</cite></a>. DCMI Usage Board.  DCMI. 20 January 2020. DCMI Recommendation. URL: <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a><!---0.910070%--></dd><dt id="bib-foaf">[foaf<!---0.910070%-->]</dt><dd><a href="http://xmlns.com/foaf/spec"><cite>FOAF Vocabulary Specification 0.99 (Paddington Edition)</cite></a>. Dan Brickley; Libby Miller.  FOAF project. 14 January 2014. URL: <a href="http://xmlns.com/foaf/spec">http://xmlns.com/foaf/spec</a><!---0.910070%--></dd><dt id="bib-odrl-model">[odrl-model<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/odrl-model/"><cite>ODRL Information Model 2.2</cite></a>. Renato Iannella; Serena Villata.  W3C. 15 February 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/odrl-model/">https://www.w3.org/TR/odrl-model/</a><!---0.910070%--></dd><dt id="bib-odrl-vocab">[odrl-vocab<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/odrl-vocab/"><cite>ODRL Vocabulary &amp; Expression 2.2</cite></a>. Renato Iannella; Michael Steidl; Stuart Myles; Víctor Rodríguez-Doncel.  W3C. 15 February 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/odrl-vocab/">https://www.w3.org/TR/odrl-vocab/</a><!---0.910070%--></dd><dt id="bib-owl2-overview">[owl2-overview<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/owl2-overview/"><cite>OWL 2 Web Ontology Language Document Overview (Second Edition)</cite></a>. W3C OWL Working Group.  W3C. 11 December 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/owl2-overview/">https://www.w3.org/TR/owl2-overview/</a><!---0.910070%--></dd><dt id="bib-rdf-schema">[rdf-schema<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/rdf-schema/"><cite>RDF Schema 1.1</cite></a>. Dan Brickley; Ramanathan Guha.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf-schema/">https://www.w3.org/TR/rdf-schema/</a><!---0.910070%--></dd><dt id="bib-rdf11-concepts">[rdf11-concepts<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/rdf11-concepts/"><cite>RDF 1.1 Concepts and Abstract Syntax</cite></a>. Richard Cyganiak; David Wood; Markus Lanthaler.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf11-concepts/">https://www.w3.org/TR/rdf11-concepts/</a><!---0.910070%--></dd><dt id="bib-skos-reference">[skos-reference<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/skos-reference/"><cite>SKOS Simple Knowledge Organization System Reference</cite></a>. Alistair Miles; Sean Bechhofer.  W3C. 18 August 2009. W3C Recommendation. URL: <a href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a><!---0.910070%--></dd><dt id="bib-vcard-rdf">[vcard-rdf<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/vcard-rdf/"><cite>vCard Ontology - for describing People and Organizations</cite></a>. Renato Iannella; James McKinney.  W3C. 22 May 2014. W3C Note. URL: <a href="https://www.w3.org/TR/vcard-rdf/">https://www.w3.org/TR/vcard-rdf/</a><!---0.910070%--></dd><dt id="bib-xmlschema11-2">[xmlschema11-2<!---0.910070%-->]</dt><dd><a href="https://www.w3.org/TR/xmlschema11-2/"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes</cite></a>. David Peterson; Sandy Gao; Ashok Malhotra; Michael Sperberg-McQueen; Henry Thompson; Paul V. Biron et al.  W3C. 5 April 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xmlschema11-2/">https://www.w3.org/TR/xmlschema11-2/</a><!---0.910070%--></dd><!---0.910070%--></dl>
+</section></section><p role="navigation" id="back-to-top">
+  <a href="https://w3c.github.io/odrl/profile-bigdata/#title"><abbr title="Back to Top">↑</abbr></a>
+</p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+document.respec.ready.then(setupPanel);
+} else {
+setupPanel();
+}
+
+function setupPanel() {
+const listener = panelListener();
+document.body.addEventListener("keydown", listener);
+document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+/** @type {HTMLElement} */
+let panel = null;
+return event => {
+  const { target, type } = event;
+
+  if (!(target instanceof HTMLElement)) return;
+
+  // For keys, we only care about Enter key to activate the panel
+  // otherwise it's activated via a click.
+  if (type === "keydown" && event.key !== "Enter") return;
+
+  const action = deriveAction(event);
+
+  switch (action) {
+    case "show": {
+      hidePanel(panel);
+      /** @type {HTMLElement} */
+      const dfn = target.closest("dfn, .index-term");
+      panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+      const coords = deriveCoordinates(event);
+      displayPanel(dfn, panel, coords);
+      break;
+    }
+    case "dock": {
+      panel.style.left = null;
+      panel.style.top = null;
+      panel.classList.add("docked");
+      break;
+    }
+    case "hide": {
+      hidePanel(panel);
+      panel = null;
+      break;
+    }
+  }
+};
+}
+
+/**
+* @param {MouseEvent|KeyboardEvent} event
+*/
+function deriveCoordinates(event) {
+const target = /** @type HTMLElement */ (event.target);
+
+// We prevent synthetic AT clicks from putting
+// the dialog in a weird place. The AT events sometimes
+// lack coordinates, so they have clientX/Y = 0
+const rect = target.getBoundingClientRect();
+if (
+  event instanceof MouseEvent &&
+  event.clientX >= rect.left &&
+  event.clientY >= rect.top
+) {
+  // The event probably happened inside the bounding rect...
+  return { x: event.clientX, y: event.clientY };
+}
+
+// Offset to the middle of the element
+const x = rect.x + rect.width / 2;
+// Placed at the bottom of the element
+const y = rect.y + rect.height;
+return { x, y };
+}
+
+/**
+* @param {Event} event
+*/
+function deriveAction(event) {
+const target = /** @type {HTMLElement} */ (event.target);
+const hitALink = !!target.closest("a");
+if (target.closest("dfn:not([data-cite]), .index-term")) {
+  return hitALink ? "none" : "show";
+}
+if (target.closest(".dfn-panel")) {
+  if (hitALink) {
+    return target.classList.contains("self-link") ? "hide" : "dock";
+  }
+  const panel = target.closest(".dfn-panel");
+  return panel.classList.contains("docked") ? "hide" : "none";
+}
+if (document.querySelector(".dfn-panel:not([hidden])")) {
+  return "hide";
+}
+return "none";
+}
+
+/**
+* @param {HTMLElement} dfn
+* @param {HTMLElement} panel
+* @param {{ x: number, y: number }} clickPosition
+*/
+function displayPanel(dfn, panel, { x, y }) {
+panel.hidden = false;
+// distance (px) between edge of panel and the pointing triangle (caret)
+const MARGIN = 20;
+
+const dfnRects = dfn.getClientRects();
+// Find the `top` offset when the `dfn` can be spread across multiple lines
+let closestTop = 0;
+let minDiff = Infinity;
+for (const rect of dfnRects) {
+  const { top, bottom } = rect;
+  const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+  if (diffFromClickY < minDiff) {
+    minDiff = diffFromClickY;
+    closestTop = top;
+  }
+}
+
+const top = window.scrollY + closestTop + dfnRects[0].height;
+const left = x - MARGIN;
+panel.style.left = `${left}px`;
+panel.style.top = `${top}px`;
+
+// Find if the panel is flowing out of the window
+const panelRect = panel.getBoundingClientRect();
+const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+if (panelRect.right > SCREEN_WIDTH) {
+  const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+  const newCaretOffset = left - newLeft;
+  panel.style.left = `${newLeft}px`;
+  /** @type {HTMLElement} */
+  const caret = panel.querySelector(".caret");
+  caret.style.left = `${newCaretOffset}px`;
+}
+
+// As it's a dialog, we trap focus.
+// TODO: when <dialog> becomes a implemented, we should really
+// use that.
+trapFocus(panel, dfn);
+}
+
+/**
+* @param {HTMLElement} panel
+* @param {HTMLElement} dfn
+* @returns
+*/
+function trapFocus(panel, dfn) {
+/** @type NodeListOf<HTMLAnchorElement> elements */
+const anchors = panel.querySelectorAll("a[href]");
+// No need to trap focus
+if (!anchors.length) return;
+
+// Move focus to first anchor element
+const first = anchors.item(0);
+first.focus();
+
+const trapListener = createTrapListener(anchors, panel, dfn);
+panel.addEventListener("keydown", trapListener);
+
+// Hiding the panel releases the trap
+const mo = new MutationObserver(records => {
+  const [record] = records;
+  const target = /** @type HTMLElement */ (record.target);
+  if (target.hidden) {
+    panel.removeEventListener("keydown", trapListener);
+    mo.disconnect();
+  }
+});
+mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+*
+* @param {NodeListOf<HTMLAnchorElement>} anchors
+* @param {HTMLElement} panel
+* @param {HTMLElement} dfn
+* @returns
+*/
+function createTrapListener(anchors, panel, dfn) {
+const lastIndex = anchors.length - 1;
+let currentIndex = 0;
+return event => {
+  switch (event.key) {
+    // Hitting "Tab" traps us in a nice loop around elements.
+    case "Tab": {
+      event.preventDefault();
+      currentIndex += event.shiftKey ? -1 : +1;
+      if (currentIndex < 0) {
+        currentIndex = lastIndex;
+      } else if (currentIndex > lastIndex) {
+        currentIndex = 0;
+      }
+      anchors.item(currentIndex).focus();
+      break;
+    }
+
+    // Hitting "Enter" on an anchor releases the trap.
+    case "Enter":
+      hidePanel(panel);
+      break;
+
+    // Hitting "Escape" returns focus to dfn.
+    case "Escape":
+      hidePanel(panel);
+      dfn.focus();
+      return;
+  }
+};
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+if (!panel) return;
+panel.hidden = true;
+panel.classList.remove("docked");
+}
+})()</script><script src="./odrl-dpv-acl-profile_files/fixup.js.transferir"></script></body></html>
