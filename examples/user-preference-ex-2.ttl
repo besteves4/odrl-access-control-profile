@@ -2,17 +2,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
-@prefix acl:  <http://www.w3.org/ns/auth/acl#> .
-@prefix odrl-ac: <https://example.com/odrl-ac> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix cert: <http://www.w3.org/ns/auth/cert#> .
+@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
 
-:policy-2
-    rdfs:comment '''Beatriz, as identified by her WebID https://beatriz.databox.me/profile/card#me, 
+@prefix : <http://example.com> .
+
+:policy-2 a odrl:Policy ;
+    rdfs:comment '''Anne, as identified by her WebID https://anne.databox.me/profile/card#me, 
     prohibits the sharing of a resource stored on her Pod, located at 
-    https://beatriz.databox.me/docs/file1, with any third parties.''' ;
-    a odrl:Policy ;
+    https://anne.databox.me/docs/file1, with any third parties.''' ;
     odrl:prohibition [
         a odrl:Prohibition ;
-        odrl:assigner <https://beatriz.databox.me/profile/card#me> ;
+        odrl:assigner :anne ;
         odrl:target <https://beatriz.databox.me/docs/file1> ;
         odrl:action dpv:Share ;
         odrl:constraint [
@@ -21,3 +23,6 @@
                 odrl:rightOperand dpv:ThirdParty
         ]
     ] .
+
+:anne a dpv:DataSubject ;
+    cert:key <https://anne.databox.me/profile/card#me> .

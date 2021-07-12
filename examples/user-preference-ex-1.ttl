@@ -2,16 +2,18 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
-@prefix acl:  <http://www.w3.org/ns/auth/acl#> .
-@prefix odrl-ac: <https://example.com/odrl-ac> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix cert: <http://www.w3.org/ns/auth/cert#> .
+@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
 
-:policy-1
-    rdfs:comment '''Beatriz, as identified by her WebID https://beatriz.databox.me/profile/card#me, 
+@prefix : <http://example.com> .
+
+:policy-1 a odrl:Policy ;
+    rdfs:comment '''Anne, as identified by her WebID https://anne.databox.me/profile/card#me, 
     permits read access operations over her contact data for the purpose of research and development.''' ;
-    a odrl:Policy ;
     odrl:permission [
         a odrl:Permission ;
-        odrl:assigner <https://beatriz.databox.me/profile/card#me> ;
+        odrl:assigner :anne ;
         odrl:target dpv:Contact ;
         odrl:action acl:Read ;
         odrl:constraint [
@@ -20,3 +22,6 @@
             odrl:rightOperand dpv:ResearchAndDevelopment
         ] 
     ] .
+
+:anne a dpv:DataSubject ;
+    cert:key <https://anne.databox.me/profile/card#me> .

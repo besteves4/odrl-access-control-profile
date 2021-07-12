@@ -2,17 +2,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
-@prefix dpv-gdpr: <http://www.w3.org/ns/dpv-gdpr#> .
-@prefix odrl-ac: <https://example.com/odrl-ac> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix cert: <http://www.w3.org/ns/auth/cert#> .
+@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
 
-:app-1
+@prefix : <http://example.com> .
+
+:app-1 a odrl:Policy ;
     rdfs:comment """App 1, as identified by their URL https://example-app-1.com, 
     requests permission to use and store the email address and social network 
     information of users for the purpose of registering and authenticating to their service.""" ;
-    a odrl:Policy ;
     odrl:permission [
         a odrl:Permission ;
-        odrl:assignee <https://example-app-1.com> ;
+        odrl:assignee :app-1-controller ;
         odrl:target dpv:EmailAddress, dpv:SocialNetwork ;
         odrl:action dpv:Use, dpv:Store ;
         odrl:constraint [
@@ -22,3 +24,6 @@
         ]
 
     ] .
+
+:app-1-controller a dpv:DataController ;
+    cert:key <https://example-app-1.com> .

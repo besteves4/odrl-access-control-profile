@@ -2,16 +2,18 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
-@prefix dpv-gdpr: <http://www.w3.org/ns/dpv-gdpr#> .
-@prefix odrl-ac: <https://example.com/odrl-ac> .
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix cert: <http://www.w3.org/ns/auth/cert#> .
+@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
 
-:app-2
+@prefix : <http://example.com> .
+
+:app-2 a odrl:Policy ;
     rdfs:comment """App 2, as identified by their URL https://example-app-2.com, 
     requests permission to collect and produce a copy of the health records, 
     medical prescriptions and health history of users for the purpose of performing 
-    academic research and make the anonymised information available to the scientific community.""" ;
-    a odrl:Policy ;
-    odrl:assignee <https://example-app-2.com> ;
+    academic research and make the anonymised information available to third parties.""" ;
+    odrl:assignee :app-2-controller ;
     odrl:target dpv:HealthRecord, dpv:Prescription, dpv:HealthHistory ;
     odrl:permission [
         a odrl:Permission ;
@@ -31,3 +33,6 @@
             odrl:rightOperand dpv:ThirdParty
         ]
     ] .
+
+:app-2-controller a dpv:DataController ;
+    cert:key <https://example-app-2.com> .
