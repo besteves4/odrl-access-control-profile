@@ -26,7 +26,7 @@
     ] ;
     odrl:permission [
         a odrl:Permission ;
-        Odrl:action dpv:Anonymise, dpv:MakeAvailable ;
+        odrl:action dpv:Anonymise, dpv:MakeAvailable ;
         odrl:constraint [
             odrl:leftOperand dpv:Recipient ;
             odrl:operator odrl:isA ;

@@ -22,7 +22,6 @@
             odrl:operator odrl:isA ;
             odrl:rightOperand dpv:RegistrationAuthentication
         ]
-
     ] .
 
 :app-1-controller a dpv:DataController ;

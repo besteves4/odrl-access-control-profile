@@ -383,21 +383,21 @@
               <bdi class="secno">4.1 </bdi>User Preference 1
             </a>
           </li>
-<!--           <li class="tocline">
-            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-2-processing">
-              <bdi class="secno">3.2 </bdi>Processing
+          <li class="tocline">
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x4-2-user-preference-2">
+              <bdi class="secno">4.2 </bdi>User Preference 2
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-3-personalData">
-              <bdi class="secno">3.3 </bdi>Personal Data Category
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x4-3-app-policy-1">
+              <bdi class="secno">4.3 </bdi>App Policy 1
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-4-purpose">
-              <bdi class="secno">3.4 </bdi>Purpose
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x4-4-app-policy-2">
+              <bdi class="secno">4.4 </bdi>App Policy 2
             </a>
-          </li> -->
+          </li>
         </ol>
       </li>
       <li class="tocline">
@@ -784,27 +784,130 @@
       <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x4-1-user-preference-1"></a>
     </h3>
     <p>
-      Anne, as identified by her WebID https://anne.databox.me/profile/card#me, 
+      Anne, as identified by her WebID <i>https://anne.databox.me/profile/card#me</i>, 
       permits read access operations over her contact data for the purpose of research and development.
     </p>
     <div class="example"><div class="example-title marker"><span>Example 4.1</span></div>
       <pre id="ex41" class="hljs" aria-busy="false" aria-live="polite">
         <code class="hljs json" aria-busy="false">
-          :policy-1 a odrl:Policy ;
+          :example-4-1 a odrl:Policy ;
             odrl:permission [
-                a odrl:Permission ;
-                odrl:assigner :anne ;
-                odrl:target dpv:Contact ;
-                odrl:action acl:Read ;
-                odrl:constraint [
-                    odrl:leftOperand dpv:Purpose ;
-                    odrl:operator odrl:isA ;
-                    odrl:rightOperand dpv:ResearchAndDevelopment
-                ] 
+              a odrl:Permission ;
+              odrl:assigner :anne ;
+              odrl:target dpv:Contact ;
+              odrl:action acl:Read ;
+              odrl:constraint [
+                odrl:leftOperand dpv:Purpose ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand dpv:ResearchAndDevelopment
+              ] 
             ] .
       
           :anne a dpv:DataSubject ;
-            cert:key <https://anne.databox.me/profile/card#me> .
+            cert:key "https://anne.databox.me/profile/card#me" .
+        </code>
+      </pre>
+    </div>
+    <h3 id="x4-2-user-preference-2">
+      <bdi class="secno">4.2 </bdi>User Preference 2 - Prohibition to share resource <i>/docs/file1</i> with third parties
+      <a class="self-link respec-offending-element" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x4-2-user-preference-2"></a>
+    </h3>
+    <p>
+      Anne, as identified by her WebID <i>https://anne.databox.me/profile/card#me</i>, 
+      prohibits the sharing of a resource stored on her Pod, located at 
+      <i>https://anne.databox.me/docs/file1</i>, with any third parties.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 4.2</span></div>
+      <pre id="ex42" class="hljs" aria-busy="false" aria-live="polite">
+        <code class="hljs json" aria-busy="false">
+          :example-4-2 a odrl:Policy ;
+            odrl:prohibition [
+              a odrl:Prohibition ;
+              odrl:assigner :anne ;
+              odrl:target "https://beatriz.databox.me/docs/file1" ;
+              odrl:action dpv:Share ;
+              odrl:constraint [
+                odrl:leftOperand dpv:Recipient ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand dpv:ThirdParty
+              ]
+            ] .
+      
+          :anne a dpv:DataSubject ;
+            cert:key "https://anne.databox.me/profile/card#me" .
+        </code>
+      </pre>
+    </div>
+    <h3 id="x4-3-app-policy-1">
+      <bdi class="secno">4.3 </bdi>App Policy 1 - Request to use data for Registration purposes
+      <a class="self-link respec-offending-element" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x4-3-app-policy-1"></a>
+    </h3>
+    <p>
+      App 1, as identified by their URL <i>https://example-app-1.com</i>, 
+      requests permission to use and store the email address and social network 
+      information of users for the purpose of registering and authenticating to their service.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 4.3</span></div>
+      <pre id="ex43" class="hljs" aria-busy="false" aria-live="polite">
+        <code class="hljs json" aria-busy="false">
+          :example-4-3 a odrl:Policy ;
+            odrl:permission [
+              a odrl:Permission ;
+              odrl:assignee :app-1-controller ;
+              odrl:target dpv:EmailAddress, dpv:SocialNetwork ;
+              odrl:action dpv:Use, dpv:Store ;
+              odrl:constraint [
+                odrl:leftOperand dpv:Purpose ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand dpv:RegistrationAuthentication
+              ]
+            ] .
+    
+          :app-1-controller a dpv:DataController ;
+            cert:key "https://example-app-1.com" .
+        </code>
+      </pre>
+    </div>
+    <h3 id="x4-4-app-policy-2">
+      <bdi class="secno">4.4 </bdi>App Policy 2 - Request to collect and share anonymised Health Records
+      <a class="self-link respec-offending-element" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x4-4-app-policy-2"></a>
+    </h3>
+    <p>
+      App 2, as identified by their URL <i>https://example-app-2.com</i>, 
+      requests permission to collect and produce a copy of the health records, 
+      medical prescriptions and health history of users for the purpose of performing 
+      academic research and make the anonymised information available to third parties.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 4.4</span></div>
+      <pre id="ex43" class="hljs" aria-busy="false" aria-live="polite">
+        <code class="hljs json" aria-busy="false">
+          :example-4-4 a odrl:Policy ;
+            odrl:assignee :app-2-controller ;
+            odrl:target dpv:HealthRecord, dpv:Prescription, dpv:HealthHistory ;
+            odrl:permission [
+              a odrl:Permission ;
+              odrl:action dpv:Collect, dpv:Copy ;
+              odrl:constraint [
+              odrl:leftOperand dpv:Purpose ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand dpv:AcademicResearch 
+              ]
+            ] ;
+            odrl:permission [
+              a odrl:Permission ;
+              odrl:action dpv:Anonymise, dpv:MakeAvailable ;
+              odrl:constraint [
+                odrl:leftOperand dpv:Recipient ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand dpv:ThirdParty
+              ]
+            ] .
+        
+          :app-2-controller a dpv:DataController ;
+            cert:key "https://example-app-2.com" .
         </code>
       </pre>
     </div>
