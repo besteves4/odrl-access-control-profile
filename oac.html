@@ -437,16 +437,19 @@
       <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#intro"></a>
     </h2>
     <p>
-      Solid is a specification[cite: https://solidproject.org/TR/protocol] for decentralised personal data stores (called `Pods') 
+      Solid is a specification 
+      [<cite><a class="bibref" data-link-type="biblio" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#bib-solid-protocol" title="Solid Protocol">solid-protocol</a></cite>]
+      for decentralised personal data stores (called `Pods') 
       that uses linked data and Web standards to achieve user control and interoperability. The access to data stored within 
-      Solid Pods is governed by the Web Access Control (WAC) specification [cite: https://solid.github.io/web-access-control-spec/]
+      Solid Pods is governed by the Web Access Control (WAC) specification 
+      [<cite><a class="bibref" data-link-type="biblio" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#bib-wac" title="Web Access Control">wac</a></cite>]
       which uses IRIs to represent resources and agents, and stores authorisation statements within Access Control Lists (ACL) 
       defined per resource or inherited from the parent resource. Therefore, in Solid, the user controlling the ACL is the entity responsible 
       for deciding who has access to the data.
     </p>
     <p>
       Given that Solid provides a way for personal data to be stored and managed by individuals, it is important to consider the impact 
-      and application of data protection and privacy laws such as the European General Data Protection Regulation (GDPR)[cite: https://eur-lex.europa.eu/eli/reg/2016/679/] 
+      and application of data protection and privacy laws such as the European General Data Protection Regulation (GDPR)
       that define specific concepts and obligations for how personal data can be collected, stored, used, and shared. In addition, 
       such laws also specify various rights and the legal basis used to justify using the data and the conditions for their validity. 
       In particular, GDPR's Articles 13 and 14 require controllers to provide information such as identity, purpose, personal data 
@@ -455,7 +458,7 @@
     <p>
       Applied to Solid, this information can be presented using conventional methods, such as a notice provided on the data requester's 
       website, and the resulting authorisation decision made by the individual stored within the ACL. However, for individuals to control 
-      their data practices, the Solid pod must contain this information as well so that the individual has the opportunity to:
+      their data practices, the Solid Pod must contain this information as well so that the individual has the opportunity to:
     </p>
     <p class="tab">
       (i) inspect their personal data within an environment under their control; 
@@ -472,7 +475,7 @@
     <p>
       To achieve these goals, the following requirements motivate our approach to extend Solid’s existing ACL mechanism 
       using the ODRL Vocabulary and Expression specification to define ‘sticky policies’ that express permissions and / or 
-      prohibitions associated with data stored in a Solid pod and utilises DPV as a controlled vocabulary for invoking privacy 
+      prohibitions associated with data stored in a Solid Pod and utilises DPV as a controlled vocabulary for invoking privacy 
       and data protection-specific terms.
     </p>
     <p class="tab">
@@ -514,7 +517,7 @@
         <tr>
           <td colspan=2 class="table-cell">
             The purpose of this profile of ODRL is to support policies 
-            determining the access control to personal data stored in Solid pods.
+            determining the access control to personal data stored in Solid Pods.
           </td>
         </tr>
         <tr>
@@ -560,7 +563,7 @@
         </tr>
         <tr>
           <td colspan=2 class="table-cell">
-            Use 1. Declaration of a policy by an individual storing personal data in a pod.<br>
+            Use 1. Declaration of a policy by an individual storing personal data in a Pod.<br>
             Use 2. Request of data made by a person or application to gain access to the data in different modalities.<br>
             Use 3. Contextual elements to be considered in the authorization decision.<br>
             Use 4. Explanation of the authorization decision.
@@ -1045,6 +1048,24 @@
       </a>. David Peterson; Sandy Gao; Ashok Malhotra; Michael Sperberg-McQueen; Henry Thompson; Paul V. Biron et al.  W3C. 5 April 2012. W3C Recommendation. URL: 
       <a href="https://www.w3.org/TR/xmlschema11-2/">
         https://www.w3.org/TR/xmlschema11-2/
+      </a>
+    </dd>
+    <dt id="bib-solid-protocol">[solid-protocol]</dt>
+    <dd>
+      <a href="https://solidproject.org/TR/protocol">
+        <cite>Solid Protocol</cite>
+      </a>. Sarven Capadisli; Tim Berners-Lee; Ruben Verborgh; Kjetil Kjernsmo; Justin Bingham; Dmitri Zagidulin. 7 July 2021. URL: 
+      <a href="https://solidproject.org/TR/protocol">
+        https://solidproject.org/TR/protocol
+      </a>
+    </dd>
+    <dt id="bib-wac">[wac]</dt>
+    <dd>
+      <a href="https://solid.github.io/web-access-control-spec/">
+        <cite>Web Access Control</cite>
+      </a>. Sarven Capadisli. 11 July 2021. URL: 
+      <a href="https://solid.github.io/web-access-control-spec/">
+        https://solid.github.io/web-access-control-spec/
       </a>
     </dd>
   </dl>
