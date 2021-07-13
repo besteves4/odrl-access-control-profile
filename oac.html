@@ -340,38 +340,38 @@
         <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#spec">
           <bdi class="secno">3. </bdi>Profile specification
         </a>
-<!--         <ol class="toc">
+        <ol class="toc">
           <li class="tocline">
-            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-query">
-              <bdi class="secno">4.1 </bdi>Query
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-1-access">
+              <bdi class="secno">3.1 </bdi>Access
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-write">
-              <bdi class="secno">4.2 </bdi>Publish
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-2-processing">
+              <bdi class="secno">3.2 </bdi>Processing
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-train">
-              <bdi class="secno">4.3 </bdi>Train
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-3-personalData">
+              <bdi class="secno">3.3 </bdi>Personal Data Category
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-evaluate">
-              <bdi class="secno">4.4 </bdi>Evaluate
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-4-purpose">
+              <bdi class="secno">3.4 </bdi>Purpose
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-anonymize">
-              <bdi class="secno">4.5 </bdi>Anonymize
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-5-recipient">
+              <bdi class="secno">3.5 </bdi>Recipient
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#x4-4-1-accept-anonymize">
-              <bdi class="secno">4.6 </bdi>Transform
+            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-6-legalEntity">
+              <bdi class="secno">3.6 </bdi>Legal Entity
             </a>
           </li>
-        </ol> -->
+        </ol>
       </li>
 <!--       <li class="tocline">
         <a class="tocxref" href="https://w3c.github.io/odrl/profile-bigdata/#party">
@@ -691,8 +691,86 @@
       <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#spec"></a>
     </h2>
     <p>
-      For the class Action (http://www.w3.org/ns/odrl/2/Action), used with Rules, these instances are defined.
+      This ODRL profile relies on the invocation of legal concepts using DPV and its core concepts are Purpose, Personal Data Categories, Processing, and Recipients.
     </p>
+    <section id="access">
+      <h3 id="x3-3-1-access">
+        <bdi class="secno">3.1</bdi>Access
+        <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-1-access"></a>
+      </h3>
+      <table class="def propdef">
+          <tbody><tr><th>Definition:</th> <td>Operations for resource access</td></tr>
+          <tr><th>Label:</th> <td>acl:Access</td></tr>
+          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/auth/acl#Access">http://www.w3.org/ns/auth/acl#Access</a></td></tr>
+          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">http://www.w3.org/ns/odrl/2/Action</a></td></tr>
+          </tbody>
+      </table>
+    </section>
+    <section id="processing">
+      <h3 id="x3-3-2-processing">
+        <bdi class="secno">3.2</bdi>Processing
+        <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-2-processing"></a>
+      </h3>
+      <table class="def propdef">
+          <tbody><tr><th>Definition:</th> <td>Processing of personal data</td></tr>
+          <tr><th>Label:</th> <td>dpv:Processing</td></tr>
+          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#Processing">http://www.w3.org/ns/dpv#Processing</a></td></tr>
+          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">http://www.w3.org/ns/odrl/2/Action</a></td></tr>
+          </tbody>
+      </table>
+    </section>
+    <section id="personalData">
+      <h3 id="x3-3-3-personalData">
+        <bdi class="secno">3.3</bdi>Personal Data Category
+        <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-3-personalData"></a>
+      </h3>
+      <table class="def propdef">
+          <tbody><tr><th>Definition:</th> <td>Categories of personal data</td></tr>
+          <tr><th>Label:</th> <td>dpv:PersonalDataCategory</td></tr>
+          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#PersonalDataCategory">http://www.w3.org/ns/dpv#PersonalDataCategory</a></td></tr>
+          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Asset">http://www.w3.org/ns/odrl/2/Asset</a></td></tr>
+          </tbody>
+      </table>
+    </section>
+    <section id="purpose">
+      <h3 id="x3-3-4-purpose">
+        <bdi class="secno">3.4</bdi>Purpose
+        <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-4-purpose"></a>
+      </h3>
+      <table class="def propdef">
+          <tbody><tr><th>Definition:</th> <td>Purposes for personal data processing</td></tr>
+          <tr><th>Label:</th> <td>dpv:Purpose</td></tr>
+          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#Purpose">http://www.w3.org/ns/dpv#Purpose</a></td></tr>
+          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/purpose">http://www.w3.org/ns/odrl/2/purpose</a></td></tr>
+          </tbody>
+      </table>
+    </section>
+    <section id="recipient">
+      <h3 id="x3-3-5-recipient">
+        <bdi class="secno">3.5</bdi>Recipient
+        <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-5-recipient"></a>
+      </h3>
+      <table class="def propdef">
+          <tbody><tr><th>Definition:</th> <td>Entities receiving personal data</td></tr>
+          <tr><th>Label:</th> <td>dpv:Recipient</td></tr>
+          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#Recipient">http://www.w3.org/ns/dpv#Recipient</a></td></tr>
+          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/recipient">http://www.w3.org/ns/odrl/2/recipient</a></td></tr>
+          </tbody>
+      </table>
+    </section>
+    <section id="legalEntity">
+      <h3 id="x3-3-6-legalEntity">
+        <bdi class="secno">3.6</bdi>Legal Entity
+        <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#x3-3-6-legalEntity"></a>
+      </h3>
+      <table class="def propdef">
+          <tbody><tr><th>Definition:</th> <td>Legally defined entities e.g. data controllers</td></tr>
+          <tr><th>Label:</th> <td>dpv:LegalEntity</td></tr>
+          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#LegalEntity">http://www.w3.org/ns/dpv#LegalEntity</a></td></tr>
+          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">http://www.w3.org/ns/odrl/2/Party</a></td></tr>
+          </tbody>
+      </table>
+    </section>
   </section>
 
   <section id="examples">
