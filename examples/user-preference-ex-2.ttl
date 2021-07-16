@@ -1,28 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
 @prefix cert: <http://www.w3.org/ns/auth/cert#> .
-@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
+@prefix oac: <https://w3id.org/oac/> .
 
 @prefix : <http://example.com> .
 
 :policy-2 a odrl:Policy ;
+    odrl:profile oac: ;
     rdfs:comment '''Anne, as identified by her WebID https://anne.databox.me/profile/card#me, 
     prohibits the sharing of a resource stored on her Pod, located at 
-    https://anne.databox.me/docs/file1, with any third parties.''' ;
+    https://anne.databox.me/docs/file1, with more than 3 recipients.''' ;
     odrl:prohibition [
         a odrl:Prohibition ;
         odrl:assigner :anne ;
         odrl:target <https://beatriz.databox.me/docs/file1> ;
-        odrl:action dpv:Share ;
+        odrl:action oac:Share ;
         odrl:constraint [
-                odrl:leftOperand dpv:Recipient ;
-                odrl:operator odrl:isA ;
-                odrl:rightOperand dpv:ThirdParty
+                odrl:leftOperand oac:Recipient ;
+                odrl:operator odrl:gt ;
+                odrl:rightOperand "3"^^xsd:integer
         ]
     ] .
 
-:anne a dpv:DataSubject ;
+:anne a oac:DataSubject ;
     cert:key <https://anne.databox.me/profile/card#me> .

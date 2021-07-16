@@ -143,8 +143,7 @@
     }
     @media print{
     .removeOnSave{display:none}
-    }</style><link rel="dns-prefetch" crossorigin="anonymous" href="https://api.specref.org/" class="removeOnSave"><link rel="preconnect" crossorigin="anonymous" href="https://respec.org/" class="removeOnSave"><link rel="preload" as="script" href="https://www.w3.org/Tools/respec/respec-highlight" class="removeOnSave"><link rel="stylesheet" href="./oac_files/cg-draft"><meta name="description" content="This document presents a new profile called ODRLData Usage Control (DUC) that extends from ODRL core vocabulary and expresion focused on data processing
-                    over big data systems"><style>.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+    }</style><link rel="dns-prefetch" crossorigin="anonymous" href="https://api.specref.org/" class="removeOnSave"><link rel="preconnect" crossorigin="anonymous" href="https://respec.org/" class="removeOnSave"><link rel="preload" as="script" href="https://www.w3.org/Tools/respec/respec-highlight" class="removeOnSave"><link rel="stylesheet" href="./oac_files/cg-draft"><meta name="description" content=""><style>.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
     .hljs-comment,.hljs-quote{color:#717277;font-style:italic}
     .hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
     .hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
@@ -233,7 +232,7 @@
     <dl>
       <dt>Latest editor's draft:</dt>
       <dd>
-        <a href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html">https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html</a>
+        <a href="https://w3id.org/oac/">https://w3id.org/oac/</a>
       </dd>
       <dt>Editors:</dt>
       <dd class="p-author h-card vcard">
@@ -679,7 +678,7 @@
               </tr>
               <tr>
                 <td>oac</td>
-                <td>https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac</td>
+                <td>https://w3id.org/oac/</td>
                 <td>[<cite><a class="bibref" data-link-type="biblio" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#bib-oac" title="ODRL Profile for Access Control in Solid">oac</a></cite>]</td>
               </tr>
             </tbody>
@@ -694,7 +693,8 @@
       <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#spec"></a>
     </h2>
     <p>
-      This ODRL profile relies on the invocation of legal concepts using DPV and its core concepts are Purpose, Personal Data Categories, Processing, and Recipients.
+      This ODRL profile relies on the invocation of legal concepts using DPV and ACL for the reference to access mode operations.
+      Its core concepts are Purpose, Personal Data Categories, Processing, Access and Legal Entities.
     </p>
     <section id="access">
       <h3 id="x3-3-1-access">
@@ -703,9 +703,8 @@
       </h3>
       <table class="def propdef">
           <tbody><tr><th>Definition:</th> <td>Operations for resource access</td></tr>
-          <tr><th>Label:</th> <td>acl:Access</td></tr>
-          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/auth/acl#Access">http://www.w3.org/ns/auth/acl#Access</a></td></tr>
-          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">http://www.w3.org/ns/odrl/2/Action</a></td></tr>
+          <tr><th>Label:</th> <td>oac:Access</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a>, <a href="http://www.w3.org/ns/auth/acl#Access">acl:Access</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -716,9 +715,8 @@
       </h3>
       <table class="def propdef">
           <tbody><tr><th>Definition:</th> <td>Processing of personal data</td></tr>
-          <tr><th>Label:</th> <td>dpv:Processing</td></tr>
-          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#Processing">http://www.w3.org/ns/dpv#Processing</a></td></tr>
-          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">http://www.w3.org/ns/odrl/2/Action</a></td></tr>
+          <tr><th>Label:</th> <td>oac:Processing</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a>, <a href="http://www.w3.org/ns/dpv#Processing">dpv:Processing</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -729,9 +727,8 @@
       </h3>
       <table class="def propdef">
           <tbody><tr><th>Definition:</th> <td>Categories of personal data</td></tr>
-          <tr><th>Label:</th> <td>dpv:PersonalDataCategory</td></tr>
-          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#PersonalDataCategory">http://www.w3.org/ns/dpv#PersonalDataCategory</a></td></tr>
-          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Asset">http://www.w3.org/ns/odrl/2/Asset</a></td></tr>
+          <tr><th>Label:</th> <td>oac:PersonalDataCategory</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a>, <a href="http://www.w3.org/ns/dpv#PersonalDataCategory">dpv:PersonalDataCategory</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -742,9 +739,8 @@
       </h3>
       <table class="def propdef">
           <tbody><tr><th>Definition:</th> <td>Purposes for personal data processing</td></tr>
-          <tr><th>Label:</th> <td>dpv:Purpose</td></tr>
-          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#Purpose">http://www.w3.org/ns/dpv#Purpose</a></td></tr>
-          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/purpose">http://www.w3.org/ns/odrl/2/purpose</a></td></tr>
+          <tr><th>Label:</th> <td>oac:Purpose</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="http://www.w3.org/ns/dpv#Purpose">dpv:Purpose</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -755,9 +751,8 @@
       </h3>
       <table class="def propdef">
           <tbody><tr><th>Definition:</th> <td>Entities receiving personal data</td></tr>
-          <tr><th>Label:</th> <td>dpv:Recipient</td></tr>
-          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#Recipient">http://www.w3.org/ns/dpv#Recipient</a></td></tr>
-          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/recipient">http://www.w3.org/ns/odrl/2/recipient</a></td></tr>
+          <tr><th>Label:</th> <td>oac:Recipient</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="http://www.w3.org/ns/dpv#Recipient">dpv:Recipient</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -768,9 +763,8 @@
       </h3>
       <table class="def propdef">
           <tbody><tr><th>Definition:</th> <td>Legally defined entities e.g. data controllers</td></tr>
-          <tr><th>Label:</th> <td>dpv:LegalEntity</td></tr>
-          <tr><th>Identifier:</th> <td><a href="http://www.w3.org/ns/dpv#LegalEntity">http://www.w3.org/ns/dpv#LegalEntity</a></td></tr>
-          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">http://www.w3.org/ns/odrl/2/Party</a></td></tr>
+          <tr><th>Label:</th> <td>oac:LegalEntity</td></tr>
+          <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">odrl:Party</a>, <a href="http://www.w3.org/ns/dpv#LegalEntity">dpv:LegalEntity</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -794,19 +788,20 @@
       <pre id="ex41" class="hljs" aria-busy="false" aria-live="polite">
         <code class="hljs json" aria-busy="false">
           :example-4-1 a odrl:Policy ;
+            odrl:profile oac: ;
             odrl:permission [
               a odrl:Permission ;
               odrl:assigner :anne ;
-              odrl:target dpv:Contact ;
-              odrl:action acl:Read ;
+              odrl:target oac:Contact ;
+              odrl:action oac:Read ;
               odrl:constraint [
-                odrl:leftOperand dpv:Purpose ;
+                odrl:leftOperand oac:Purpose ;
                 odrl:operator odrl:isA ;
                 odrl:rightOperand dpv:ResearchAndDevelopment
               ] 
             ] .
       
-          :anne a dpv:DataSubject ;
+          :anne a oac:DataSubject ;
             cert:key "https://anne.databox.me/profile/card#me" .
         </code>
       </pre>
@@ -819,25 +814,26 @@
     <p>
       Anne, as identified by her WebID <i>https://anne.databox.me/profile/card#me</i>, 
       prohibits the sharing of a resource stored on her Pod, located at 
-      <i>https://anne.databox.me/docs/file1</i>, with any third parties.
+      <i>https://anne.databox.me/docs/file1</i>, with more than 3 recipients.
     </p>
     <div class="example"><div class="example-title marker"><span>Example 4.2</span></div>
       <pre id="ex42" class="hljs" aria-busy="false" aria-live="polite">
         <code class="hljs json" aria-busy="false">
           :example-4-2 a odrl:Policy ;
+            odrl:profile oac: ;
             odrl:prohibition [
               a odrl:Prohibition ;
               odrl:assigner :anne ;
               odrl:target "https://beatriz.databox.me/docs/file1" ;
-              odrl:action dpv:Share ;
+              odrl:action oac:Share ;
               odrl:constraint [
-                odrl:leftOperand dpv:Recipient ;
-                odrl:operator odrl:isA ;
-                odrl:rightOperand dpv:ThirdParty
+                odrl:leftOperand oac:Recipient ;
+                odrl:operator odrl:gt ;
+                odrl:rightOperand "3"^^xsd:integer
               ]
             ] .
       
-          :anne a dpv:DataSubject ;
+          :anne a oac:DataSubject ;
             cert:key "https://anne.databox.me/profile/card#me" .
         </code>
       </pre>
@@ -856,19 +852,20 @@
       <pre id="ex43" class="hljs" aria-busy="false" aria-live="polite">
         <code class="hljs json" aria-busy="false">
           :example-4-3 a odrl:Policy ;
+            odrl:profile oac: ;
             odrl:permission [
               a odrl:Permission ;
               odrl:assignee :app-1-controller ;
-              odrl:target dpv:EmailAddress, dpv:SocialNetwork ;
-              odrl:action dpv:Use, dpv:Store ;
+              odrl:target oac:EmailAddress, oac:SocialNetwork ;
+              odrl:action oac:Use, oac:Store ;
               odrl:constraint [
-                odrl:leftOperand dpv:Purpose ;
+                odrl:leftOperand oac:Purpose ;
                 odrl:operator odrl:isA ;
                 odrl:rightOperand dpv:RegistrationAuthentication
               ]
             ] .
     
-          :app-1-controller a dpv:DataController ;
+          :app-1-controller a oac:DataController ;
             cert:key "https://example-app-1.com" .
         </code>
       </pre>
@@ -888,42 +885,34 @@
       <pre id="ex43" class="hljs" aria-busy="false" aria-live="polite">
         <code class="hljs json" aria-busy="false">
           :example-4-4 a odrl:Policy ;
+            odrl:profile oac: ;
             odrl:assignee :app-2-controller ;
-            odrl:target dpv:HealthRecord, dpv:Prescription, dpv:HealthHistory ;
+            odrl:target oac:HealthRecord, oac:Prescription, oac:HealthHistory ;
             odrl:permission [
               a odrl:Permission ;
-              odrl:action dpv:Collect, dpv:Copy ;
+              odrl:action oac:Collect, oac:Copy ;
               odrl:constraint [
-              odrl:leftOperand dpv:Purpose ;
+              odrl:leftOperand oac:Purpose ;
                 odrl:operator odrl:isA ;
                 odrl:rightOperand dpv:AcademicResearch 
               ]
             ] ;
             odrl:permission [
               a odrl:Permission ;
-              odrl:action dpv:Anonymise, dpv:MakeAvailable ;
+              odrl:action oac:Anonymise, oac:MakeAvailable ;
               odrl:constraint [
-                odrl:leftOperand dpv:Recipient ;
+                odrl:leftOperand oac:Recipient ;
                 odrl:operator odrl:isA ;
                 odrl:rightOperand dpv:ThirdParty
               ]
             ] .
         
-          :app-2-controller a dpv:DataController ;
+          :app-2-controller a oac:DataController ;
             cert:key "https://example-app-2.com" .
         </code>
       </pre>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
 
 <section id="references" class="appendix"><!--OddPage--><h2 id="a-references"><bdi class="secno">A.<!---0.910070%--> </bdi>References<!---0.910070%--><a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#references"></a></h2><section id="informative-references">
   <h3 id="a-1-informative-references"><bdi class="secno">A.1<!---0.910070%--> </bdi>Informative references<!---0.910070%--><a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#informative-references"></a></h3>

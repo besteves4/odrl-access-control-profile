@@ -4,25 +4,26 @@
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
 @prefix cert: <http://www.w3.org/ns/auth/cert#> .
-@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
+@prefix oac: <https://w3id.org/oac/> .
 
 @prefix : <http://example.com> .
 
 :app-1 a odrl:Policy ;
+    odrl:profile oac: ;
     rdfs:comment """App 1, as identified by their URL https://example-app-1.com, 
     requests permission to use and store the email address and social network 
     information of users for the purpose of registering and authenticating to their service.""" ;
     odrl:permission [
         a odrl:Permission ;
         odrl:assignee :app-1-controller ;
-        odrl:target dpv:EmailAddress, dpv:SocialNetwork ;
-        odrl:action dpv:Use, dpv:Store ;
+        odrl:target oac:EmailAddress, oac:SocialNetwork ;
+        odrl:action oac:Use, oac:Store ;
         odrl:constraint [
-            odrl:leftOperand dpv:Purpose ;
+            odrl:leftOperand oac:Purpose ;
             odrl:operator odrl:isA ;
             odrl:rightOperand dpv:RegistrationAuthentication
         ]
     ] .
 
-:app-1-controller a dpv:DataController ;
+:app-1-controller a oac:DataController ;
     cert:key <https://example-app-1.com> .

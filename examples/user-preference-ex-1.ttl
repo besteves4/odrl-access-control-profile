@@ -4,24 +4,25 @@
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
 @prefix cert: <http://www.w3.org/ns/auth/cert#> .
-@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
+@prefix oac: <https://w3id.org/oac/> .
 
 @prefix : <http://example.com> .
 
 :policy-1 a odrl:Policy ;
+    odrl:profile oac: ;
     rdfs:comment '''Anne, as identified by her WebID https://anne.databox.me/profile/card#me, 
     permits read access operations over her contact data for the purpose of research and development.''' ;
     odrl:permission [
         a odrl:Permission ;
         odrl:assigner :anne ;
-        odrl:target dpv:Contact ;
-        odrl:action acl:Read ;
+        odrl:target oac:Contact ;
+        odrl:action oac:Read ;
         odrl:constraint [
-            odrl:leftOperand dpv:Purpose ;
+            odrl:leftOperand oac:Purpose ;
             odrl:operator odrl:isA ;
             odrl:rightOperand dpv:ResearchAndDevelopment
         ] 
     ] .
 
-:anne a dpv:DataSubject ;
+:anne a oac:DataSubject ;
     cert:key <https://anne.databox.me/profile/card#me> .

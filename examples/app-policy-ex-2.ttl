@@ -4,35 +4,36 @@
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
 @prefix acl: <http://www.w3.org/ns/auth/acl#> .
 @prefix cert: <http://www.w3.org/ns/auth/cert#> .
-@prefix oac: <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac> .
+@prefix oac: <https://w3id.org/oac/> .
 
 @prefix : <http://example.com> .
 
 :app-2 a odrl:Policy ;
+    odrl:profile oac: ;
     rdfs:comment """App 2, as identified by their URL https://example-app-2.com, 
     requests permission to collect and produce a copy of the health records, 
     medical prescriptions and health history of users for the purpose of performing 
     academic research and make the anonymised information available to third parties.""" ;
     odrl:assignee :app-2-controller ;
-    odrl:target dpv:HealthRecord, dpv:Prescription, dpv:HealthHistory ;
+    odrl:target oac:HealthRecord, oac:Prescription, oac:HealthHistory ;
     odrl:permission [
         a odrl:Permission ;
-        odrl:action dpv:Collect, dpv:Copy ;
+        odrl:action oac:Collect, oac:Copy ;
         odrl:constraint [
-        odrl:leftOperand dpv:Purpose ;
+        odrl:leftOperand oac:Purpose ;
             odrl:operator odrl:isA ;
             odrl:rightOperand dpv:AcademicResearch 
         ]
     ] ;
     odrl:permission [
         a odrl:Permission ;
-        odrl:action dpv:Anonymise, dpv:MakeAvailable ;
+        odrl:action oac:Anonymise, oac:MakeAvailable ;
         odrl:constraint [
-            odrl:leftOperand dpv:Recipient ;
+            odrl:leftOperand oac:Recipient ;
             odrl:operator odrl:isA ;
             odrl:rightOperand dpv:ThirdParty
         ]
     ] .
 
-:app-2-controller a dpv:DataController ;
+:app-2-controller a oac:DataController ;
     cert:key <https://example-app-2.com> .
