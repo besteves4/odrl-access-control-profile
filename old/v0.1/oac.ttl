@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dpv: <http://www.w3.org/ns/dpv#> .
+@prefix acl:  <http://www.w3.org/ns/auth/acl#> .
+
+@prefix oac: <https://w3id.org/oac/> .
+
+oac:
+	a owl:Ontology ;
+	dct:title "ODRL Profile for Access Control in Solid"@en ;
+	ns1:preferredNamespacePrefix "oac" ;
+    ns1:preferredNamespaceUri "https://w3id.org/oac/"^^xsd:string ;
+	rdfs:label "ODRL access control policies profile"@en ;
+	owl:versionInfo "1.0"^^xsd:string ;
+	dct:created "2021-04-12"^^xsd:date ;
+	dct:creator "Beatriz Esteves", "Harshvardhan J. Pandit", "Víctor Rodríguez-Doncel" ;
+	dct:abstract "The ODRL Profile for Access Control in Solid intends to extend Solid's ACL mechanism by using the ODRL Model specification to define ‘sticky policies’ that express permissions and / or prohibitions associated with data stored in a Solid Pod and utilises DPV as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
+	dct:description "The ODRL Profile for Access Control in Solid intends to extend Solid's ACL mechanism by using the ODRL Model specification to define ‘sticky policies’ that express permissions and / or prohibitions associated with data stored in a Solid Pod and utilises DPV as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
+	rdfs:comment "This is the RDF ontology for the ODRL Profile for Access Control in Solid."@en ;
+	dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+<https://w3id.org/oac/>
+    a skos:Collection ;
+    skos:prefLabel "ODRL Access Control profile concepts"@en ;
+    skos:scopeNote "ODRL Access Control profile terms based on the DPV and ACL taxonomies"@en ;
+    skos:member oac:Access ;
+    skos:member oac:Processing ;
+    skos:member oac:PersonalDataCategory ;
+    skos:member oac:Purpose ;
+	skos:member oac:Recipient ;
+	skos:member oac:LegalEntity .
+
+oac:Access
+	a acl:Access, odrl:Action, skos:Concept ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Operations for resource access"@en ;
+	skos:definition "Modes used to access resources, e.g. stored in Solid Pods."@en .
+
+oac:Processing
+	a dpv:Processing, odrl:Action, skos:Concept ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Processing of personal data"@en ;
+	skos:definition "Processing operations performed on personal data."@en .
+
+oac:PersonalDataCategory
+	a dpv:PersonalDataCategory, odrl:Asset, skos:Concept ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Categories of personal data"@en ;
+	skos:definition "Categories of personal data that refer to the nature of the information, e.g. financial, social."@en .
+
+oac:Purpose
+  a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy oac: ;
+  rdfs:label "Purposes for personal data processing"@en ;
+  skos:definition "Constraint on the purpose for which the processing of personal data is permitted or prohibited."@en ;
+  skos:note '''Only the isA, ..., ... operators SHOULD be used. 
+  Example: oac:Purpose odrl:isA dpv:ResearchAndDevelopment indicates that
+  the purpose for the processing of personal data is an instance of dpv:ResearchAndDevelopment.''' .
+
+oac:Recipient
+  a dpv:Recipient, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy oac: ;
+  rdfs:label "Entities that receive personal data"@en ;
+  skos:definition "Constraint on the recipients that may receive the results of the processing of personal data."@en ;
+  skos:note '''Only the isA, ..., ... operators SHOULD be used. 
+  Example: oac:Recipient odrl:isA ex:UniversityA indicates that
+  the recipient of the personal data is an instance of ex:UniversityA.''' .
+
+oac:LegalEntity
+	a dpv:LegalEntity, odrl:Party, skos:Concept ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Legally defined entities"@en ;
+	skos:definition "Legal entities refer to individuals, organisations, institutions, authorities, agencies, or any similar 'actors'."@en .
