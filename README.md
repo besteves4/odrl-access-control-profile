@@ -1,10 +1,10 @@
-# ODRL Profile for Access Control in Solid
+# ODRL Profile for Access Control
 
 Repository for the OAC (ODRL profile for Access Control) documentation.
 
-Check the profile at [https://w3id.org/oac/](https://w3id.org/oac/)
+Check the profile at [https://w3id.org/oac](https://w3id.org/oac)
 
-![ODRL Profile for Access Control in Solid](oac%20diagram.png "ODRL Profile for Access Control in Solid")
+![ODRL Profile for Access Control](oac%20diagram.png "ODRL Profile for Access Control")
 
 -----------------------
 Work developed by:
