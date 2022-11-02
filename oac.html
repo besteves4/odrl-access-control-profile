@@ -317,18 +317,13 @@
         </a>
         <ol class="toc">
           <li class="tocline">
-            <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#orsd">
-              <bdi class="secno">1.1 </bdi>Ontology Requirement Specification Document
-            </a>
-          </li>
-          <li class="tocline">
             <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#diag">
-              <bdi class="secno">1.2 </bdi>Profile diagram
+              <bdi class="secno">1.1 </bdi>Profile diagram
             </a>
           </li>
           <li class="tocline">
             <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#conventions">
-              <bdi class="secno">1.3 </bdi>Document Conventions
+              <bdi class="secno">1.2 </bdi>Document Conventions
             </a>
           </li>
         </ol>
@@ -398,16 +393,19 @@
         </ol>
       </li>
       <li class="tocline">
+        <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#orsd">
+          <bdi class="secno">A </bdi>Ontology Requirement Specification Document
+        </a>
         <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#ack">
-          <bdi class="secno">A. </bdi>Acknowledgments
+          <bdi class="secno">B. </bdi>Acknowledgments
         </a>
         <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#references">
-          <bdi class="secno">B. </bdi>References
+          <bdi class="secno">C. </bdi>References
         </a>
         <ol class="toc">
           <li class="tocline">
             <a class="tocxref" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#informative-references">
-              <bdi class="secno">B.1 </bdi>Informative references
+              <bdi class="secno">C.1 </bdi>Informative references
             </a>
           </li>
         </ol>
@@ -481,125 +479,9 @@
       R6. Support querying policies and authorisations for introspection of data use.
     </p>
 
-    <section id="orsd">
-      <h3 id="x2-1-document-orsd">
-        <bdi class="secno">1.1 </bdi>Ontology Requirement Specification Document
-        <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#orsd"></a>
-      </h3>
-
-      <table class="center">
-        <tr>
-          <th colspan=2 class="table-top">
-            ODRL Profile for Access Control in Solid
-          </th>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            1. Purpose
-          </th>
-        </tr>
-        <tr>
-          <td colspan=2 class="table-cell">
-            The purpose of this profile of ODRL is to support policies 
-            determining the access control to personal data stored in Solid Pods.
-          </td>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            2. Scope
-          </th>
-        </tr>
-        <tr>
-          <td colspan=2 class="table-cell">
-            The scope of this profile is limited to the definition of an ODRL Profile 
-            for Access Control in Solid. In particular, the introduced elements will 
-            serve one of these purposes: (i) define actions supporting enforcement 
-            of current ACL verbs, (ii) define data protection-related actions and restrictions 
-            defined in GDPR, (iii) any vocabulary element to support policy patterns that can 
-            be anticipated to be common, and (iv) elements necessary to support the authorization 
-            reasoning decision.
-          </td>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            3. Implementation Language
-          </th>
-        </tr>
-        <tr>
-          <td colspan=2 class="table-cell">
-            OWL
-          </td>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            4. Intended End-Users
-          </th>
-        </tr>
-        <tr>
-          <td colspan=2 class="table-cell">
-            Developers of Solid servers and Solid clients.
-          </td>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            5. Intended Uses
-          </th>
-        </tr>
-        <tr>
-          <td colspan=2 class="table-cell">
-            Use 1. Declaration of a policy by an individual storing personal data in a Pod.<br>
-            Use 2. Request of data made by a person or application to gain access to the data in different modalities.<br>
-            Use 3. Contextual elements to be considered in the authorization decision.<br>
-            Use 4. Explanation of the authorization decision.
-          </td>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            6. Ontology Requirements
-          </th>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            a. Non-Functional Requirements
-          </th>
-        </tr>
-        <tr>
-          <td colspan=2 class="table-cell">
-            NFR 1. The ontology shall be published online with standard documentation.
-          </td>
-        </tr>
-        <tr>
-          <th colspan=2 class="table-title">
-            b. Functional Requirements: Groups of Competency Question
-          </th>
-        </tr>
-        <tr>
-          <th class="table-title">
-            CQG1. Related to authorization
-          </th>
-          <th class="table-title">
-            CQG2. Related to GDPR
-          </th>
-        </tr>
-        <tr>
-          <td class="table-cell">
-            CQ1. Which actions are to be authorized?<br>
-            CQ2. Which requirements are to be authorized?<br>
-            CQ3. Who are the parties intervening in policy?<br>
-            CQ4. Which is the priority of a certain policy?<br>
-            CQ5. Which are the contextual elements to be considered in the authorization decision?
-          </td>
-          <td class="table-cell">
-            CQ6. Which obligations and requirements, and information about personal data and its processing are necessary?<br>
-            CQ7. Which is the legal identification of the policy parties?
-          </td>
-        </tr>
-      </table>
-    </section>
-
     <section id="diag">
       <h3 id="x2-2-document-conventions">
-        <bdi class="secno">1.2 </bdi>Profile diagram
+        <bdi class="secno">1.1 </bdi>Profile diagram
         <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#diag"></a>
       </h3>
 
@@ -615,7 +497,7 @@
 
     <section id="conventions">
       <h3 id="x2-2-document-conventions">
-        <bdi class="secno">1.3 </bdi>Document Conventions
+        <bdi class="secno">1.2 </bdi>Document Conventions
         <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#conventions"></a>
       </h3>
 
@@ -919,9 +801,125 @@
     </div>
   </section>
 
+  <section id="orsd">
+    <h3 id="x2-1-document-orsd">
+      <bdi class="secno">A </bdi>Ontology Requirement Specification Document
+      <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#orsd"></a>
+    </h3>
+
+    <table class="center">
+      <tr>
+        <th colspan=2 class="table-top">
+          ODRL Profile for Access Control in Solid
+        </th>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          1. Purpose
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          The purpose of this profile of ODRL is to support policies 
+          determining the access control to personal data stored in Solid Pods.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          2. Scope
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          The scope of this profile is limited to the definition of an ODRL Profile 
+          for Access Control in Solid. In particular, the introduced elements will 
+          serve one of these purposes: (i) define actions supporting enforcement 
+          of current ACL verbs, (ii) define data protection-related actions and restrictions 
+          defined in GDPR, (iii) any vocabulary element to support policy patterns that can 
+          be anticipated to be common, and (iv) elements necessary to support the authorization 
+          reasoning decision.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          3. Implementation Language
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          OWL
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          4. Intended End-Users
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          Developers of Solid servers and Solid clients.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          5. Intended Uses
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          Use 1. Declaration of a policy by an individual storing personal data in a Pod.<br>
+          Use 2. Request of data made by a person or application to gain access to the data in different modalities.<br>
+          Use 3. Contextual elements to be considered in the authorization decision.<br>
+          Use 4. Explanation of the authorization decision.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          6. Ontology Requirements
+        </th>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          a. Non-Functional Requirements
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2 class="table-cell">
+          NFR 1. The ontology shall be published online with standard documentation.
+        </td>
+      </tr>
+      <tr>
+        <th colspan=2 class="table-title">
+          b. Functional Requirements: Groups of Competency Question
+        </th>
+      </tr>
+      <tr>
+        <th class="table-title">
+          CQG1. Related to authorization
+        </th>
+        <th class="table-title">
+          CQG2. Related to GDPR
+        </th>
+      </tr>
+      <tr>
+        <td class="table-cell">
+          CQ1. Which actions are to be authorized?<br>
+          CQ2. Which requirements are to be authorized?<br>
+          CQ3. Who are the parties intervening in policy?<br>
+          CQ4. Which is the priority of a certain policy?<br>
+          CQ5. Which are the contextual elements to be considered in the authorization decision?
+        </td>
+        <td class="table-cell">
+          CQ6. Which obligations and requirements, and information about personal data and its processing are necessary?<br>
+          CQ7. Which is the legal identification of the policy parties?
+        </td>
+      </tr>
+    </table>
+  </section>
+
 <section id="ack">
   <h2 id="x1-acknowledgments">
-    <bdi class="secno">A. </bdi>Acknowledgments
+    <bdi class="secno">B. </bdi>Acknowledgments
     <a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#ack"></a>
   </h2>
   <p>
@@ -935,8 +933,8 @@
   </p>
 </section>
 
-<section id="references" class="appendix"><!--OddPage--><h2 id="a-references"><bdi class="secno">B.<!---0.910070%--> </bdi>References<!---0.910070%--><a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#references"></a></h2><section id="informative-references">
-  <h3 id="a-1-informative-references"><bdi class="secno">B.1<!---0.910070%--> </bdi>Informative references<!---0.910070%--><a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#informative-references"></a></h3>
+<section id="references" class="appendix"><!--OddPage--><h2 id="a-references"><bdi class="secno">C.<!---0.910070%--> </bdi>References<!---0.910070%--><a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#references"></a></h2><section id="informative-references">
+  <h3 id="a-1-informative-references"><bdi class="secno">C.1<!---0.910070%--> </bdi>Informative references<!---0.910070%--><a class="self-link" aria-label="§" href="https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html#informative-references"></a></h3>
   <dl class="bibliography">
     <dt id="bib-acl">[acl]</dt>
     <dd>
