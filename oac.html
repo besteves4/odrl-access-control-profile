@@ -342,6 +342,18 @@
                 <a class="tocxref" href="./oac.html#x2-1-1-policies">
                   <bdi class="secno">2.1.1 </bdi>Policies
                 </a>
+                <ol class="toc">
+                  <li class="tocline">
+                    <a class="tocxref" href="./oac.html#x2-1-1-1-preference">
+                      <bdi class="secno">2.1.1.1 </bdi>Preference
+                    </a>
+                  </li>
+                  <li class="tocline">
+                    <a class="tocxref" href="./oac.html#x2-1-1-2-requirement">
+                      <bdi class="secno">2.1.1.2 </bdi>Requirement
+                    </a>
+                  </li>
+                </ol>
               </li>
             </ol>
           </li>
@@ -606,9 +618,43 @@
     <section id="policies">
       <h4 id="x2-1-1-policies">
         <bdi class="secno">2.1.1 </bdi>Policies
-        <a class="self-link" aria-label="§" href="./oac.html#xx2-1-1-policies"></a>
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-1-policies"></a>
       </h4>
       <div class="issue">TODO: add description</div>
+    </section>
+    <section id="preference">
+      <h5 id="x2-1-1-1-preference">
+        <bdi class="secno">2.1.1.1 </bdi>Preference
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-1-1-preference"></a>
+      </h5>
+      <div class="issue">TODO: add description</div>
+      <table class="def propdef">
+        <tbody>
+          <tr><th>Label:</th> <td>Preference</td></tr>
+          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Preference">https://w3id.org/oac#Preference</a></td></tr>
+          <tr><th>Definition:</th> <td>A Preference Policy is a soft rule that expresses the assigner's preferences over an Asset which MAY not be satisfied.</td></tr>
+          <tr><th>Example:</th> <td>If a preference policy set by a party A does not match a request policy from party B, the request can still be accepted if party A accepts party B's request conditions.</td></tr>
+          <tr><th>Parent class:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></td></tr>
+          <tr><th>Disjoint classes:</th> <td><a href="http://www.w3.org/ns/odrl/2/Agreement">odrl:Agreement</a>, <a href="http://www.w3.org/ns/odrl/2/Offer">odrl:Offer</a>, <a href="http://www.w3.org/ns/odrl/2/Privacy">odrl:Privacy</a>, <a href="http://www.w3.org/ns/odrl/2/Request">odrl:Request</a>, <a href="http://www.w3.org/ns/odrl/2/Ticket">odrl:Ticket</a>, <a href="http://www.w3.org/ns/odrl/2/Assertion">odrl:Assertion</a>, <a href="https://w3id.org/oac#Requirement">oac:Requirement</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="requirement">
+      <h5 id="x2-1-1-2-requirement">
+        <bdi class="secno">2.1.1.2 </bdi>Requirement
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-1-2-requirement"></a>
+      </h5>
+      <div class="issue">TODO: add description</div>
+      <table class="def propdef">
+        <tbody>
+          <tr><th>Label:</th> <td>Requirement</td></tr>
+          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Requirement">https://w3id.org/oac#Requirement</a></td></tr>
+          <tr><th>Definition:</th> <td>A Requirement Policy is a hard rule that expresses the assigner's preferences over an Asset which MUST be satisfied.</td></tr>
+          <tr><th>Example:</th> <td>If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions.</td></tr>
+          <tr><th>Parent class:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></td></tr>
+          <tr><th>Disjoint classes:</th> <td><a href="http://www.w3.org/ns/odrl/2/Agreement">odrl:Agreement</a>, <a href="http://www.w3.org/ns/odrl/2/Offer">odrl:Offer</a>, <a href="http://www.w3.org/ns/odrl/2/Privacy">odrl:Privacy</a>, <a href="http://www.w3.org/ns/odrl/2/Request">odrl:Request</a>, <a href="http://www.w3.org/ns/odrl/2/Ticket">odrl:Ticket</a>, <a href="http://www.w3.org/ns/odrl/2/Assertion">odrl:Assertion</a>, <a href="https://w3id.org/oac#Preference">oac:Preference</a></td></tr>
+        </tbody>
+      </table>
     </section>
     <section id="access">
       <h3 id="x2-1-access">

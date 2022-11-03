@@ -9,7 +9,7 @@
 @prefix dpv: <http://www.w3.org/ns/dpv#> .
 @prefix acl:  <http://www.w3.org/ns/auth/acl#> .
 
-@prefix oac: <https://w3id.org/oac/> .
+@prefix oac: <https://w3id.org/oac#> .
 
 oac:
 	a owl:Ontology ;
@@ -25,7 +25,7 @@ oac:
 	rdfs:comment "This is the RDF ontology for the ODRL Profile for Access Control in Solid."@en ;
 	dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
 
-<https://w3id.org/oac/>
+<https://w3id.org/oac#>
     a skos:Collection ;
     skos:prefLabel "ODRL Access Control profile concepts"@en ;
     skos:scopeNote "ODRL Access Control profile terms based on the DPV and ACL taxonomies"@en ;
@@ -35,6 +35,20 @@ oac:
     skos:member oac:Purpose ;
 	skos:member oac:Recipient ;
 	skos:member oac:LegalEntity .
+
+oac:Preference rdfs:subClassOf odrl:Policy ;
+	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:Requirement ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Preference"@en ;
+	skos:definition "A Preference Policy is a soft rule that expresses the assigner's preferences over an Asset which MAY not be satisfied."@en ;
+	skos:example "If a preference policy set by a party A does not match a request policy from party B, the request can still be accepted if party A accepts party B's request conditions."@en .
+
+oac:Requirement rdfs:subClassOf odrl:Policy ;
+	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:Preference ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Requirement"@en ;
+	skos:definition "A Requirement Policy is a hard rule that expresses the assigner's preferences over an Asset which MUST be satisfied."@en ;
+	skos:example "If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions."@en .
 
 oac:Access
 	a acl:Access, odrl:Action, skos:Concept ;
