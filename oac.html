@@ -356,6 +356,25 @@
                 </ol>
               </li>
             </ol>
+            <ol class="toc">
+              <li class="tocline">
+                <a class="tocxref" href="./oac.html#x2-1-2-operators">
+                  <bdi class="secno">2.1.2 </bdi>Operators
+                </a>
+                <ol class="toc">
+                  <li class="tocline">
+                    <a class="tocxref" href="./oac.html#x2-1-2-1-isNotA">
+                      <bdi class="secno">2.1.2.1 </bdi>Is not a
+                    </a>
+                  </li>
+                  <li class="tocline">
+                    <a class="tocxref" href="./oac.html#x2-1-2-2-subclass">
+                      <bdi class="secno">2.1.2.2 </bdi>Subclass
+                    </a>
+                  </li>
+                </ol>
+              </li>
+            </ol>
           </li>
           <li class="tocline">
             <a class="tocxref" href="./oac.html#x2-2-personal-data">
@@ -446,6 +465,16 @@
           <li class="tocline">
             <a class="tocxref" href="./oac.html#x3-8-multiple-constraints">
               <bdi class="secno">3.8 </bdi>Policy with multiple constraints
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="./oac.html#x3-9-sNotA-operator">
+              <bdi class="secno">3.9 </bdi>Policy with is not a operator
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="./oac.html#x3-10-subclass-operator">
+              <bdi class="secno">3.10 </bdi>Policy with subclass operator
             </a>
           </li>
           <!-- <li class="tocline">
@@ -708,6 +737,45 @@
           <tr><th>Example:</th> <td>If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions.</td></tr>
           <tr><th>Parent class:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></td></tr>
           <tr><th>Disjoint classes:</th> <td><a href="http://www.w3.org/ns/odrl/2/Agreement">odrl:Agreement</a>, <a href="http://www.w3.org/ns/odrl/2/Offer">odrl:Offer</a>, <a href="http://www.w3.org/ns/odrl/2/Privacy">odrl:Privacy</a>, <a href="http://www.w3.org/ns/odrl/2/Request">odrl:Request</a>, <a href="http://www.w3.org/ns/odrl/2/Ticket">odrl:Ticket</a>, <a href="http://www.w3.org/ns/odrl/2/Assertion">odrl:Assertion</a>, <a href="https://w3id.org/oac#Preference">oac:Preference</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="operators">
+      <h4 id="x2-1-2-operators">
+        <bdi class="secno">2.1.2 </bdi>Operators
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-operators"></a>
+      </h4>
+      <div class="issue">TODO: add description</div>
+    </section>
+    <section id="isNotA">
+      <h5 id="x2-1-2-1-isNotA">
+        <bdi class="secno">2.1.2.1 </bdi>Is not a
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-1-isNotA"></a>
+      </h5>
+      <div class="issue">TODO: add description</div>
+      <table class="def propdef">
+        <tbody>
+          <tr><th>Label:</th> <td>Is not a</td></tr>
+          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#isNotA">https://w3id.org/oac#isNotA</a></td></tr>
+          <tr><th>Definition:</th> <td>Indicates that a given Left Operand is not an instance of the Right Operand of the Constraint.</td></tr>
+          <tr><th>Example:</th> <td>The purpose constraint of a rule can not be an instance of a academic research.</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></a></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="subclass">
+      <h5 id="x2-1-2-2-subclass">
+        <bdi class="secno">2.1.2.2 </bdi>Subclass
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-2-subclass"></a>
+      </h5>
+      <div class="issue">TODO: add description</div>
+      <table class="def propdef">
+        <tbody>
+          <tr><th>Label:</th> <td>Subclass</td></tr>
+          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#subclass">https://w3id.org/oac#subclass</a></td></tr>
+          <tr><th>Definition:</th> <td>Indicates that a given Left Operand is a subclass of the Right Operand of the Constraint.</td></tr>
+          <tr><th>Example:</th> <td>The purpose constraint of a rule can be a subclass of research and development such as academic research, non-commercial research or commercial research.</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></a></td></tr>
         </tbody>
       </table>
     </section>

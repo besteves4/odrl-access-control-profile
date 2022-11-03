@@ -28,7 +28,7 @@ oac: a owl:Ontology ;
 <https://w3id.org/oac#>
     a skos:Collection ;
     skos:prefLabel "ODRL Access Control profile concepts"@en ;
-    skos:scopeNote "ODRL Access Control profile terms based on the DPV and ACL taxonomies"@en ;
+    skos:scopeNote "ODRL Access Control profile terms based on the DPV and ACL vocabularies"@en ;
     skos:member oac:Preference ;
 	skos:member oac:Requirement ;
 	skos:member oac:PersonalData ;
@@ -36,7 +36,9 @@ oac: a owl:Ontology ;
     skos:member oac:Processing ;
     skos:member oac:Purpose ;
 	skos:member oac:Recipient ;
-	skos:member oac:Entity .
+	skos:member oac:Entity ;
+	skos:member oac:isNotA ;
+	skos:member oac:subclass .
 
 oac:Preference rdfs:subClassOf odrl:Policy ;
 	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:Requirement ;
@@ -90,6 +92,18 @@ oac:Recipient a dpv:Recipient, odrl:LeftOperand, owl:NamedIndividual, skos:Conce
 
 oac:Entity a dpv:Entity, odrl:Party, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
-	rdfs:label "Legally defined entities"@en ;
+	rdfs:label "Entity"@en ;
 	skos:definition "A human or non-human party that constitutes an entity."@en ;
 	skos:example "Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications."@en .
+
+oac:isNotA a odrl:Operator ;
+	rdfs:isDefinedBy oac: ;
+    rdfs:label "Is not a"@en ;
+	skos:definition "Indicates that a given Left Operand is not an instance of the Right Operand of the Constraint."@en ;
+    skos:example "The purpose constraint of a rule can not be an instance of a academic research."@en .
+
+oac:subclass a odrl:Operator ;
+	rdfs:isDefinedBy oac: ;
+    rdfs:label "Subclass"@en ;
+	skos:definition "Indicates that a given Left Operand is a subclass of the Right Operand of the Constraint."@en ;
+    skos:example "The purpose constraint of a rule can be a subclass of research and development such as academic research, non-commercial research or commercial research."@en .
