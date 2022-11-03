@@ -35,7 +35,7 @@ oac: a owl:Ontology ;
     skos:member oac:Processing ;
     skos:member oac:Purpose ;
 	skos:member oac:Recipient ;
-	skos:member oac:LegalEntity .
+	skos:member oac:Entity .
 
 oac:Preference rdfs:subClassOf odrl:Policy ;
 	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:Requirement ;
@@ -87,8 +87,8 @@ oac:Recipient a dpv:Recipient, odrl:LeftOperand, owl:NamedIndividual, skos:Conce
   Example: oac:Recipient odrl:isA ex:UniversityA indicates that
   the recipient of the personal data is an instance of ex:UniversityA.''' .
 
-oac:LegalEntity
-	a dpv:LegalEntity, odrl:Party, skos:Concept ;
+oac:Entity a dpv:Entity, odrl:Party, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Legally defined entities"@en ;
-	skos:definition "Legal entities refer to individuals, organisations, institutions, authorities, agencies, or any similar 'actors'."@en .
+	skos:definition "A human or non-human party that constitutes an entity."@en ;
+	skos:example "Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications."@en .
