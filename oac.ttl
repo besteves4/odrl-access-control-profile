@@ -56,7 +56,8 @@ oac:oac-ttl a profile:ResourceDescriptor ;
 	skos:member oac:Recipient ;
 	skos:member oac:Entity ;
 	skos:member oac:isNotA ;
-	skos:member oac:subclass .
+	skos:member oac:subclass ;
+	skos:member oac:service .
 
 oac:Preference rdfs:subClassOf odrl:Policy ;
 	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:Requirement ;
@@ -125,3 +126,9 @@ oac:subclass a odrl:Operator ;
     rdfs:label "Subclass"@en ;
 	skos:definition "Indicates that a given Left Operand is a subclass of the Right Operand of the Constraint."@en ;
     skos:example "The purpose constraint of a rule can be a subclass of research and development such as academic research, non-commercial research or commercial research."@en .
+
+oac:service rdfs:subPropertyOf odrl:function ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Service"@en ;
+	skos:definition "The Party is the service used by the recipient of the Rule."@en ;
+	skos:example "Method used by the assignee to interact with the data, e.g., application, API."@en .
