@@ -78,11 +78,11 @@ oac:Purpose a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
   Example: oac:Purpose odrl:isA dpv:ResearchAndDevelopment indicates that
   the purpose for the processing of personal data is an instance of dpv:ResearchAndDevelopment.''' .
 
-oac:Recipient
-  a dpv:Recipient, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+oac:Recipient a dpv:Recipient, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
   rdfs:isDefinedBy oac: ;
-  rdfs:label "Entities that receive personal data"@en ;
+  rdfs:label "Recipient"@en ;
   skos:definition "Constraint on the recipients that may receive the results of the processing of personal data."@en ;
+  skos:example "A recipient can be any entity receiving personal data, including data subjects, controllers, non profit organisations or non governmental organisations."@en ;
   skos:note '''Only the isA, ..., ... operators SHOULD be used. 
   Example: oac:Recipient odrl:isA ex:UniversityA indicates that
   the recipient of the personal data is an instance of ex:UniversityA.''' .
