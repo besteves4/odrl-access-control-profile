@@ -57,17 +57,17 @@ oac:PersonalData a dpv:PersonalData, odrl:Asset, skos:Concept ;
 	skos:definition "Data directly or indirectly associated or related to an individual."@en ;
 	skos:example "Data assets related to an individual include financial data such as credit card or account numbers, social data such as marital status or friends, health data such as health records or blood type and so on."@en .
 
-oac:Access
-	a acl:Access, odrl:Action, skos:Concept ;
+oac:Access a acl:Access, odrl:Action, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
-	rdfs:label "Operations for resource access"@en ;
-	skos:definition "Modes used to access resources, e.g. stored in Solid Pods."@en .
+	rdfs:label "Access"@en ;
+	skos:definition "Modes used to access resources, e.g. stored in Solid Pods."@en ;
+	skos:example "The ACL vocabulary includes Read, Write and Append access modes."@en .
 
-oac:Processing
-	a dpv:Processing, odrl:Action, skos:Concept ;
+oac:Processing a dpv:Processing, odrl:Action, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
-	rdfs:label "Processing of personal data"@en ;
-	skos:definition "Processing operations performed on personal data."@en .
+	rdfs:label "Processing"@en ;
+	skos:definition "Processing operations performed on personal data."@en ;
+	skos:example "DPV includes processing operations such as use, collect, adapt or infer."@en .
 
 oac:Purpose
   a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
