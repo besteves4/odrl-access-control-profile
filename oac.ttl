@@ -69,12 +69,12 @@ oac:Processing a dpv:Processing, odrl:Action, skos:Concept ;
 	skos:definition "Processing operations performed on personal data."@en ;
 	skos:example "DPV includes processing operations such as use, collect, adapt or infer."@en .
 
-oac:Purpose
-  a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+oac:Purpose a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
   rdfs:isDefinedBy oac: ;
-  rdfs:label "Purposes for personal data processing"@en ;
+  rdfs:label "Purpose"@en ;
   skos:definition "Constraint on the purpose for which the processing of personal data is permitted or prohibited."@en ;
-  skos:note '''Only the isA, ..., ... operators SHOULD be used. 
+  skos:example "DPV includes purposes such as academic research, customer care or identity verification."@en ;
+  skos:note '''Only the odrl:isA, ..., ... operators SHOULD be used. 
   Example: oac:Purpose odrl:isA dpv:ResearchAndDevelopment indicates that
   the purpose for the processing of personal data is an instance of dpv:ResearchAndDevelopment.''' .
 
