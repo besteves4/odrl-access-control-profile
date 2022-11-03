@@ -6,13 +6,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix dpv: <http://www.w3.org/ns/dpv#> .
+@prefix dpv: <https://w3id.org/dpv#> .
 @prefix acl:  <http://www.w3.org/ns/auth/acl#> .
 
 @prefix oac: <https://w3id.org/oac#> .
 
-oac:
-	a owl:Ontology ;
+oac: a owl:Ontology ;
 	dct:title "ODRL Profile for Access Control in Solid"@en ;
 	ns1:preferredNamespacePrefix "oac" ;
     ns1:preferredNamespaceUri "https://w3id.org/oac/"^^xsd:string ;
@@ -29,9 +28,11 @@ oac:
     a skos:Collection ;
     skos:prefLabel "ODRL Access Control profile concepts"@en ;
     skos:scopeNote "ODRL Access Control profile terms based on the DPV and ACL taxonomies"@en ;
-    skos:member oac:Access ;
+    skos:member oac:Preference ;
+	skos:member oac:Requirement ;
+	skos:member oac:PersonalData ;
+	skos:member oac:Access ;
     skos:member oac:Processing ;
-    skos:member oac:PersonalDataCategory ;
     skos:member oac:Purpose ;
 	skos:member oac:Recipient ;
 	skos:member oac:LegalEntity .
@@ -50,6 +51,12 @@ oac:Requirement rdfs:subClassOf odrl:Policy ;
 	skos:definition "A Requirement Policy is a hard rule that expresses the assigner's preferences over an Asset which MUST be satisfied."@en ;
 	skos:example "If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions."@en .
 
+oac:PersonalData a dpv:PersonalData, odrl:Asset, skos:Concept ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Personal data"@en ;
+	skos:definition "Data directly or indirectly associated or related to an individual."@en ;
+	skos:example "Data assets related to an individual include financial data such as credit card or account numbers, social data such as marital status or friends, health data such as health records or blood type and so on."@en .
+
 oac:Access
 	a acl:Access, odrl:Action, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
@@ -61,12 +68,6 @@ oac:Processing
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Processing of personal data"@en ;
 	skos:definition "Processing operations performed on personal data."@en .
-
-oac:PersonalDataCategory
-	a dpv:PersonalDataCategory, odrl:Asset, skos:Concept ;
-	rdfs:isDefinedBy oac: ;
-	rdfs:label "Categories of personal data"@en ;
-	skos:definition "Categories of personal data that refer to the nature of the information, e.g. financial, social."@en .
 
 oac:Purpose
   a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;

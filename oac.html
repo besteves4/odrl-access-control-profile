@@ -358,6 +358,11 @@
             </ol>
           </li>
           <li class="tocline">
+            <a class="tocxref" href="./oac.html#x2-2-personal-data">
+              <bdi class="secno">2.2 </bdi>Personal Data
+            </a>
+          </li>
+          <li class="tocline">
             <a class="tocxref" href="./oac.html#x2-1-access">
               <bdi class="secno">2.1 </bdi>Access
             </a>
@@ -365,11 +370,6 @@
           <li class="tocline">
             <a class="tocxref" href="./oac.html#2-2-processing">
               <bdi class="secno">2.2 </bdi>Processing
-            </a>
-          </li>
-          <li class="tocline">
-            <a class="tocxref" href="./oac.html#x2-3-personalData">
-              <bdi class="secno">2.3 </bdi>Personal Data Category
             </a>
           </li>
           <li class="tocline">
@@ -604,6 +604,7 @@
       <bdi class="secno">2. </bdi>Profile specification
       <a class="self-link" aria-label="§" href="./oac.html#spec"></a>
     </h2>
+    <div class="issue">TODO: update description</div>
     <p>
       This ODRL profile relies on the invocation of legal concepts using DPV and ACL for the reference to access mode operations.
       Its core concepts are Purpose, Personal Data Categories, Processing, Access and Legal Entities.
@@ -656,6 +657,22 @@
         </tbody>
       </table>
     </section>
+    <section id="personal-data">
+      <h3 id="x2-2-personal-data">
+        <bdi class="secno">2.2 </bdi>Personal Data
+        <a class="self-link" aria-label="§" href="./oac.html#x2-2-personal-data"></a>
+      </h3>
+      <div class="issue">TODO: add description</div>
+      <table class="def propdef">
+          <tbody>
+            <tr><th>Label:</th> <td>Personal Data</td></tr>
+            <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#PersonalData">https://w3id.org/oac#PersonalData</a></td></tr>
+            <tr><th>Definition:</th> <td>Data directly or indirectly associated or related to an individual.</td></tr>
+            <tr><th>Example:</th> <td>Data assets related to an individual include financial data such as credit card or account numbers, social data such as marital status or friends, health data such as health records or blood type and so on.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a>, <a href="https://w3id.org/dpv#PersonalData">dpv:PersonalData</a></td></tr>
+          </tbody>
+      </table>
+    </section>
     <section id="access">
       <h3 id="x2-1-access">
         <bdi class="secno">2.1 </bdi>Access
@@ -677,18 +694,6 @@
           <tbody><tr><th>Definition:</th> <td>Processing of personal data</td></tr>
           <tr><th>Label:</th> <td>oac:Processing</td></tr>
           <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a>, <a href="http://www.w3.org/ns/dpv#Processing">dpv:Processing</a></td></tr>
-          </tbody>
-      </table>
-    </section>
-    <section id="personalData">
-      <h3 id="x2-3-personalData">
-        <bdi class="secno">2.3 </bdi>Personal Data Category
-        <a class="self-link" aria-label="§" href="./oac.html#x2-3-personalData"></a>
-      </h3>
-      <table class="def propdef">
-          <tbody><tr><th>Definition:</th> <td>Categories of personal data</td></tr>
-          <tr><th>Label:</th> <td>oac:PersonalDataCategory</td></tr>
-          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a>, <a href="http://www.w3.org/ns/dpv#PersonalDataCategory">dpv:PersonalDataCategory</a></td></tr>
           </tbody>
       </table>
     </section>
