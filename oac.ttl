@@ -2,7 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://purl.org/vocab/vann/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
@@ -13,8 +13,8 @@
 
 oac: a owl:Ontology ;
 	dct:title "ODRL Profile for Access Control in Solid"@en ;
-	ns1:preferredNamespacePrefix "oac" ;
-    ns1:preferredNamespaceUri "https://w3id.org/oac/"^^xsd:string ;
+	vann:preferredNamespacePrefix "oac" ;
+    vann:preferredNamespaceUri "https://w3id.org/oac/"^^xsd:string ;
 	rdfs:label "ODRL access control policies profile"@en ;
 	owl:versionInfo "1.0"^^xsd:string ;
 	dct:created "2021-04-12"^^xsd:date ;
