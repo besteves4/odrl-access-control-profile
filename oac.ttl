@@ -1,29 +1,47 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix dpv: <https://w3id.org/dpv#> .
-@prefix acl:  <http://www.w3.org/ns/auth/acl#> .
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX acl:  <http://www.w3.org/ns/auth/acl#>
+PREFIX profile: <http://www.w3.org/ns/dx/prof/>
+PREFIX role: <http://www.w3.org/ns/dx/prof/role/>
 
-@prefix oac: <https://w3id.org/oac#> .
+PREFIX oac: <https://w3id.org/oac#>
 
-oac: a owl:Ontology ;
+oac: a owl:Ontology, profile:Profile ;
+	profile:isProfileOf <http://www.w3.org/ns/odrl/2/core> ;
+	profile:hasResource oac:oac-html, oac:oac-ttl ;
 	dct:title "ODRL Profile for Access Control"@en ;
 	vann:preferredNamespacePrefix "oac" ;
     vann:preferredNamespaceUri "https://w3id.org/oac/"^^xsd:string ;
 	rdfs:label "ODRL access control policies profile"@en ;
 	owl:versionInfo "0.2"^^xsd:string ;
 	dct:created "2021-04-12"^^xsd:date ;
-	dct:modified "2022-11-03"^^xsd:date ;
+	dct:modified "2022-11-XX"^^xsd:date ;
 	dct:creator "Beatriz Esteves", "Harshvardhan J. Pandit", "Víctor Rodríguez-Doncel" ;
 	dct:abstract "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define ‘sticky policies’ that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
 	dct:description "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define ‘sticky policies’ that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
 	rdfs:comment "This is the RDF ontology for the ODRL Profile for Access Control."@en ;
 	dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+oac:oac-html a profile:ResourceDescriptor ;
+    profile:hasRole role:specification ;
+    profile:hasArtifact <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html> ;
+    dct:title "ODRL Profile for Access Control HTML specification" ;
+    dct:format <https://www.iana.org/assignments/media-types/text/html> ;
+    dct:conformsTo <https://www.w3.org/TR/html/> .
+
+oac:oac-ttl a profile:ResourceDescriptor ;
+    profile:hasRole role:vocabulary ;
+    profile:hasArtifact <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.ttl> ;
+    dct:title "ODRL Profile for Access Control Turtle vocabulary" ;
+    dct:format <https://www.iana.org/assignments/media-types/text/turtle> ;
+    dct:conformsTo <https://www.w3.org/TR/turtle/> .
 
 <https://w3id.org/oac#>
     a skos:Collection ;
