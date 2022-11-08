@@ -1010,6 +1010,44 @@
       </pre>
     </div>
 
+    <h3 id="x3-3-offer-policy">
+      <bdi class="secno">3.3 </bdi>Offer policy
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-3-offer-policy"></a>
+    </h3>
+    <p>
+      User A issued an Offer that obliges its assignee to read identifier data only for identity verification 
+      and permits read access operations over its behavioral data for research and development.
+      This offer is a combination that derives from the <code>https://example.com/preference1</code> and 
+      <code>https://example.com/requirement1</code> policies as indicated by the <code>dct:source</code> property.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 3.3</span></div>
+      <pre id="ex33" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/offer1> a odrl:Offer ;
+  dct:description """Offer to read identifier data for identity verification 
+      and behavioral data for research and development""" ;
+  dct:source ex:preference1, ex:requirement1 ;
+  dct:creator ex:userA ;
+  dct:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
+  odrl:uid ex:offer1 ;
+  odrl:profile oac: ;
+  odrl:assigner ex:userA ;
+  odrl:action oac:Read ;
+  odrl:permission [
+    odrl:target oac:Behavioral ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator odrl:isA ;
+      odrl:rightOperand dpv:ResearchAndDevelopment ] ] ;
+  odrl:obligation [
+    odrl:target oac:Identifier ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator odrl:isA ;
+      odrl:rightOperand dpv:IdentityVerification ] ] .
+      </pre>
+    </div>
+
     <!-- <h3 id="x3-1-user-preference-1">
       <bdi class="secno">3.1 </bdi>User Preference 1 - Read-only policy for Contact for R&D Purposes
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
