@@ -1058,7 +1058,7 @@
     </p>
     <div class="example"><div class="example-title marker"><span>Example 3.4</span></div>
       <pre id="ex34" class="hljs" aria-busy="false" aria-live="polite">    
-<https://example.com/request1> a odrl:Request;
+&lt;https://example.com/request1> a odrl:Request;
   dct:description "Request to use behavioral data for research and development purposes" ;
   dct:creator ex:userB ;
   dct:issued "2022-11-08T17:58:31"^^xsd:dateTime ;
@@ -1067,6 +1067,37 @@
   odrl:permission [
     odrl:assignee ex:userB ;
     odrl:action oac:Use ;
+    odrl:target oac:Behavioral ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator odrl:isA ;
+      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      </pre>
+    </div>
+
+    <h3 id="x3-5-agreement-policy">
+      <bdi class="secno">3.5 </bdi>Agreement policy
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-5-agreement-policy"></a>
+    </h3>
+    <p>
+      User A and B agree to allow read access over user A's behavioral data for research and development.
+      This agreement is the result of the matching of <code>https://example.com/offer1</code> and 
+      <code>https://example.com/request1</code>, as indicated by the <code>dct:references</code> property.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 3.5</span></div>
+      <pre id="ex35" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/agreement1> a odrl:Agreement;
+  dct:description "Agreement to read behavioral data for research and development purposes" ;
+  dct:creator ex:userA ;
+  dct:issued "2022-11-08T18:13:37"^^xsd:dateTime ;
+  odrl:uid ex:agreement1;
+  dct:references ex:offer1, ex:request1 ;
+  odrl:profile oac: ;
+  odrl:permission [
+    odrl:assigner ex:userA ;
+    odrl:assignee ex:userB ;
+    odrl:action oac:Read ;
     odrl:target oac:Behavioral ;
     odrl:constraint [
       odrl:leftOperand oac:Purpose ;
