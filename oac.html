@@ -972,13 +972,41 @@
   odrl:uid ex:preference1 ;
   odrl:profile oac: ;
   odrl:permission [
-      odrl:assigner ex:userA ;
-      odrl:target oac:Behavioral ;
-      odrl:action oac:Read ;
-      odrl:constraint [
-          odrl:leftOperand oac:Purpose ;
-          odrl:operator odrl:isA ;
-          odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+    odrl:assigner ex:userA ;
+    odrl:target oac:Behavioral ;
+    odrl:action oac:Read ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator odrl:isA ;
+      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      </pre>
+    </div>
+
+    <h3 id="x3-2-requirement-policy">
+      <bdi class="secno">3.2 </bdi>Requirement policy
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-2-requirement-policy"></a>
+    </h3>
+    <p>
+      User A issued a preference that permits read access operations over its behavioral data 
+      for the purpose of research and development.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 3.2</span></div>
+      <pre id="ex32" class="hljs" aria-busy="false" aria-live="polite">
+&lt;https://example.com/requirement1> a oac:Requirement ;
+  dct:description "Requirement to read identifier data for identity verification purposes" ;
+  dct:creator ex:userA ;
+  dct:issued "2022-11-08T16:30:15"^^xsd:dateTime ;
+  odrl:uid ex:requirement1 ;
+  odrl:profile oac: ;
+  odrl:obligation [
+    odrl:assigner ex:userA ;
+    odrl:target oac:Identifier ;
+    odrl:action oac:Read ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator odrl:isA ;
+      odrl:rightOperand dpv:IdentityVerification ] ] .
       </pre>
     </div>
 
