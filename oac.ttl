@@ -64,6 +64,7 @@ oac:Preference rdfs:subClassOf odrl:Policy ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Preference"@en ;
 	skos:definition "A Preference Policy is a soft rule that expresses the assigner's preferences over an Asset which MAY not be satisfied."@en ;
+	skos:note "A Preference Policy MUST contain at least one Permission or Prohibition rule and a Party with Assigner function (in the same Permission or Prohibition). The Preference Policy MAY contain a Party with Assignee and/or Service functions, but MUST not grant any privileges to that Party."@en ;
 	skos:example "If a preference policy set by a party A does not match a request policy from party B, the request can still be accepted if party A accepts party B's request conditions."@en .
 
 oac:Requirement rdfs:subClassOf odrl:Policy ;
