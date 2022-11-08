@@ -948,11 +948,40 @@
   </section>
 
   <section id="examples">
-    <h2 id="x4-examples">
+    <h2 id="examples">
       <bdi class="secno">3. </bdi>Examples
       <a class="self-link" aria-label="§" href="./oac.html#examples"></a>
     </h2>
-    <h3 id="x3-1-user-preference-1">
+
+    <h3 id="x3-1-preference-policy">
+      <bdi class="secno">3.1 </bdi>Preference policy
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-1-user-preference-1"></a>
+    </h3>
+    <p>
+      User A issued a preference that permits read access operations over its behavioral data 
+      for the purpose of research and development.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 3.1</span></div>
+      <pre id="ex31" class="hljs" aria-busy="false" aria-live="polite">
+&lt;https://example.com/preference1> a oac:Preference ;
+  dct:description "Preference to read behavioral data for research and development purposes" ;
+  dct:creator ex:userA ;
+  dct:issued "2022-11-02T11:08:05"^^xsd:dateTime ;
+  odrl:uid ex:preference1 ;
+  odrl:profile oac: ;
+  odrl:permission [
+      odrl:assigner ex:userA ;
+      odrl:target oac:Behavioral ;
+      odrl:action oac:Read ;
+      odrl:constraint [
+          odrl:leftOperand oac:Purpose ;
+          odrl:operator odrl:isA ;
+          odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      </pre>
+    </div>
+
+    <!-- <h3 id="x3-1-user-preference-1">
       <bdi class="secno">3.1 </bdi>User Preference 1 - Read-only policy for Contact for R&D Purposes
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
       <a class="self-link" aria-label="§" href="./oac.html#x3-1-user-preference-1"></a>
@@ -1088,7 +1117,7 @@
             cert:key "https://example-app-2.com" .
         </code>
       </pre>
-    </div>
+    </div> -->
   </section>
 
   <section id="orsd">
