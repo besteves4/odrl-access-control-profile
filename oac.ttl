@@ -72,7 +72,7 @@ oac:Requirement rdfs:subClassOf odrl:Policy ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Requirement"@en ;
 	skos:definition "A Requirement Policy is a hard rule that expresses the assigner's preferences over an Asset which MUST be satisfied."@en ;
-	skos:note ""@en ;
+	skos:note "A Requirement Policy MUST contain at least one Duty rule, an Action, a target Asset and a Party with Assigner function (in the same Duty). The Requirement Policy MAY contain a Party with Assignee and/or Service functions, but MUST not grant any privileges to those Parties."@en ;
 	skos:example "If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions."@en .
 
 oac:PersonalData a dpv:PersonalData, odrl:Asset, skos:Concept ;
