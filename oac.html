@@ -442,13 +442,18 @@
         </a>
         <ol class="toc">
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-1-mapping-acl-dpv">
-              <bdi class="secno">3.1 </bdi>Mapping ACL verbs to DPV processing
+            <a class="tocxref" href="./oac.html#x3-1-mapping-dpv-pd">
+              <bdi class="secno">3.1 </bdi>Associate resources with DPV-PD types
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-2-mapping-matching">
-              <bdi class="secno">3.2 </bdi>Mapping results of the matching with ACP/ACL 
+            <a class="tocxref" href="./oac.html#x3-2-mapping-acl-dpv">
+              <bdi class="secno">3.2 </bdi>Mapping ACL verbs to DPV processing
+            </a>
+          </li>
+          <li class="tocline">
+            <a class="tocxref" href="./oac.html#x3-3-mapping-matching">
+              <bdi class="secno">3.3 </bdi>Mapping results of the matching with ACP/ACL 
             </a>
           </li>
         </ol>
@@ -971,10 +976,18 @@
       <a class="self-link" aria-label="§" href="./oac.html#matching"></a>
     </h2>
 
-    <h3 id="x3-1-mapping-acl-dpv">
-      <bdi class="secno">3.1 </bdi>Mapping ACL verbs to DPV processing
+    <h3 id="x3-1-mapping-dpv-pd">
+      <bdi class="secno">3.1 </bdi>Associate resources with DPV-PD types
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-1-mapping-acl-dpv"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-1-mapping-dpv-pd"></a>
+    </h3>
+
+    <div class="note">Associate resources with the data they contain -> :resource dpv:hasData / dpv:hasPersonalData :data-category</div>
+
+    <h3 id="x3-2-mapping-acl-dpv">
+      <bdi class="secno">3.2 </bdi>Mapping ACL verbs to DPV processing
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-2-mapping-acl-dpv"></a>
     </h3>
 
     <table class="def">
@@ -990,10 +1003,10 @@
     <div class="issue">The Solid WAC specification has a proposal to include new ACL verbs: acl:Update, acl:Create, acl:Delete - see <a href="https://github.com/solid/web-access-control-spec/issues/85" target="_blank">solid/web-access-control-spec/issues/85</a></div>
     <div class="issue">Issue in the Solid WAC specification to remove acl:Control access mode - see <a href="https://github.com/solid/web-access-control-spec/issues/94" target="_blank">solid/web-access-control-spec/issues/94</a></div>
 
-    <h3 id="x3-2-mapping-matching">
-      <bdi class="secno">3.2 </bdi>Mapping results of the matching with ACP/ACL
+    <h3 id="x3-3-mapping-matching">
+      <bdi class="secno">3.3 </bdi>Mapping results of the matching with ACP/ACL
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-2-mapping-matching"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-3-mapping-matching"></a>
     </h3>
 
     <div class="note">new properties might be needed in ACP/ACL to connect the granted authorization with the users policies, app request, …</div>
