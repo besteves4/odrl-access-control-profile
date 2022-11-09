@@ -977,13 +977,18 @@
       <a class="self-link" aria-label="§" href="./oac.html#x3-1-mapping-acl-dpv"></a>
     </h3>
 
-    <ul>
-      <li>ACL Read - DPV Use, Collect, ...</li>
-      <li>ACL Write - DPV Store, MakeAvailable, ...</li>
-      <li>ACL Append - ...</li>
-    </ul>
+    <table class="def">
+      <tbody>
+        <tr><th>ACL access mode</th> <th>DPV processing</th></tr>
+        <tr><td>Read</td> <td>Use, Collect</td></tr>
+        <tr><td>Write</td> <td>Store, MakeAvailable</td></tr>
+        <tr><td>Append</td> <td>...</td></tr>
+        <tr><td>...</td> <td>Share, Transfer</td></tr>
+      </tbody>
+    </table>
 
-    <div class="note">interoperability panel specification has a proposal to include new ACL verbs: acl:Update, acl:Create, acl:Delete</div>
+    <div class="issue">The Solid WAC specification has a proposal to include new ACL verbs: acl:Update, acl:Create, acl:Delete - see <a href="https://github.com/solid/web-access-control-spec/issues/85" target="_blank">solid/web-access-control-spec/issues/85</a></div>
+    <div class="issue">Issue in the Solid WAC specification to remove acl:Control access mode - see <a href="https://github.com/solid/web-access-control-spec/issues/94" target="_blank">solid/web-access-control-spec/issues/94</a></div>
 
     <h3 id="x3-2-mapping-matching">
       <bdi class="secno">3.2 </bdi>Mapping results of the matching with ACP/ACL
