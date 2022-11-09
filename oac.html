@@ -467,7 +467,7 @@
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-6-sNotA-operator">
+            <a class="tocxref" href="./oac.html#x3-6-isNotA-operator">
               <bdi class="secno">3.6 </bdi>Policy with is not a operator
             </a>
           </li>
@@ -481,11 +481,11 @@
               <bdi class="secno">3.8 </bdi>Policy with service party
             </a>
           </li>
-          <li class="tocline">
+<!--           <li class="tocline">
             <a class="tocxref" href="./oac.html#x3-9-service-assignee">
               <bdi class="secno">3.9 </bdi>Policy with service and assignee parties
             </a>
-          </li>
+          </li> -->
           <li class="tocline">
             <a class="tocxref" href="./oac.html#x3-10-purpose-policy">
               <bdi class="secno">3.10 </bdi>Policy with a purpose constraint
@@ -1087,17 +1087,102 @@
     </p>
     <div class="example"><div class="example-title marker"><span>Example 3.5</span></div>
       <pre id="ex35" class="hljs" aria-busy="false" aria-live="polite">    
-&lt;https://example.com/agreement1> a odrl:Agreement;
+&lt;https://example.com/agreement1> a odrl:Agreement ;
   dct:description "Agreement to read behavioral data for research and development purposes" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-08T18:13:37"^^xsd:dateTime ;
-  odrl:uid ex:agreement1;
+  odrl:uid ex:agreement1 ;
   dct:references ex:offer1, ex:request1 ;
   odrl:profile oac: ;
   odrl:permission [
     odrl:assigner ex:userA ;
     odrl:assignee ex:userB ;
     odrl:action oac:Read ;
+    odrl:target oac:Behavioral ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator odrl:isA ;
+      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      </pre>
+    </div>
+
+    <h3 id="x3-6-isNotA-operator">
+      <bdi class="secno">3.6 </bdi>Policy with is not a operator
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-6-isNotA-operator"></a>
+    </h3>
+    <p>
+      User A prohibits write access operations over its behavioral data if the purpose
+      is not commercial research.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 3.6</span></div>
+      <pre id="ex36" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/policy2> a oac:Preference ;
+  dct:description "Prohibition to write behavioral data if the purpose is not commercial research" ;
+  dct:creator ex:userA ;
+  dct:issued "2022-11-09T09:14:10"^^xsd:dateTime ;
+  odrl:uid ex:policy2 ;
+  odrl:profile oac: ;
+  odrl:permission [
+    odrl:assigner ex:userA ;
+    odrl:action oac:Write ;
+    odrl:target oac:Behavioral ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator oac:isNotA ;
+      odrl:rightOperand dpv:CommercialResearch ] ] .
+      </pre>
+    </div>
+
+    <h3 id="x3-7-subclass-operator">
+      <bdi class="secno">3.7 </bdi>Policy with subclass operator
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-7-subclass-operator"></a>
+    </h3>
+    <p>
+      User A allows write access operations over its behavioral data if the purpose
+      is a subclass of research and development such as academic research, non-commercial research or commercial research.
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 3.7</span></div>
+      <pre id="ex37" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/policy3> a oac:Preference ;
+  dct:description "Permission to write behavioral data if the purpose is a subclass of research and development" ;
+  dct:creator ex:userA ;
+  dct:issued "2022-11-09T09:17:13"^^xsd:dateTime ;
+  odrl:uid ex:policy3 ;
+  odrl:profile oac: ;
+  odrl:permission [
+    odrl:assigner ex:userA ;
+    odrl:action oac:Write ;
+    odrl:target oac:Behavioral ;
+    odrl:constraint [
+      odrl:leftOperand oac:Purpose ;
+      odrl:operator oac:subclass ;
+      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      </pre>
+    </div>
+
+    <h3 id="x3-8-service">
+      <bdi class="secno">3.8 </bdi>Policy with service party
+      <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x3-8-service"></a>
+    </h3>
+    <p>
+      User A allows write access operations over its behavioral data for the purpose
+      of research and development using <code>https://example.com/serviceA</code> .
+    </p>
+    <div class="example"><div class="example-title marker"><span>Example 3.8</span></div>
+      <pre id="ex38" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/policy4> a oac:Preference ;
+  dct:description "Permission to write behavioral data if the purpose research and development using service A" ;
+  dct:creator ex:userA ;
+  dct:issued "2022-11-09T09:22:42"^^xsd:dateTime ;
+  odrl:uid ex:policy4 ;
+  odrl:profile oac: ;
+  odrl:permission [
+    odrl:assigner ex:userA ;
+    oac:service ex:serviceA ;
+    odrl:action oac:Write ;
     odrl:target oac:Behavioral ;
     odrl:constraint [
       odrl:leftOperand oac:Purpose ;
