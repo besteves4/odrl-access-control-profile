@@ -996,9 +996,50 @@
       <a class="self-link" aria-label="§" href="./oac.html#x3-2-mapping-matching"></a>
     </h3>
 
-    <ul>
-      <li>new properties might be needed in ACP/ACL to connect the granted authorization with the users policies, app request, …</li>
-    </ul>
+    <div class="note">new properties might be needed in ACP/ACL to connect the granted authorization with the users policies, app request, …</div>
+
+    <div class="example"><div class="example-title marker"><span>Agreement</span></div>
+    <pre id="ex-agreement" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/agreement1> a odrl:Agreement ;
+dct:description "Agreement to read behavioral data for research and development purposes" ;
+dct:creator ex:userA ;
+dct:issued "2022-11-08T18:13:37"^^xsd:dateTime ;
+odrl:uid ex:agreement1 ;
+dct:references ex:offer1, ex:request1 ;
+odrl:profile oac: ;
+odrl:permission [
+  odrl:assigner ex:userA ;
+  odrl:assignee ex:userB ;
+  odrl:action oac:Read ;
+  odrl:target oac:Behavioral ;
+  odrl:constraint [
+    odrl:leftOperand oac:Purpose ;
+    odrl:operator odrl:isA ;
+    odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+    </pre>
+  </div>
+
+  <div class="example"><div class="example-title marker"><span>Derived ACL authorization</span></div>
+  <pre id="ex-acl-authz" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/aclAuthorization1> a acl:Authorization ;
+  acl:accessTo :TemplateResource ; # find resources that contain dpv-pd:Behavioral
+  acl:agent ex:userB ;
+  acl:mode acl:Read .
+  </pre>
+</div>
+
+<div class="example"><div class="example-title marker"><span>Derived ACP grant</span></div>
+<pre id="ex-acp-authz" class="hljs" aria-busy="false" aria-live="polite">    
+&lt;https://example.com/acpGrant1> a acp:AccessGrant ;
+  acp:grant acl:Read ;
+  acp:context [
+    acp:agent ex:userB ;
+    acp:target :TemplateResource ; # find resources that contain dpv-pd:Behavioral
+    acp:mode acl:Read
+  ] .
+
+</pre>
+</div>
 
   </section>
 
