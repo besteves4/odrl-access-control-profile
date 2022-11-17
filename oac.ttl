@@ -59,7 +59,8 @@ oac:oac-ttl a profile:ResourceDescriptor ;
 	skos:member oac:isNotA ;
 	skos:member oac:subclass ;
 	skos:member oac:semantic ;
-	skos:member oac:service .
+	skos:member oac:service ;
+	skos:member oac:application .
 
 oac:PreferencePolicy rdfs:subClassOf odrl:Policy ;
 	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:RequirementPolicy ;
@@ -150,4 +151,10 @@ oac:service rdfs:subPropertyOf odrl:function ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Service"@en ;
 	skos:definition "The Party is the service used by the recipient of the Rule."@en ;
-	skos:example "Method used by the assignee to interact with the data, e.g., application, API."@en .
+	skos:example "Method used to interact with the data, e.g., identity verification service, query service."@en .
+
+oac:application rdfs:subPropertyOf odrl:function ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Application"@en ;
+	skos:definition "The Party is the application used by the recipient of the Rule."@en ;
+	skos:example "Application used by the assignee to interact with the data, e.g., address book, game."@en .
