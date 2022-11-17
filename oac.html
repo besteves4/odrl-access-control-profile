@@ -780,13 +780,13 @@
       <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
-          <tr><th>Label:</th> <td>Preference</td></tr>
-          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Preference">https://w3id.org/oac#Preference</a></td></tr>
+          <tr><th>Label:</th> <td>Preference Policy</td></tr>
+          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#PreferencePolicy">https://w3id.org/oac#PreferencePolicy</a></td></tr>
           <tr><th>Definition:</th> <td>A Preference Policy is a soft rule that expresses the assigner's preferences over an Asset which MAY not be satisfied.</td></tr>
-          <tr><th>Note:</th> <td>A Preference Policy MUST contain at least one Permission or Prohibition rule, an Action, a target Asset and a Party with Assigner function (in the same Permission or Prohibition). The Preference Policy MAY contain a Party with Assignee and/or Service functions, but MUST not grant any privileges to those Parties.</td></tr>
+          <tr><th>Note:</th> <td>A Preference Policy MUST contain at least one Permission or Prohibition rule, an Action, a target Asset and a Party with Assigner function (in the same Permission or Prohibition). The Preference Policy MAY contain a Party with Assignee, Application and/or Service functions, but MUST not grant any privileges to those Parties.</td></tr>
           <tr><th>Example:</th> <td>If a preference policy set by a party A does not match a request policy from party B, the request can still be accepted if party A accepts party B's request conditions.</td></tr>
           <tr><th>Parent class:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></td></tr>
-          <tr><th>Disjoint classes:</th> <td><a href="http://www.w3.org/ns/odrl/2/Agreement">odrl:Agreement</a>, <a href="http://www.w3.org/ns/odrl/2/Offer">odrl:Offer</a>, <a href="http://www.w3.org/ns/odrl/2/Privacy">odrl:Privacy</a>, <a href="http://www.w3.org/ns/odrl/2/Request">odrl:Request</a>, <a href="http://www.w3.org/ns/odrl/2/Ticket">odrl:Ticket</a>, <a href="http://www.w3.org/ns/odrl/2/Assertion">odrl:Assertion</a>, <a href="https://w3id.org/oac#Requirement">oac:Requirement</a></td></tr>
+          <tr><th>Disjoint classes:</th> <td><a href="http://www.w3.org/ns/odrl/2/Agreement">odrl:Agreement</a>, <a href="http://www.w3.org/ns/odrl/2/Offer">odrl:Offer</a>, <a href="http://www.w3.org/ns/odrl/2/Privacy">odrl:Privacy</a>, <a href="http://www.w3.org/ns/odrl/2/Request">odrl:Request</a>, <a href="http://www.w3.org/ns/odrl/2/Ticket">odrl:Ticket</a>, <a href="http://www.w3.org/ns/odrl/2/Assertion">odrl:Assertion</a>, <a href="https://w3id.org/oac#RequirementPolicy">oac:RequirementPolicy</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -1099,7 +1099,7 @@ odrl:permission [
     </p>
     <div class="example"><div class="example-title marker"><span>Example 3.1</span></div>
       <pre id="ex31" class="hljs" aria-busy="false" aria-live="polite">
-&lt;https://example.com/preference1> a oac:Preference ;
+&lt;https://example.com/preference1> a oac:PreferencePolicy ;
   dct:description "Preference to read behavioral data for research and development purposes" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-02T11:08:05"^^xsd:dateTime ;
