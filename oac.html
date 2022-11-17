@@ -1150,8 +1150,8 @@ odrl:permission [
       <a class="self-link" aria-label="§" href="./oac.html#x3-3-offer-policy"></a>
     </h3>
     <p>
-      User A issued an Offer that obliges its assignee to read identifier data only for identity verification 
-      and permits read access operations over its behavioral data for research and development.
+      User A issued an Offer that requires its assignee to read identifier data only for identity verification 
+      and allows read access operations over its behavioral data for research and development.
       This offer is a combination that derives from the <code>https://example.com/preference1</code> and 
       <code>https://example.com/requirement1</code> policies as indicated by the <code>dct:source</code> property.
     </p>
@@ -1165,17 +1165,23 @@ odrl:permission [
   dct:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
   odrl:uid ex:offer1 ;
   odrl:profile oac: ;
-  odrl:assigner ex:userA ;
-  odrl:action oac:Read ;
   odrl:permission [
+    dpv:hasContext dpv:Optional ;
+    odrl:assigner ex:userA ;
     odrl:target oac:Behavioral ;
+    odrl:action oac:Read ;
     odrl:constraint [
+      dct:title "Purpose for access is to conduct research and development." ;
       odrl:leftOperand oac:Purpose ;
       odrl:operator odrl:isA ;
       odrl:rightOperand dpv:ResearchAndDevelopment ] ] ;
-  odrl:obligation [
+  odrl:permission [
+    dpv:hasContext dpv:Required ;
+    odrl:assigner ex:userA ;
     odrl:target oac:Identifier ;
+    odrl:action oac:Read ;
     odrl:constraint [
+      dct:title "Purpose for access is to verify the identity of the assigner." ;  
       odrl:leftOperand oac:Purpose ;
       odrl:operator odrl:isA ;
       odrl:rightOperand dpv:IdentityVerification ] ] .
@@ -1188,7 +1194,7 @@ odrl:permission [
       <a class="self-link" aria-label="§" href="./oac.html#x3-4-request-policy"></a>
     </h3>
     <p>
-      User B makes a request to use behavioral data for research and development.
+      User B makes a request to use behavioral data for research and development in the context of project X.
     </p>
     <div class="example"><div class="example-title marker"><span>Example 3.4</span></div>
       <pre id="ex34" class="hljs" aria-busy="false" aria-live="polite">    
@@ -1203,9 +1209,13 @@ odrl:permission [
     odrl:action oac:Use ;
     odrl:target oac:Behavioral ;
     odrl:constraint [
+      dct:title "Purpose for processing is to conduct research in the R&D project X." ;
       odrl:leftOperand oac:Purpose ;
-      odrl:operator odrl:isA ;
-      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      odrl:operator odrl:eq ;
+      odrl:rightOperand ex:RDProjectX ] ] .
+
+ex:RDProjectX a dpv:ResearchAndDevelopment ;
+  rdfs:label "Conduct research in the R&D project X." .
       </pre>
     </div>
 
@@ -1222,21 +1232,25 @@ odrl:permission [
     <div class="example"><div class="example-title marker"><span>Example 3.5</span></div>
       <pre id="ex35" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/agreement1> a odrl:Agreement ;
+  odrl:profile oac: ;  
   dct:description "Agreement to read behavioral data for research and development purposes" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-08T18:13:37"^^xsd:dateTime ;
   odrl:uid ex:agreement1 ;
   dct:references ex:offer1, ex:request1 ;
-  odrl:profile oac: ;
+  dpv:hasDataSubject ex:userA ;
+  dpv:hasDataController ex:userB ;
+  dpv:hasLegalBasis dpv:Consent ;
   odrl:permission [
     odrl:assigner ex:userA ;
     odrl:assignee ex:userB ;
     odrl:action oac:Read ;
     odrl:target oac:Behavioral ;
     odrl:constraint [
+      dct:title "Purpose for processing is to conduct research in the R&D project X." ;
       odrl:leftOperand oac:Purpose ;
-      odrl:operator odrl:isA ;
-      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      odrl:operator odrl:eq ;
+      odrl:rightOperand ex:RDProjectX ] ] .
       </pre>
     </div>
 
