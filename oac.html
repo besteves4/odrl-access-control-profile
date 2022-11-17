@@ -798,13 +798,13 @@
       <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
-          <tr><th>Label:</th> <td>Requirement</td></tr>
-          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Requirement">https://w3id.org/oac#Requirement</a></td></tr>
+          <tr><th>Label:</th> <td>Requirement Policy</td></tr>
+          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#RequirementPolicy">https://w3id.org/oac#RequirementPolicy</a></td></tr>
           <tr><th>Definition:</th> <td>A Requirement Policy is a hard rule that expresses the assigner's preferences over an Asset which MUST be satisfied.</td></tr>
-          <tr><th>Note:</th> <td>A Requirement Policy MUST contain at least one Duty rule, an Action, a target Asset and a Party with Assigner function (in the same Duty). The Requirement Policy MAY contain a Party with Assignee and/or Service functions, but MUST not grant any privileges to those Parties.</td></tr>
+          <tr><th>Note:</th> <td>A Requirement Policy MUST contain at least one Permission or Prohibition rule, an Action, a target Asset and a Party with Assigner function (in the same Permission or Prohibition). The Requirement Policy MAY contain a Duty, Party with Assignee, Application and/or Service functions, but MUST not grant any privileges to those Parties.</td></tr>
           <tr><th>Example:</th> <td>If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions.</td></tr>
           <tr><th>Parent class:</th> <td><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></td></tr>
-          <tr><th>Disjoint classes:</th> <td><a href="http://www.w3.org/ns/odrl/2/Agreement">odrl:Agreement</a>, <a href="http://www.w3.org/ns/odrl/2/Offer">odrl:Offer</a>, <a href="http://www.w3.org/ns/odrl/2/Privacy">odrl:Privacy</a>, <a href="http://www.w3.org/ns/odrl/2/Request">odrl:Request</a>, <a href="http://www.w3.org/ns/odrl/2/Ticket">odrl:Ticket</a>, <a href="http://www.w3.org/ns/odrl/2/Assertion">odrl:Assertion</a>, <a href="https://w3id.org/oac#Preference">oac:Preference</a></td></tr>
+          <tr><th>Disjoint classes:</th> <td><a href="http://www.w3.org/ns/odrl/2/Agreement">odrl:Agreement</a>, <a href="http://www.w3.org/ns/odrl/2/Offer">odrl:Offer</a>, <a href="http://www.w3.org/ns/odrl/2/Privacy">odrl:Privacy</a>, <a href="http://www.w3.org/ns/odrl/2/Request">odrl:Request</a>, <a href="http://www.w3.org/ns/odrl/2/Ticket">odrl:Ticket</a>, <a href="http://www.w3.org/ns/odrl/2/Assertion">odrl:Assertion</a>, <a href="https://w3id.org/oac#PreferencePolicy">oac:PreferencePolicy</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -1127,13 +1127,13 @@ odrl:permission [
     </p>
     <div class="example"><div class="example-title marker"><span>Example 3.2</span></div>
       <pre id="ex32" class="hljs" aria-busy="false" aria-live="polite">
-&lt;https://example.com/requirement1> a oac:Requirement ;
+&lt;https://example.com/requirement1> a oac:RequirementPolicy ;
   dct:description "Requirement to read identifier data for identity verification purposes" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-08T16:30:15"^^xsd:dateTime ;
   odrl:uid ex:requirement1 ;
   odrl:profile oac: ;
-  odrl:obligation [
+  odrl:permission [
     odrl:assigner ex:userA ;
     odrl:target oac:Identifier ;
     odrl:action oac:Read ;

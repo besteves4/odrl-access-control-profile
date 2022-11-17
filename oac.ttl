@@ -48,7 +48,7 @@ oac:oac-ttl a profile:ResourceDescriptor ;
     skos:prefLabel "ODRL Access Control profile concepts"@en ;
     skos:scopeNote "ODRL Access Control profile terms based on the DPV and ACL vocabularies"@en ;
     skos:member oac:PreferencePolicy ;
-	skos:member oac:Requirement ;
+	skos:member oac:RequirementPolicy ;
 	skos:member oac:PersonalData ;
 	skos:member oac:Access ;
     skos:member oac:Processing ;
@@ -68,12 +68,12 @@ oac:PreferencePolicy rdfs:subClassOf odrl:Policy ;
 	skos:note "A Preference Policy MUST contain at least one Permission or Prohibition rule, an Action, a target Asset and a Party with Assigner function (in the same Permission or Prohibition). The Preference Policy MAY contain a Party with Assignee, Application and/or Service functions, but MUST not grant any privileges to those Parties."@en ;
 	skos:example "If a preference policy set by a party A does not match a request policy from party B, the request can still be accepted if party A accepts party B's request conditions."@en .
 
-oac:Requirement rdfs:subClassOf odrl:Policy ;
-	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:Preference ;
+oac:RequirementPolicy rdfs:subClassOf odrl:Policy ;
+	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:PreferencePolicy ;
 	rdfs:isDefinedBy oac: ;
-	rdfs:label "Requirement"@en ;
+	rdfs:label "Requirement Policy"@en ;
 	skos:definition "A Requirement Policy is a hard rule that expresses the assigner's preferences over an Asset which MUST be satisfied."@en ;
-	skos:note "A Requirement Policy MUST contain at least one Duty rule, an Action, a target Asset and a Party with Assigner function (in the same Duty). The Requirement Policy MAY contain a Party with Assignee and/or Service functions, but MUST not grant any privileges to those Parties."@en ;
+	skos:note "A Requirement Policy MUST contain at least one Permission or Prohibition rule, an Action, a target Asset and a Party with Assigner function (in the same Permission or Prohibition). The Requirement Policy MAY contain a Duty, Party with Assignee, Application and/or Service functions, but MUST not grant any privileges to those Parties."@en ;
 	skos:example "If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions."@en .
 
 oac:PersonalData a dpv:PersonalData, odrl:Asset, skos:Concept ;
