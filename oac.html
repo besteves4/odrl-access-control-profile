@@ -372,6 +372,11 @@
                       <bdi class="secno">2.1.2.2 </bdi>Subclass
                     </a>
                   </li>
+                  <li class="tocline">
+                    <a class="tocxref" href="./oac.html#x2-1-2-3-semantic">
+                      <bdi class="secno">2.1.2.3 </bdi>Semantic
+                    </a>
+                  </li>
                 </ol>
               </li>
             </ol>
@@ -847,6 +852,22 @@
         </tbody>
       </table>
     </section>
+    <section id="semantic">
+      <h5 id="x2-1-2-3-semantic">
+        <bdi class="secno">2.1.2.3 </bdi>Semantic
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-3-semantic"></a>
+      </h5>
+      <div class="issue">TODO: add description</div>
+      <table class="def propdef">
+        <tbody>
+          <tr><th>Label:</th> <td>Semantic</td></tr>
+          <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#semantic">https://w3id.org/oac#semantic</a></td></tr>
+          <tr><th>Definition:</th> <td>Indicates that a given Left Operand is equal to, an instance or a subclass of the Right Operand of the Constraint.</td></tr>
+          <tr><th>Example:</th> <td>The purpose constraint of a rule can be research and development, an instance of research and development or one of its subclasses such as academic research, non-commercial research or commercial research.</td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></a></td></tr>
+        </tbody>
+      </table>
+    </section>
     <section id="party-roles">
       <h4 id="x2-1-3-party-roles">
         <bdi class="secno">2.1.3 </bdi>Party roles
@@ -1265,7 +1286,7 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
     </p>
     <div class="example"><div class="example-title marker"><span>Example 3.6</span></div>
       <pre id="ex36" class="hljs" aria-busy="false" aria-live="polite">    
-&lt;https://example.com/policy2> a oac:Preference ;
+&lt;https://example.com/policy2> a oac:PreferencePolicy ;
   dct:description "Prohibition to write behavioral data if the purpose is not commercial research" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-09T09:14:10"^^xsd:dateTime ;
@@ -1293,7 +1314,7 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
     </p>
     <div class="example"><div class="example-title marker"><span>Example 3.7</span></div>
       <pre id="ex37" class="hljs" aria-busy="false" aria-live="polite">    
-&lt;https://example.com/policy3> a oac:Preference ;
+&lt;https://example.com/policy3> a oac:PreferencePolicy ;
   dct:description "Permission to write behavioral data if the purpose is a subclass of research and development" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-09T09:17:13"^^xsd:dateTime ;

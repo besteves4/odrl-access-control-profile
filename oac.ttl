@@ -58,6 +58,7 @@ oac:oac-ttl a profile:ResourceDescriptor ;
 	skos:member oac:Entity ;
 	skos:member oac:isNotA ;
 	skos:member oac:subclass ;
+	skos:member oac:semantic ;
 	skos:member oac:service .
 
 oac:PreferencePolicy rdfs:subClassOf odrl:Policy ;
@@ -138,6 +139,12 @@ oac:subclass a odrl:Operator ;
     rdfs:label "Subclass"@en ;
 	skos:definition "Indicates that a given Left Operand is a subclass of the Right Operand of the Constraint."@en ;
     skos:example "The purpose constraint of a rule can be a subclass of research and development such as academic research, non-commercial research or commercial research."@en .
+
+oac:semantic a odrl:Operator ;
+	rdfs:isDefinedBy oac: ;
+    rdfs:label "Semantic"@en ;
+	skos:definition "Indicates that a given Left Operand is equal to, an instance or a subclass of the Right Operand of the Constraint."@en ;
+    skos:example "The purpose constraint of a rule can be research and development, an instance of research and development or one of its subclasses such as academic research, non-commercial research or commercial research."@en .
 
 oac:service rdfs:subPropertyOf odrl:function ;
 	rdfs:isDefinedBy oac: ;
