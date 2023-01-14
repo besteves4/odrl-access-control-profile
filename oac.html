@@ -287,7 +287,7 @@
   <section id="abstract" class="introductory"><h2>Abstract</h2>
     <p>
       This document presents a new profile, the ODRL Profile for Access Control (OAC), that extends the WAC access control list 
-      mechanism by using the Open Digital Rights Language (ODRL) to define data sharing policies that express permissions and / or 
+      mechanism by using the Open Digital Rights Language (ODRL) to define access control policies that express permissions and / or 
       prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV)
       as a controlled vocabulary for invoking privacy and data protection-specific terms.
     </p>
@@ -580,13 +580,6 @@
         <a class="tocxref" href="./oac.html#references">
           <bdi class="secno">C. </bdi>References
         </a>
-        <ol class="toc">
-          <li class="tocline">
-            <a class="tocxref" href="./oac.html#informative-references">
-              <bdi class="secno">C.1 </bdi>Informative references
-            </a>
-          </li>
-        </ol>
       </li>
     </ol>
   </nav>
@@ -596,28 +589,36 @@
       <bdi class="secno">1. </bdi>Introduction
       <a class="self-link" aria-label="§" href="./oac.html#intro"></a>
     </h2>
-    <div class="issue">TODO: update intro</div>
     <p>
+      The Web Access Control (WAC) specification 
+      [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-wac" title="Web Access Control">wac</a></cite>]
+      is a <i>"decentralized cross-domain access control system"</i> that uses Linked Data 
+      [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-ld" title="Linked Data">ld</a></cite>]
+      and URIs to store authorisation conditions within Access Control Lists (ACL) to define access of Web agents to Web resources.
+      Amongst other uses, it is used in the Solid ecosystem as a tool to determine the access to data stored within Solid Pods - 
+      therefore, in Solid the user controlling the ACL is the entity responsible for deciding who has access to the data.
       Solid is a specification 
       [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-solid-protocol" title="Solid Protocol">solid-protocol</a></cite>]
       for decentralised personal data stores (called `Pods') 
-      that uses linked data and Web standards to achieve user control and interoperability. The access to data stored within 
-      Solid Pods is governed by the Web Access Control (WAC) specification 
-      [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-wac" title="Web Access Control">wac</a></cite>]
-      which uses IRIs to represent resources and agents, and stores authorisation statements within Access Control Lists (ACL) 
-      defined per resource or inherited from the parent resource. Therefore, in Solid, the user controlling the ACL is the entity responsible 
-      for deciding who has access to the data.
+      that uses Web standards and semantic technologies to achieve user control and interoperability.
+      <b>
+        Therefore, the usage of the ODRL profile for Access Control (OAC) will be demonstrated through the Solid ecosystem
+        as it is an example implementation of a decentralised environment for the sharing of personal data.
+        However, it should be clear that OAC is not Solid-dependent and can be deployed in other environments as it does not
+        rely in any Solid-specific vocabularies.
+      </b>
     </p>
     <p>
       Given that Solid provides a way for personal data to be stored and managed by individuals, it is important to consider the impact 
       and application of data protection and privacy laws such as the European General Data Protection Regulation (GDPR)
+      [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-gdpr" title="General Data Protection Regulation">gdpr</a></cite>]
       that define specific concepts and obligations for how personal data can be collected, stored, used, and shared. In addition, 
       such laws also specify various rights and the legal basis used to justify using the data and the conditions for their validity. 
       In particular, GDPR's Articles 13 and 14 require controllers to provide information such as identity, purpose, personal data 
-      categories, legal basis, and recipients where they collect personal data directly or indirectly from individuals.
+      categories, legal basis, and recipients when they collect personal data directly or indirectly from individuals.
     </p>
     <p>
-      Applied to Solid, this information can be presented using conventional methods, such as a notice provided on the data requester's 
+      Applied to Solid, this information can be presented using conventional methods, such as a notice provided through the data requester's 
       website, and the resulting authorisation decision made by the individual stored within the ACL. However, for individuals to control 
       their data practices, the Solid Pod must contain this information as well so that the individual has the opportunity to:
     </p>
@@ -635,9 +636,12 @@
     </p>
     <p>
       To achieve these goals, the following requirements motivate our approach to extend Solid’s existing ACL mechanism 
-      using the ODRL Vocabulary and Expression specification to define ‘sticky policies’ that express permissions and / or 
-      prohibitions associated with data stored in a Solid Pod and utilises DPV as a controlled vocabulary for invoking privacy 
-      and data protection-specific terms.
+      using the ODRL Vocabulary and Expression 
+      [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-odrl-vocab" title="ODRL Vocabulary and Expression 2.2">odrl-vocab</a></cite>]
+      specification to define access control policies that express permissions and / or 
+      prohibitions associated with data stored in a Solid Pod and utilises the Data Privacy Vocabulary (DPV)
+      [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dpv" title="Data Privacy Vocabulary">dpv</a></cite>]
+      as a controlled vocabulary for invoking privacy and data protection-specific terms.
     </p>
     <p class="tab">
       R1. Support specifying user preferences as policies.
@@ -1683,7 +1687,6 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
 </section>
 
 <section id="references" class="appendix"><!--OddPage--><h2 id="a-references"><bdi class="secno">C.<!---0.910070%--> </bdi>References<!---0.910070%--><a class="self-link" aria-label="§" href="./oac.html#references"></a></h2><section id="informative-references">
-  <h3 id="a-1-informative-references"><bdi class="secno">C.1<!---0.910070%--> </bdi>Informative references<!---0.910070%--><a class="self-link" aria-label="§" href="./oac.html#informative-references"></a></h3>
   <dl class="bibliography">
     <dt id="bib-acl">[acl]</dt>
     <dd>
@@ -1714,11 +1717,29 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
     </dd>
     <dt id="bib-dpv">[dpv]</dt>
     <dd>
-      <a href="http://www.w3.org/ns/dpv#">
-        <cite>Data Privacy Vocabulary (DPV) version 0.2</cite>
-      </a>. Axel Polleres; Beatriz Esteves; Bert Bos; Bud Bruegger; Elmar Kiesling; Eva Schlehahn; Fajar J. Ekaputra; Georg P. Krog; Harshvardhan J. Pandit; Javier D. Fernández; Mark Lizar; Paul Ryan; Piero Bonatti; Ramisa Gachpaz Hamed; Rigo Wenning; Rob Brennan; Simon Steyskal. 21 June 2021. URL: 
-      <a href="http://www.w3.org/ns/dpv#">
-        http://www.w3.org/ns/dpv#
+      <a href="https://w3id.org/dpv"><cite>Data Privacy Vocabulary (DPV) version 1</cite></a>.
+      Axel Polleres; Beatriz Esteves; Bert Bos; Bud Bruegger; David Hickey; Elmar Kiesling; Eva Schlehahn; Fajar J. Ekaputra; Georg P. Krog; 
+      Harshvardhan J. Pandit; Javier D. Fernández; Julian Flake; Mark Lizar; Paul Ryan; Piero Bonatti; Ramisa Gachpaz Hamed; Rigo Wenning; Rob Brennan; 
+      Simon Steyskal. 5 December 2022. URL: 
+      <a href="https://w3id.org/dpv">
+        https://w3id.org/dpv
+      </a>
+    </dd>
+    <dt id="bib-gdpr">[gdpr]</dt>
+    <dd>
+      Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the 
+      processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation). URL: 
+      <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">
+        https://eur-lex.europa.eu/eli/reg/2016/679/oj
+      </a>
+    </dd>
+    <dt id="bib-ld">[ld]</dt>
+    <dd>
+      <a href="https://www.w3.org/DesignIssues/LinkedData.html">
+        <cite>Linked Data</cite>
+      </a>. Tim Berners-Lee. 18 June 2009. URL: 
+      <a href="https://www.w3.org/DesignIssues/LinkedData.html">
+        https://www.w3.org/DesignIssues/LinkedData.html
       </a>
     </dd>
 <!--     <dt id="bib-foaf">[foaf]</dt>
