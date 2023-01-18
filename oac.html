@@ -226,9 +226,9 @@
   </p>
   <div class="head">
     <h1 id="title" class="title">ODRL Profile for Access Control</h1>
-    <h2 style="color: red;">
-      Release
-      <time class="dt-published" datetime="2022-11-02">XX November 2022</time>
+    <h2>
+      Draft release
+      <time class="dt-published" datetime="2022-12-21">12 December 2022</time>
     </h2>
     <dl>
       <b>Version:</b> 0.2
@@ -457,75 +457,80 @@
         </ol>
       </li>
       <li class="tocline">
+        <a class="tocxref" href="./oac.html#validation">
+          <bdi class="secno">3. </bdi>Validation of policies with SHACL
+        </a>
+      </li>
+      <li class="tocline">
         <a class="tocxref" href="./oac.html#matching">
-          <bdi class="secno">3. </bdi>Matching requests for data
+          <bdi class="secno">4. </bdi>Matching requests for data
         </a>
         <ol class="toc">
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-1-mapping-dpv-pd">
-              <bdi class="secno">3.1 </bdi>Associate resources with DPV-PD types
+            <a class="tocxref" href="./oac.html#x4-1-mapping-dpv-pd">
+              <bdi class="secno">4.1 </bdi>Associate resources with DPV-PD types
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-2-mapping-acl-dpv">
-              <bdi class="secno">3.2 </bdi>Mapping ACL verbs to DPV processing
+            <a class="tocxref" href="./oac.html#x4-2-mapping-acl-dpv">
+              <bdi class="secno">4.2 </bdi>Mapping ACL verbs to DPV processing
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-3-mapping-matching">
-              <bdi class="secno">3.3 </bdi>Mapping results of the matching with ACP/ACL 
+            <a class="tocxref" href="./oac.html#x4-3-mapping-matching">
+              <bdi class="secno">4.3 </bdi>Mapping results of the matching with ACP/ACL 
             </a>
           </li>
         </ol>
       </li>
       <li class="tocline">
         <a class="tocxref" href="./oac.html#examples">
-          <bdi class="secno">3. </bdi>Examples
+          <bdi class="secno">5. </bdi>Examples
         </a>
         <ol class="toc">
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-1-preference-policy">
-              <bdi class="secno">3.1 </bdi>Preference policy
+            <a class="tocxref" href="./oac.html#x5-1-preference-policy">
+              <bdi class="secno">5.1 </bdi>Preference policy
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-2-requirement-policy">
-              <bdi class="secno">3.2 </bdi>Requirement policy
+            <a class="tocxref" href="./oac.html#x5-2-requirement-policy">
+              <bdi class="secno">5.2 </bdi>Requirement policy
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-3-offer-policy">
-              <bdi class="secno">3.3 </bdi>Offer policy
+            <a class="tocxref" href="./oac.html#x5-3-offer-policy">
+              <bdi class="secno">5.3 </bdi>Offer policy
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-4-request-policy">
-              <bdi class="secno">3.4 </bdi>Request policy
+            <a class="tocxref" href="./oac.html#x5-4-request-policy">
+              <bdi class="secno">5.4 </bdi>Request policy
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-5-agreement-policy">
-              <bdi class="secno">3.5 </bdi>Agreement policy
+            <a class="tocxref" href="./oac.html#x5-5-agreement-policy">
+              <bdi class="secno">5.5 </bdi>Agreement policy
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-6-isNotA-operator">
-              <bdi class="secno">3.6 </bdi>Policy with is not a operator
+            <a class="tocxref" href="./oac.html#x5-6-isNotA-operator">
+              <bdi class="secno">5.6 </bdi>Policy with is not a operator
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-7-subclass-operator">
-              <bdi class="secno">3.7 </bdi>Policy with subclass operator
+            <a class="tocxref" href="./oac.html#x5-7-subclass-operator">
+              <bdi class="secno">5.7 </bdi>Policy with subclass operator
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-8-service">
-              <bdi class="secno">3.8 </bdi>Policy with service party
+            <a class="tocxref" href="./oac.html#x5-8-service">
+              <bdi class="secno">5.8 </bdi>Policy with service party
             </a>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x3-9-application-assignee">
-              <bdi class="secno">3.9 </bdi>Policy with application and assignee parties
+            <a class="tocxref" href="./oac.html#x5-9-application-assignee">
+              <bdi class="secno">5.9 </bdi>Policy with application and assignee parties
             </a>
           </li>
 <!--           <li class="tocline">
@@ -743,6 +748,11 @@
                 <td>dpv</td>
                 <td>https://w3id.org/dpv#</td>
                 <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dpv" title="Data Privacy Vocabulary (DPV) version 1">dpv</a></cite>]</td>
+              </tr>
+              <tr>
+                <td>dpv-pd</td>
+                <td>https://w3id.org/dpv/dpv-pd#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dpv-pd" title="DPV-PD: Extended Personal Data categories for DPV version 1">dpv-pd</a></cite>]</td>
               </tr>
               <tr>
                 <td>acl</td>
@@ -1052,24 +1062,50 @@
     </section>
   </section>
 
+  <section id="validation">
+    <h2>
+      <bdi class="secno">3. </bdi>Validation of policies with SHACL
+      <a class="self-link" aria-label="§" href="./oac.html#validation"></a>
+    </h2>
+  </section>
+
   <section id="matching">
-    <h2 id="examples">
-      <bdi class="secno">3. </bdi>Matching requests for data
+    <h2>
+      <bdi class="secno">4. </bdi>Matching requests for data
       <a class="self-link" aria-label="§" href="./oac.html#matching"></a>
     </h2>
 
-    <h3 id="x3-1-mapping-dpv-pd">
-      <bdi class="secno">3.1 </bdi>Associate resources with DPV-PD types
+    <p>
+      In this section, the followed architecture to implement the usage of OAC in Solid is discussed.
+    </p>
+    <p>
+      The <a href="https://github.com/besteves4/solid-sope" target="_blank">SOPE</a> (Solid's ODRL access control Policies Editor) application can be used to 
+      automatically generate OAC policies and store them in a specific container of a Solid Pod.
+    </p>
+    <p>
+      To match data requests for specific data types, when an app, service or user generates and stores data in a Pod, in addition to the storage operation,
+      needs to label the generated resources with the data type they contain. For this, we suggest the usage of the 
+      <a href="https://w3id.org/dpv/dpv-pd">Extended Personal Data categories for DPV (DPV-PD)</a> specification, which contains a set of more than 200
+      personal data types. 
+    </p>
+    <center>
+      <img src="./assets/matching-sequence-diagram.png" alt="Matching sequence diagram" width="700px">
+    </center>
+
+    <h3 id="x4-1-mapping-dpv-pd">
+      <bdi class="secno">4.1 </bdi>Associate resources with DPV-PD types
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-1-mapping-dpv-pd"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x4-1-mapping-dpv-pd"></a>
     </h3>
 
-    <div class="note">Associate resources with the data they contain -> :resource dpv:hasData / dpv:hasPersonalData :data-category</div>
+    <p>Using <a href="https://w3id.org/dpv/dpv-pd">DPV-PD</a> it is possible to associate Solid Pod resources with the data type they contain.</p>
+    <div class="example"><code>&lt;https://my-solid-pod/private/health/file1> dpv:hasPersonalData dpv-pd:HealthHistory .</code></div>
+    <div class="note">NOTE: More instructions in this procedure will be added in the near future.</div>
 
-    <h3 id="x3-2-mapping-acl-dpv">
-      <bdi class="secno">3.2 </bdi>Mapping ACL verbs to DPV processing
+    <h3 id="x4-2-mapping-acl-dpv">
+      <bdi class="secno">4.2 </bdi>Mapping ACL verbs to DPV processing
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-2-mapping-acl-dpv"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x4-2-mapping-acl-dpv"></a>
     </h3>
 
     <table class="def">
@@ -1085,10 +1121,10 @@
     <div class="issue">The Solid WAC specification has a proposal to include new ACL verbs: acl:Update, acl:Create, acl:Delete - see <a href="https://github.com/solid/web-access-control-spec/issues/85" target="_blank">solid/web-access-control-spec/issues/85</a></div>
     <div class="issue">Issue in the Solid WAC specification to remove acl:Control access mode - see <a href="https://github.com/solid/web-access-control-spec/issues/94" target="_blank">solid/web-access-control-spec/issues/94</a></div>
 
-    <h3 id="x3-3-mapping-matching">
-      <bdi class="secno">3.3 </bdi>Mapping results of the matching with ACP/ACL
+    <h3 id="x4-3-mapping-matching">
+      <bdi class="secno">4.3 </bdi>Mapping results of the matching with ACP/ACL
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-3-mapping-matching"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x4-3-mapping-matching"></a>
     </h3>
 
     <div class="note">new properties might be needed in ACP/ACL to connect the granted authorization with the users policies, app request, …</div>
@@ -1140,20 +1176,20 @@ odrl:permission [
 
   <section id="examples">
     <h2 id="examples">
-      <bdi class="secno">3. </bdi>Examples
+      <bdi class="secno">5. </bdi>Examples
       <a class="self-link" aria-label="§" href="./oac.html#examples"></a>
     </h2>
 
-    <h3 id="x3-1-preference-policy">
-      <bdi class="secno">3.1 </bdi>Preference policy
+    <h3 id="x5-1-preference-policy">
+      <bdi class="secno">5.1 </bdi>Preference policy
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-1-user-preference-1"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-1-user-preference-1"></a>
     </h3>
     <p>
       User A issued a Preference that permits read access operations over its behavioral data 
       for the purpose of research and development.
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.1</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.1</span></div>
       <pre id="ex31" class="hljs" aria-busy="false" aria-live="polite">
 &lt;https://example.com/preference1> a oac:PreferencePolicy ;
   dct:description "Preference to read behavioral data for research and development purposes" ;
@@ -1172,16 +1208,16 @@ odrl:permission [
       </pre>
     </div>
 
-    <h3 id="x3-2-requirement-policy">
-      <bdi class="secno">3.2 </bdi>Requirement policy
+    <h3 id="x5-2-requirement-policy">
+      <bdi class="secno">5.2 </bdi>Requirement policy
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-2-requirement-policy"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-2-requirement-policy"></a>
     </h3>
     <p>
       User A issued a Requirement that obliges its assignee to read identifier data 
       only for the purpose of identity verification.
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.2</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.2</span></div>
       <pre id="ex32" class="hljs" aria-busy="false" aria-live="polite">
 &lt;https://example.com/requirement1> a oac:RequirementPolicy ;
   dct:description "Requirement to read identifier data for identity verification purposes" ;
@@ -1200,10 +1236,10 @@ odrl:permission [
       </pre>
     </div>
 
-    <h3 id="x3-3-offer-policy">
-      <bdi class="secno">3.3 </bdi>Offer policy
+    <h3 id="x5-3-offer-policy">
+      <bdi class="secno">5.3 </bdi>Offer policy
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-3-offer-policy"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-3-offer-policy"></a>
     </h3>
     <p>
       User A issued an Offer that requires its assignee to read identifier data only for identity verification 
@@ -1211,7 +1247,7 @@ odrl:permission [
       This offer is a combination that derives from the <code>https://example.com/preference1</code> and 
       <code>https://example.com/requirement1</code> policies as indicated by the <code>dct:source</code> property.
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.3</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.3</span></div>
       <pre id="ex33" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/offer1> a odrl:Offer ;
   dct:description """Offer to read identifier data for identity verification 
@@ -1244,15 +1280,15 @@ odrl:permission [
       </pre>
     </div>
 
-    <h3 id="x3-4-request-policy">
-      <bdi class="secno">3.4 </bdi>Request policy
+    <h3 id="x5-4-request-policy">
+      <bdi class="secno">5.4 </bdi>Request policy
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-4-request-policy"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-4-request-policy"></a>
     </h3>
     <p>
       User B makes a request to use behavioral data for research and development in the context of project X.
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.4</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.4</span></div>
       <pre id="ex34" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/request1> a odrl:Request;
   dct:description "Request to use behavioral data for research and development purposes" ;
@@ -1275,17 +1311,17 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       </pre>
     </div>
 
-    <h3 id="x3-5-agreement-policy">
-      <bdi class="secno">3.5 </bdi>Agreement policy
+    <h3 id="x5-5-agreement-policy">
+      <bdi class="secno">5.5 </bdi>Agreement policy
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-5-agreement-policy"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-5-agreement-policy"></a>
     </h3>
     <p>
       User A and B agree to allow read access over user A's behavioral data for research and development.
       This agreement is the result of the matching of <code>https://example.com/offer1</code> and 
       <code>https://example.com/request1</code>, as indicated by the <code>dct:references</code> property.
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.5</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.5</span></div>
       <pre id="ex35" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/agreement1> a odrl:Agreement ;
   odrl:profile oac: ;  
@@ -1310,16 +1346,16 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       </pre>
     </div>
 
-    <h3 id="x3-6-isNotA-operator">
-      <bdi class="secno">3.6 </bdi>Policy with is not a operator
+    <h3 id="x5-6-isNotA-operator">
+      <bdi class="secno">5.6 </bdi>Policy with is not a operator
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-6-isNotA-operator"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-6-isNotA-operator"></a>
     </h3>
     <p>
       User A prohibits write access operations over its behavioral data if the purpose
       is not commercial research.
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.6</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.6</span></div>
       <pre id="ex36" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy2> a oac:PreferencePolicy ;
   dct:description "Prohibition to write behavioral data if the purpose is not commercial research" ;
@@ -1338,16 +1374,16 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       </pre>
     </div>
 
-    <h3 id="x3-7-subclass-operator">
-      <bdi class="secno">3.7 </bdi>Policy with subclass operator
+    <h3 id="x5-7-subclass-operator">
+      <bdi class="secno">5.7 </bdi>Policy with subclass operator
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-7-subclass-operator"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-7-subclass-operator"></a>
     </h3>
     <p>
       User A allows write access operations over its behavioral data if the purpose
       is a subclass of research and development such as academic research, non-commercial research or commercial research.
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.7</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.7</span></div>
       <pre id="ex37" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy3> a oac:PreferencePolicy ;
   dct:description "Permission to write behavioral data if the purpose is a subclass of research and development" ;
@@ -1366,16 +1402,16 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       </pre>
     </div>
 
-    <h3 id="x3-8-service">
-      <bdi class="secno">3.8 </bdi>Policy with service party
+    <h3 id="x5-8-service">
+      <bdi class="secno">5.8 </bdi>Policy with service party
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-8-service"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-8-service"></a>
     </h3>
     <p>
       User A allows write access operations over its behavioral data for the purpose
       of research and development using <code>https://example.com/serviceA</code> .
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.8</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.8</span></div>
       <pre id="ex38" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy4> a oac:PreferencePolicy ;
   dct:description "Permission to write behavioral data if the purpose research and development using service A" ;
@@ -1395,16 +1431,16 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       </pre>
     </div>
 
-    <h3 id="x3-9-application-assignee">
-      <bdi class="secno">3.9 </bdi>Policy with application and assignee parties
+    <h3 id="x5-9-application-assignee">
+      <bdi class="secno">5.9 </bdi>Policy with application and assignee parties
       <a class="self-link respec-offending-element" aria-label="§" href="./oac.html#styles" title="Broken local reference found in document." id="respec-offender-broken-local-reference-found-in-document"></a>
-      <a class="self-link" aria-label="§" href="./oac.html#x3-9-application-assignee"></a>
+      <a class="self-link" aria-label="§" href="./oac.html#x5-9-application-assignee"></a>
     </h3>
     <p>
       User A allows User B to perform write access operations over its behavioral data for the purpose
       of research and development using <code>https://example.com/applicationA</code> .
     </p>
-    <div class="example"><div class="example-title marker"><span>Example 3.9</span></div>
+    <div class="example"><div class="example-title marker"><span>Example 5.9</span></div>
       <pre id="ex38" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy5> a oac:PreferencePolicy ;
   odrl:profile oac: ;
@@ -1724,6 +1760,16 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       Simon Steyskal. 5 December 2022. URL: 
       <a href="https://w3id.org/dpv">
         https://w3id.org/dpv
+      </a>
+    </dd>
+    <dt id="bib-dpv-pd">[dpv-pd]</dt>
+    <dd>
+      <a href="https://w3id.org/dpv/dpv-pd"><cite>DPV-PD: Extended Personal Data categories for DPV version 1</cite></a>.
+      Axel Polleres; Beatriz Esteves; Bert Bos; Bud Bruegger; David Hickey; Elmar Kiesling; Eva Schlehahn; Fajar J. Ekaputra; Georg P. Krog; 
+      Harshvardhan J. Pandit; Javier D. Fernández; Julian Flake; Mark Lizar; Paul Ryan; Piero Bonatti; Ramisa Gachpaz Hamed; Rigo Wenning; Rob Brennan; 
+      Simon Steyskal. 5 December 2022. URL: 
+      <a href="https://w3id.org/dpv/dpv-pd">
+        https://w3id.org/dpv/dpv-pd
       </a>
     </dd>
     <dt id="bib-gdpr">[gdpr]</dt>
