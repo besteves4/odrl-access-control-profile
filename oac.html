@@ -640,11 +640,11 @@
       (iv) be assisted in expressing and enforcing their data sharing preferences. 
     </p>
     <p>
-      To achieve these goals, the following requirements motivate our approach to extend Solid’s existing ACL mechanism 
+      To achieve these goals, the following requirements motivate our approach to extend the existing ACL mechanism 
       using the ODRL Vocabulary and Expression 
       [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-odrl-vocab" title="ODRL Vocabulary and Expression 2.2">odrl-vocab</a></cite>]
       specification to define access control policies that express permissions and / or 
-      prohibitions associated with data stored in a Solid Pod and utilises the Data Privacy Vocabulary (DPV)
+      prohibitions associated with data stored in a decentralised storage system such as Solid Pods and utilises the Data Privacy Vocabulary (DPV)
       [<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dpv" title="Data Privacy Vocabulary">dpv</a></cite>]
       as a controlled vocabulary for invoking privacy and data protection-specific terms.
     </p>
@@ -666,6 +666,10 @@
     <p class="tab">
       R6. Support querying policies and authorisations for introspection of data use.
     </p>
+    <b>
+      Therefore, these policies will add a new layer to decentralised storage systems, which is currently missing from the Solid ecosystem for instance, 
+      that will be placed below the access authorisation layer in order to provide a richer access control mechanism to such systems.
+    </b>
 
     <section id="diag">
       <h3 id="x2-2-document-conventions">
@@ -766,31 +770,34 @@
       <bdi class="secno">2. </bdi>Profile specification
       <a class="self-link" aria-label="§" href="./oac.html#spec"></a>
     </h2>
-    <div class="issue">TODO: update description</div>
     <p>
       This ODRL profile relies on the invocation of legal concepts using DPV and ACL for the reference to access mode operations.
-      Its core concepts are Purpose, Personal Data Categories, Processing, Access and Legal Entities.
+      Its core concepts are the Preference and Requirement policies, a new set of operators to constraint the defined Purposes, Recipients, Legal Basis and 
+      Technical and Organisational Measures constraints (which will require the usage of DPV's taxonomies), new party roles to specify policies for 
+      applications and services, Processing and Access actions, as well as Personal Data Categories, and Legal Entities.
     </p>
     <section id="base-concepts">
       <h3 id="x2-1-base-concepts">
         <bdi class="secno">2.1 </bdi>Base Concepts
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-base-concepts"></a>
       </h3>
-      <div class="issue">TODO: add description</div>
+      <p>
+        In this section, two new types of policies are specified to deal with the requirements of users which wish to define rules for the processing of their
+        personal data, as well as a set of three new ODRL operators which we believe are currently missing from the ODRL Core vocabulary and two new party
+        roles to specify policies for services and applications, which are important stakeholders in decentralised systems.
+      </p>
     </section>
     <section id="policies">
       <h4 id="x2-1-1-policies">
         <bdi class="secno">2.1.1 </bdi>Policies
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-1-policies"></a>
       </h4>
-      <div class="issue">TODO: add description</div>
     </section>
     <section id="preference">
       <h5 id="x2-1-1-1-preference">
         <bdi class="secno">2.1.1.1 </bdi>Preference
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-1-1-preference"></a>
       </h5>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
           <tr><th>Label:</th> <td>Preference Policy</td></tr>
@@ -808,7 +815,6 @@
         <bdi class="secno">2.1.1.2 </bdi>Requirement
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-1-2-requirement"></a>
       </h5>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
           <tr><th>Label:</th> <td>Requirement Policy</td></tr>
@@ -826,14 +832,12 @@
         <bdi class="secno">2.1.2 </bdi>Operators
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-operators"></a>
       </h4>
-      <div class="issue">TODO: add description</div>
     </section>
     <section id="isNotA">
       <h5 id="x2-1-2-1-isNotA">
         <bdi class="secno">2.1.2.1 </bdi>Is not a
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-1-isNotA"></a>
       </h5>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
           <tr><th>Label:</th> <td>Is not a</td></tr>
@@ -849,7 +853,6 @@
         <bdi class="secno">2.1.2.2 </bdi>Subclass
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-2-subclass"></a>
       </h5>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
           <tr><th>Label:</th> <td>Subclass</td></tr>
@@ -865,7 +868,6 @@
         <bdi class="secno">2.1.2.3 </bdi>Semantic
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-2-3-semantic"></a>
       </h5>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
           <tr><th>Label:</th> <td>Semantic</td></tr>
@@ -881,14 +883,12 @@
         <bdi class="secno">2.1.3 </bdi>Party roles
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-3-party-roles"></a>
       </h4>
-      <div class="issue">TODO: add description</div>
     </section>
     <section id="service">
       <h5 id="x2-1-3-1-service">
         <bdi class="secno">2.1.3.1 </bdi>Service
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-3-1-service"></a>
       </h5>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
           <tr><th>Label:</th> <td>Service</td></tr>
@@ -904,7 +904,6 @@
         <bdi class="secno">2.1.3.2 </bdi>Application
         <a class="self-link" aria-label="§" href="./oac.html#x2-1-3-2-application"></a>
       </h5>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
         <tbody>
           <tr><th>Label:</th> <td>Application</td></tr>
@@ -920,7 +919,6 @@
         <bdi class="secno">2.2 </bdi>Personal Data
         <a class="self-link" aria-label="§" href="./oac.html#x2-2-personal-data"></a>
       </h3>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Personal Data</td></tr>
@@ -936,7 +934,6 @@
         <bdi class="secno">2.3 </bdi>Actions
         <a class="self-link" aria-label="§" href="./oac.html#x2-3-actions"></a>
       </h3>
-      <div class="issue">TODO: add description</div>
     </section>
     <section id="access">
       <h4 id="x2-3-1-access">
@@ -973,7 +970,6 @@
         <bdi class="secno">2.4 </bdi>Entities
         <a class="self-link" aria-label="§" href="./oac.html#x2-4-entities"></a>
       </h3>
-      <div class="issue">TODO: add description</div>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Entity</td></tr>
@@ -989,20 +985,19 @@
         <bdi class="secno">2.5 </bdi>Constraints
         <a class="self-link" aria-label="§" href="./oac.html#x2-5-constraints"></a>
       </h3>
-      <div class="issue">TODO: add description</div>
     </section>
     <section id="purpose">
       <h4 id="x2-5-1-purpose">
         <bdi class="secno">2.5.1 </bdi>Purpose
         <a class="self-link" aria-label="§" href="./oac.html#x2-5-1-purpose"></a>
       </h4>
-      <div class="issue">TODO: add description + note with operators that should be used</div>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Purpose</td></tr>
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Purpose">https://w3id.org/oac#Purpose</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the purpose for which the processing of personal data is permitted or prohibited.</td></tr>
             <tr><th>Example:</th> <td>DPV includes purposes such as academic research, customer care or identity verification.</td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:Purpose odrl:isA dpv:ResearchAndDevelopment</code> indicates that the purpose for the processing of personal data is an instance of <code>dpv:ResearchAndDevelopment</code>.</td></tr>
             <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></td></tr>
           </tbody>
       </table>
@@ -1012,13 +1007,13 @@
         <bdi class="secno">2.5.2 </bdi>Recipient
         <a class="self-link" aria-label="§" href="./oac.html#x2-5-2-recipient"></a>
       </h4>
-      <div class="issue">TODO: add description + note with operators that should be used</div>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Recipient</td></tr>
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Recipient">https://w3id.org/oac#Recipient</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the recipients that may receive the results of the processing of personal data.</td></tr>
             <tr><th>Example:</th> <td>A recipient can be any entity receiving personal data, including data subjects, controllers, non profit organisations or non governmental organisations.</td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:Recipient odrl:neq ex:UniversityA</code> indicates that the recipient of the personal data cannot be <code>ex:UniversityA</code>.</td></tr>
             <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#Recipient">dpv:Recipient</a></td></tr>
           </tbody>
       </table>
@@ -1028,13 +1023,13 @@
         <bdi class="secno">2.5.3 </bdi>Legal Basis
         <a class="self-link" aria-label="§" href="./oac.html#x2-5-3-legal-basis"></a>
       </h4>
-      <div class="issue">TODO: add description + note with operators that should be used</div>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Legal Basis</td></tr>
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#LegalBasis">https://w3id.org/oac#LegalBasis</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the legal basis for which the processing of personal data is permitted or prohibited.</td></tr>
             <tr><th>Example:</th> <td>A legal basis can be consent, legitimate interest or contract perfomance or jurisdiction specific legal basis such as the ones provided in GDPR Article 6.</td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:LegalBasis odrl:isA dpv:Consent</code> indicates that the legal basis for the processing should be an instance of <code>dpv:Consent</code>.</td></tr>
             <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></td></tr>
           </tbody>
       </table>
@@ -1044,13 +1039,13 @@
         <bdi class="secno">2.5.4 </bdi>Technical and Organisational Measure
         <a class="self-link" aria-label="§" href="./oac.html#x2-5-4-tom"></a>
       </h4>
-      <div class="issue">TODO: add description + note with operators that should be used</div>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Technical and Organisational Measure</td></tr>
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#TechnicalOrganisationalMeasure">https://w3id.org/oac#TechnicalOrganisationalMeasure</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the technical and/or organisational measures used to ensure a secure processing of personal data.</td></tr>
             <tr><th>Example:</th> <td>Technical measures include access control methods, encryption and other security protocols. Organisational measures include notices, guidelines, policies, agreements and other organisational procedures.</td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:TechnicalOrganisationalMeasure odrl:eq dpv:AccessControlMethod</code> indicates that an access control method should be implemented for the processing to occur.</td></tr>
             <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></td></tr>
           </tbody>
       </table>
