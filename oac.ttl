@@ -84,6 +84,12 @@ oac:PersonalData a dpv:PersonalData, odrl:Asset, skos:Concept ;
 	skos:definition "Data directly or indirectly associated or related to an individual."@en ;
 	skos:example "Data assets related to an individual include financial data such as credit card or account numbers, social data such as marital status or friends, health data such as health records or blood type and so on."@en .
 
+oac:Entity a dpv:Entity, odrl:Party, skos:Concept ;
+	rdfs:isDefinedBy oac: ;
+	rdfs:label "Entity"@en ;
+	skos:definition "A human or non-human party that constitutes an entity."@en ;
+	skos:example "Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications."@en .
+
 oac:Access a acl:Access, odrl:Action, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Access"@en ;
@@ -101,7 +107,7 @@ oac:Purpose a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
   rdfs:label "Purpose"@en ;
   skos:definition "Constraint on the purpose for which the processing of personal data is permitted or prohibited."@en ;
   skos:example "DPV includes purposes such as academic research, customer care or identity verification."@en ;
-  skos:note '''Only the odrl:isA, ..., ... operators SHOULD be used. 
+  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic operators SHOULD be used. 
   Example: oac:Purpose odrl:isA dpv:ResearchAndDevelopment indicates that
   the purpose for the processing of personal data is an instance of dpv:ResearchAndDevelopment.'''@en .
 
@@ -110,7 +116,7 @@ oac:Recipient a dpv:Recipient, odrl:LeftOperand, owl:NamedIndividual, skos:Conce
   rdfs:label "Recipient"@en ;
   skos:definition "Constraint on the recipients that may receive the results of the processing of personal data."@en ;
   skos:example "A recipient can be any entity receiving personal data, including data subjects, controllers, non profit organisations or non governmental organisations."@en ;
-  skos:note '''Only the isA, ..., ... operators SHOULD be used. 
+  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic operators SHOULD be used. 
   Example: oac:Recipient odrl:isA ex:UniversityA indicates that
   the recipient of the personal data is an instance of ex:UniversityA.'''@en .
 
@@ -119,15 +125,18 @@ oac:LegalBasis a dpv:LegalBasis, odrl:LeftOperand, owl:NamedIndividual, skos:Con
   rdfs:label "Legal Basis"@en ;
   skos:definition "Constraint on the legal basis for which the processing of personal data is permitted or prohibited."@en ;
   skos:example "A legal basis can be consent, legitimate interest or contract perfomance or jurisdiction specific legal basis such as the ones provided in GDPR Article 6."@en ;
-  skos:note '''Only the isA, ..., ... operators SHOULD be used. 
+  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. 
   Example: oac:LegalBasis odrl:isA dpv:Consent indicates that
-  the legal basis for the processing should be consent.'''@en .
+  the legal basis for the processing should be an instance of dpv:Consent.'''@en .
 
-oac:Entity a dpv:Entity, odrl:Party, skos:Concept ;
-	rdfs:isDefinedBy oac: ;
-	rdfs:label "Entity"@en ;
-	skos:definition "A human or non-human party that constitutes an entity."@en ;
-	skos:example "Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications."@en .
+oac:TechnicalOrganisationalMeasure a dpv:TechnicalOrganisationalMeasure, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy oac: ;
+  rdfs:label "Technical and Organisational Measure"@en ;
+  skos:definition "Constraint on the technical and/or organisational measures used to ensure a secure processing of personal data."@en ;
+  skos:example "Technical measures include access control methods, encryption and other security protocols. Organisational measures include notices, guidelines, policies, agreements and other organisational procedures."@en ;
+  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. 
+  Example: oac:TechnicalOrganisationalMeasure odrl:eq dpv:AccessControlMethod indicates that
+  an access control method should be implemented for the processing to occur.'''@en .
 
 oac:isNotA a odrl:Operator ;
 	rdfs:isDefinedBy oac: ;
