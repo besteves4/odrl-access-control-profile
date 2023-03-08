@@ -4,7 +4,7 @@ Repository for the OAC (ODRL profile for Access Control) documentation.
 
 Check the profile at [https://w3id.org/oac](https://w3id.org/oac)
 
-![ODRL Profile for Access Control](oac%20diagram.png "ODRL Profile for Access Control")
+![ODRL Profile for Access Control](/assets/oac_diagram.png "ODRL Profile for Access Control")
 
 -----------------------
 Work developed by:
