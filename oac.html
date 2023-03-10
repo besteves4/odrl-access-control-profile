@@ -452,6 +452,11 @@
                   <bdi class="secno">2.5.4 </bdi>Technical and Organisational Measure
                 </a>
               </li>
+              <li class="tocline">
+                <a class="tocxref" href="./oac.html#x2-5-5-tech">
+                  <bdi class="secno">2.5.5 </bdi>Technology
+                </a>
+              </li>
             </ol>
           </li>
         </ol>
@@ -1057,6 +1062,22 @@
             <tr><th>Example:</th> <td>Technical measures include access control methods, encryption and other security protocols. Organisational measures include notices, guidelines, policies, agreements and other organisational procedures.</td></tr>
             <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:TechnicalOrganisationalMeasure odrl:eq dpv:AccessControlMethod</code> indicates that an access control method should be implemented for the processing to occur.</td></tr>
             <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></td></tr>
+          </tbody>
+      </table>
+    </section>
+    <section id="tech">
+      <h4 id="x2-5-5-tech">
+        <bdi class="secno">2.5.5 </bdi>Technology
+        <a class="self-link" aria-label="§" href="./oac.html#x2-5-5-tech"></a>
+      </h4>
+      <table class="def propdef">
+          <tbody>
+            <tr><th>Label:</th> <td>Technology</td></tr>
+            <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Technology">https://w3id.org/oac#Technology</a></td></tr>
+            <tr><th>Definition:</th> <td>Constraint on the technologies used for the processing of personal data.</td></tr>
+            <tr><th>Example:</th> <td>Technologies include communication mechanisms such as WiFi or Bluetooth, security technologies such as PETS, data technologies, operational technologies, identity technologies, and so on.</td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:Technology odrl:isA dpv-tech:PET</code> indicates that a PET should be used for the processing to occur.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#Technology">dpv:Technology</a></td></tr>
           </tbody>
       </table>
     </section>

@@ -138,6 +138,15 @@ oac:TechnicalOrganisationalMeasure a dpv:TechnicalOrganisationalMeasure, odrl:Le
   Example: oac:TechnicalOrganisationalMeasure odrl:eq dpv:AccessControlMethod indicates that
   an access control method should be implemented for the processing to occur.'''@en .
 
+oac:Technology a dpv:Technology, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy oac: ;
+  rdfs:label "Technology"@en ;
+  skos:definition "Constraint on the technologies used for the processing of personal data."@en ;
+  skos:example """Technologies include communication mechanisms such as WiFi or Bluetooth, security technologies such as PETS, data technologies, 
+  operational technologies, identity technologies, and so on."""@en ;
+  skos:note """Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. 
+  Example: oac:Technology odrl:isA dpv-tech:PET indicates that a PET should be used for the processing to occur."""@en .
+
 oac:isNotA a odrl:Operator ;
 	rdfs:isDefinedBy oac: ;
     rdfs:label "Is not a"@en ;
