@@ -1352,13 +1352,13 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       <a class="self-link" aria-label="§" href="./oac.html#x5-6-isNotA-operator"></a>
     </h3>
     <p>
-      User A prohibits write access operations over its behavioral data if the purpose
+      User A prohibits write access operations over its browsing behavior data if the purpose
       is not commercial research.
     </p>
     <div class="example"><div class="example-title marker"><span>Example 5.6</span></div>
       <pre id="ex36" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy2> a oac:PreferencePolicy ;
-  dct:description "Prohibition to write behavioral data if the purpose is not commercial research" ;
+  dct:description "Prohibition to write browsing behavior data if the purpose is not commercial research" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-09T09:14:10"^^xsd:dateTime ;
   odrl:uid ex:policy2 ;
@@ -1366,7 +1366,7 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
   odrl:permission [
     odrl:assigner ex:userA ;
     odrl:action oac:Write ;
-    odrl:target oac:Behavioral ;
+    odrl:target oac:BrowsingBehavior ;
     odrl:constraint [
       odrl:leftOperand oac:Purpose ;
       odrl:operator oac:isNotA ;
@@ -1380,21 +1380,21 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       <a class="self-link" aria-label="§" href="./oac.html#x5-7-subclass-operator"></a>
     </h3>
     <p>
-      User A allows write access operations over its behavioral data if the purpose
+      User A allows read access operations over its educational qualification data if the purpose
       is a subclass of research and development such as academic research, non-commercial research or commercial research.
     </p>
     <div class="example"><div class="example-title marker"><span>Example 5.7</span></div>
       <pre id="ex37" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy3> a oac:PreferencePolicy ;
-  dct:description "Permission to write behavioral data if the purpose is a subclass of research and development" ;
+  dct:description "Permission to read educational qualification data if the purpose is a subclass of research and development" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-09T09:17:13"^^xsd:dateTime ;
   odrl:uid ex:policy3 ;
   odrl:profile oac: ;
   odrl:permission [
     odrl:assigner ex:userA ;
-    odrl:action oac:Write ;
-    odrl:target oac:Behavioral ;
+    odrl:action oac:Read ;
+    odrl:target oac:EducationQualification ;
     odrl:constraint [
       odrl:leftOperand oac:Purpose ;
       odrl:operator oac:subclass ;
@@ -1408,13 +1408,13 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       <a class="self-link" aria-label="§" href="./oac.html#x5-8-service"></a>
     </h3>
     <p>
-      User A allows write access operations over its behavioral data for the purpose
-      of research and development using <code>https://example.com/serviceA</code> .
+      User A allows write access operations over its TV viewing behavior data for the purpose
+      of academic research using <code>https://example.com/serviceA</code> .
     </p>
     <div class="example"><div class="example-title marker"><span>Example 5.8</span></div>
       <pre id="ex38" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy4> a oac:PreferencePolicy ;
-  dct:description "Permission to write behavioral data if the purpose research and development using service A" ;
+  dct:description "Permission for service A to write TV viewing behavior data if the purpose is academic research" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-09T09:22:42"^^xsd:dateTime ;
   odrl:uid ex:policy4 ;
@@ -1423,11 +1423,11 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
     odrl:assigner ex:userA ;
     oac:service ex:serviceA ;
     odrl:action oac:Write ;
-    odrl:target oac:Behavioral ;
+    odrl:target oac:TVViewingBehavior ;
     odrl:constraint [
       odrl:leftOperand oac:Purpose ;
       odrl:operator odrl:isA ;
-      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      odrl:rightOperand dpv:AcademicResearch ] ] .
       </pre>
     </div>
 
@@ -1437,14 +1437,14 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       <a class="self-link" aria-label="§" href="./oac.html#x5-9-application-assignee"></a>
     </h3>
     <p>
-      User A allows User B to perform write access operations over its behavioral data for the purpose
-      of research and development using <code>https://example.com/applicationA</code> .
+      User A allows User B to perform write access operations over its location data for the purpose
+      of providing a service using <code>https://example.com/applicationA</code> .
     </p>
     <div class="example"><div class="example-title marker"><span>Example 5.9</span></div>
       <pre id="ex38" class="hljs" aria-busy="false" aria-live="polite">    
 &lt;https://example.com/policy5> a oac:PreferencePolicy ;
   odrl:profile oac: ;
-  dct:description "Permission for User B to write behavioral data if the purpose research and development using application A" ;
+  dct:description "Permission for User B to write location data using application A if the purpose is related to provide a service requested by the user" ;
   dct:creator ex:userA ;
   dct:issued "2022-11-17T12:32:18"^^xsd:dateTime ;
   odrl:uid ex:policy5 ;
@@ -1453,11 +1453,11 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
     odrl:assignee ex:userB ;
     oac:application ex:applicationA ;
     odrl:action oac:Write ;
-    odrl:target oac:Behavioral ;
+    odrl:target oac:Location ;
     odrl:constraint [
       odrl:leftOperand oac:Purpose ;
       odrl:operator odrl:isA ;
-      odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      odrl:rightOperand dpv:RequestedServiceProvision ] ] .
       </pre>
     </div>
 
