@@ -210,7 +210,7 @@
         "repoURL": "https://github.com/besteves4/odrl-access-control-profile",
         "branch": "master"
       },
-      "publishISODate": "2021-04-16T00:00:00.000Z",
+      "publishISODate": "2023-10-09T00:00:00.000Z",
       "generatedSubtitle": ""
     }
   </script>
@@ -228,7 +228,7 @@
     <h1 id="title" class="title">ODRL Profile for Access Control</h1>
     <h2>
       Draft release
-      <time class="dt-published" datetime="2022-12-21">12 December 2022</time>
+      <time class="dt-published" datetime="2023-10-09">09 September 2023</time>
     </h2>
     <dl>
       <b>Version:</b> 0.2
@@ -382,8 +382,8 @@
             </ol>
             <ol class="toc">
               <li class="tocline">
-                <a class="tocxref" href="./oac.html#x2-1-3-party-roles">
-                  <bdi class="secno">2.1.3 </bdi>Party roles
+                <a class="tocxref" href="./oac.html#x2-1-3-other-properties">
+                  <bdi class="secno">2.1.3 </bdi>Other properties
                 </a>
                 <ol class="toc">
                   <li class="tocline">
@@ -730,9 +730,9 @@
                 <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-owl2-overview" title="OWL 2 Web Ontology Language Document Overview (Second Edition)">owl2-overview<!---0.910070%--></a></cite><!---0.910070%-->]</td>
               </tr>
               <tr>
-                <td>dct</td>
+                <td>dcterms</td>
                 <td>http://purl.org/dc/terms/</td>
-                <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dct" title="DCMI Metadata Terms">dct<!---0.910070%--></a></cite><!---0.910070%-->]</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dcterms" title="DCMI Metadata Terms">dcterms<!---0.910070%--></a></cite><!---0.910070%-->]</td>
               </tr>
               <tr>
                 <td>vann</td>
@@ -758,6 +758,16 @@
                 <td>dpv-pd</td>
                 <td>https://w3id.org/dpv/dpv-pd#</td>
                 <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dpv-pd" title="DPV-PD: Extended Personal Data categories for DPV version 1">dpv-pd</a></cite>]</td>
+              </tr>
+              <tr>
+                <td>dpv-tech</td>
+                <td>https://w3id.org/dpv/dpv-tech#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-dpv-tech" title="DPV-TECH: Extension providing Technology concepts for DPV version 0.8.2">dpv-tech</a></cite>]</td>
+              </tr>
+              <tr>
+                <td>plasma</td>
+                <td>https://w3id.org/plasma#</td>
+                <td>[<cite><a class="bibref" data-link-type="biblio" href="./oac.html#bib-plasma" title="PLASMA: Policy Language for Solid's Metadata-based Access Control">plasma</a></cite>]</td>
               </tr>
               <tr>
                 <td>acl</td>
@@ -787,8 +797,8 @@
     </h2>
     <p>
       This ODRL profile relies on the invocation of legal concepts using DPV and ACL for the reference to access mode operations.
-      Its core concepts are the Preference and Requirement policies, a new set of operators to constraint the defined Purposes, Recipients, Legal Basis and 
-      Technical and Organisational Measures constraints (which will require the usage of DPV's taxonomies), new party roles to specify policies for 
+      Its core concepts are the Preference and Requirement policies, a new set of operators to constraint the defined Purposes, Recipients, Legal Basis, 
+      Technical and Organisational Measures and Technology constraints (which will require the usage of DPV's taxonomies), new properties to specify policies for 
       applications and services, Processing and Access actions, as well as Personal Data Categories, and Legal Entities.
     </p>
     <section id="base-concepts">
@@ -798,8 +808,8 @@
       </h3>
       <p>
         In this section, two new types of policies are specified to deal with the requirements of users which wish to define rules for the processing of their
-        personal data, as well as a set of three new ODRL operators which we believe are currently missing from the ODRL Core vocabulary and two new party
-        roles to specify policies for services and applications, which are important stakeholders in decentralised systems.
+        personal data, as well as a set of three new ODRL operators which we believe are currently missing from the ODRL Core vocabulary and two new properties
+        to specify policies for services and applications, which are important stakeholders in decentralised systems.
       </p>
     </section>
     <section id="policies">
@@ -859,7 +869,7 @@
           <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#isNotA">https://w3id.org/oac#isNotA</a></td></tr>
           <tr><th>Definition:</th> <td>Indicates that a given Left Operand is not an instance of the Right Operand of the Constraint.</td></tr>
           <tr><th>Example:</th> <td>The purpose constraint of a rule can not be an instance of a academic research.</td></tr>
-          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></a></td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -874,7 +884,7 @@
           <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#subclass">https://w3id.org/oac#subclass</a></td></tr>
           <tr><th>Definition:</th> <td>Indicates that a given Left Operand is a subclass of the Right Operand of the Constraint.</td></tr>
           <tr><th>Example:</th> <td>The purpose constraint of a rule can be a subclass of research and development such as academic research, non-commercial research or commercial research.</td></tr>
-          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></a></td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -889,14 +899,14 @@
           <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#semantic">https://w3id.org/oac#semantic</a></td></tr>
           <tr><th>Definition:</th> <td>Indicates that a given Left Operand is equal to, an instance or a subclass of the Right Operand of the Constraint.</td></tr>
           <tr><th>Example:</th> <td>The purpose constraint of a rule can be research and development, an instance of research and development or one of its subclasses such as academic research, non-commercial research or commercial research.</td></tr>
-          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></a></td></tr>
+          <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Operator">odrl:Operator</a></td></tr>
         </tbody>
       </table>
     </section>
     <section id="party-roles">
-      <h4 id="x2-1-3-party-roles">
-        <bdi class="secno">2.1.3 </bdi>Party roles
-        <a class="self-link" aria-label="§" href="./oac.html#x2-1-3-party-roles"></a>
+      <h4 id="x2-1-3-other-properties">
+        <bdi class="secno">2.1.3 </bdi>Other properties
+        <a class="self-link" aria-label="§" href="./oac.html#x2-1-3-other-properties"></a>
       </h4>
     </section>
     <section id="service">
@@ -908,9 +918,10 @@
         <tbody>
           <tr><th>Label:</th> <td>Service</td></tr>
           <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#service">https://w3id.org/oac#service</a></td></tr>
-          <tr><th>Definition:</th> <td>The Party is the service used by the recipient of the Rule.</td></tr>
+          <tr><th>Definition:</th> <td>Service used by the recipient of the Rule.</td></tr>
           <tr><th>Example:</th> <td>Method used to interact with the data, e.g., identity verification service, query service.</td></tr>
-          <tr><th>Parent property:</th> <td><a href="http://www.w3.org/ns/odrl/2/function">odrl:function</a></a></td></tr>
+          <tr><th>Domain:</th> <td><a href="http://www.w3.org/ns/odrl/2/Rule">odrl:Rule</a>, <a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></td></tr>
+          <tr><th>Range:</th> <td><a href="https://w3id.org/plasma#Service">plasma:Service</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -923,9 +934,10 @@
         <tbody>
           <tr><th>Label:</th> <td>Application</td></tr>
           <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#application">https://w3id.org/oac#application</a></td></tr>
-          <tr><th>Definition:</th> <td>The Party is the application used by the recipient of the Rule.</td></tr>
+          <tr><th>Definition:</th> <td>Application used by the recipient of the Rule.</td></tr>
           <tr><th>Example:</th> <td>Application used by the assignee to interact with the data, e.g., address book, game.</td></tr>
-          <tr><th>Parent property:</th> <td><a href="http://www.w3.org/ns/odrl/2/function">odrl:function</a></a></td></tr>
+          <tr><th>Domain:</th> <td><a href="http://www.w3.org/ns/odrl/2/Rule">odrl:Rule</a>, <a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></td></tr>
+          <tr><th>Range:</th> <td><a href="https://w3id.org/plasma#App">plasma:App</a></td></tr>
         </tbody>
       </table>
     </section>
@@ -940,7 +952,8 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#PersonalData">https://w3id.org/oac#PersonalData</a></td></tr>
             <tr><th>Definition:</th> <td>Data directly or indirectly associated or related to an individual.</td></tr>
             <tr><th>Example:</th> <td>Data assets related to an individual include financial data such as credit card or account numbers, social data such as marital status or friends, health data such as health records or blood type and so on.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a>, <a href="https://w3id.org/dpv#PersonalData">dpv:PersonalData</a></td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#PersonalData">dpv:PersonalData</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -961,7 +974,8 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Access">https://w3id.org/oac#Access</a></td></tr>
             <tr><th>Definition:</th> <td>Modes used to access resources, e.g. stored in Solid Pods.</td></tr>
             <tr><th>Example:</th> <td>The ACL vocabulary includes Read, Write and Append access modes.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a>, <a href="http://www.w3.org/ns/auth/acl#Access">acl:Access</a></td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="http://www.w3.org/ns/auth/acl#Access">acl:Access</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -976,7 +990,8 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Processing">https://w3id.org/oac#Processing</a></td></tr>
             <tr><th>Definition:</th> <td>Processing operations performed on personal data.</td></tr>
             <tr><th>Example:</th> <td>DPV includes processing operations such as use, collect, adapt or infer.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a>, <a href="https://w3id.org/dpv#Processing">dpv:Processing</a></td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#Processing">dpv:Processing</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -991,7 +1006,8 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Entity">https://w3id.org/oac#Entity</a></td></tr>
             <tr><th>Definition:</th> <td>A human or non-human party that constitutes an entity.</td></tr>
             <tr><th>Example:</th> <td>Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications.</td></tr>
-            <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">odrl:Party</a>, <a href="https://w3id.org/dpv#Entity">dpv:Entity</a></td></tr>
+            <tr><th>Subclass of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">odrl:Party</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#Entity">dpv:Entity</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -1012,8 +1028,9 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Purpose">https://w3id.org/oac#Purpose</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the purpose for which the processing of personal data is permitted or prohibited.</td></tr>
             <tr><th>Example:</th> <td>DPV includes purposes such as academic research, customer care or identity verification.</td></tr>
-            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:Purpose odrl:isA dpv:ResearchAndDevelopment</code> indicates that the purpose for the processing of personal data is an instance of <code>dpv:ResearchAndDevelopment</code>.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <br><code>ex:purposeConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:Purpose ;</code><br><code>odrl:operator odrl:isA ;</code><br><code>odrl:rightOperand dpv:ResearchAndDevelopment .</code><br> indicates that the purpose for the processing of personal data is an instance of <code>dpv:ResearchAndDevelopment</code>.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -1028,8 +1045,9 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Recipient">https://w3id.org/oac#Recipient</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the recipients that may receive the results of the processing of personal data.</td></tr>
             <tr><th>Example:</th> <td>A recipient can be any entity receiving personal data, including data subjects, controllers, non profit organisations or non governmental organisations.</td></tr>
-            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:Recipient odrl:neq ex:UniversityA</code> indicates that the recipient of the personal data cannot be <code>ex:UniversityA</code>.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#Recipient">dpv:Recipient</a></td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <br><code>ex:recipientConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:Recipient ;</code><br><code>odrl:operator odrl:neq ;</code><br><code>odrl:rightOperand ex:UniversityA .</code><br> indicates that the recipient of the personal data cannot be <code>ex:UniversityA</code>.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#Recipient">dpv:Recipient</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -1044,8 +1062,9 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#LegalBasis">https://w3id.org/oac#LegalBasis</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the legal basis for which the processing of personal data is permitted or prohibited.</td></tr>
             <tr><th>Example:</th> <td>A legal basis can be consent, legitimate interest or contract perfomance or jurisdiction specific legal basis such as the ones provided in GDPR Article 6.</td></tr>
-            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:LegalBasis odrl:isA dpv:Consent</code> indicates that the legal basis for the processing should be an instance of <code>dpv:Consent</code>.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <br><code>ex:legalBasisConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:LegalBasis ;</code><br><code>odrl:operator odrl:isA ;</code><br><code>odrl:rightOperand dpv:Consent .</code><br> indicates that the legal basis for the processing should be an instance of <code>dpv:Consent</code>.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -1060,8 +1079,9 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#TechnicalOrganisationalMeasure">https://w3id.org/oac#TechnicalOrganisationalMeasure</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the technical and/or organisational measures used to ensure a secure processing of personal data.</td></tr>
             <tr><th>Example:</th> <td>Technical measures include access control methods, encryption and other security protocols. Organisational measures include notices, guidelines, policies, agreements and other organisational procedures.</td></tr>
-            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:TechnicalOrganisationalMeasure odrl:eq dpv:AccessControlMethod</code> indicates that an access control method should be implemented for the processing to occur.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <br><code>ex:tomConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:TechnicalOrganisationalMeasure ;</code><br><code>odrl:operator odrl:eq ;</code><br><code>odrl:rightOperand dpv:AccessControlMethod .</code><br> indicates that an access control method should be implemented for the processing to occur.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -1076,8 +1096,9 @@
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Technology">https://w3id.org/oac#Technology</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the technologies used for the processing of personal data.</td></tr>
             <tr><th>Example:</th> <td>Technologies include communication mechanisms such as WiFi or Bluetooth, security technologies such as PETS, data technologies, operational technologies, identity technologies, and so on.</td></tr>
-            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <code>oac:Technology odrl:isA dpv-tech:PET</code> indicates that a PET should be used for the processing to occur.</td></tr>
-            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a>, <a href="https://w3id.org/dpv#Technology">dpv:Technology</a></td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:isA</code>, <code>odrl:eq</code>, <code>odrl:neq</code>, <code>oac:isNotA</code>, <code>oac:subclass</code> or <code>oac:semantic</code> operators SHOULD be used. Example: <br><code>ex:technologyConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:Technology ;</code><br><code>odrl:operator odrl:isA ;</code><br><code>odrl:rightOperand dpv-tech:PET .</code><br> indicates that a PET should be used for the processing to occur.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></td></tr>
+            <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#Technology">dpv:Technology</a></td></tr>
           </tbody>
       </table>
     </section>
@@ -1743,7 +1764,7 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
     <a class="self-link" aria-label="§" href="./oac.html#ack"></a>
   </h2>
   <p>
-    This research has been supported by European Union’s Horizon 2020 research and innovation programme under 
+    This research has been supported by European Union's Horizon 2020 research and innovation programme under 
     the Marie Skłodowska-Curie grant agreement No 813497 (PROTECT) and `Datos 4.0 Retos y Soluciones' 
     (TIN2016-78011-C4-3-R). Harshvardhan J. Pandit is funded by the Irish Research Council Government of Ireland 
     Postdoctoral Fellowship Grant#GOIPD/2020/790; European Union's Horizon 2020 research and innovation programme 
@@ -1764,7 +1785,7 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
         http://www.w3.org/ns/auth/acl#
       </a>
     </dd>
-    <dt id="bib-dct">[dct]</dt>
+    <dt id="bib-dcterms">[dcterms]</dt>
     <dd>
       <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">
         <cite>DCMI Metadata Terms</cite>
@@ -1791,6 +1812,14 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       Simon Steyskal. 5 December 2022. URL: 
       <a href="https://w3id.org/dpv/dpv-pd">
         https://w3id.org/dpv/dpv-pd
+      </a>
+    </dd>
+    <dt id="bib-dpv-tech">[dpv-tech]</dt>
+    <dd>
+      <a href="https://w3id.org/dpv/dpv-tech"><cite>DPV-TECH: Extension providing Technology concepts for DPV version 0.8.2</cite></a>.
+      Beatriz Esteves; Georg P. Krog; Harshvardhan J. Pandit; Julian Flake; Paul Ryan. 5 December 2022. URL: 
+      <a href="https://w3id.org/dpv/dpv-tech">
+        https://w3id.org/dpv/dpv-tech
       </a>
     </dd>
     <dt id="bib-gdpr">[gdpr]</dt>
@@ -1843,6 +1872,14 @@ ex:RDProjectX a dpv:ResearchAndDevelopment ;
       <a href="https://www.w3.org/TR/owl2-overview/">
         https://www.w3.org/TR/owl2-overview/
       </a><!---0.910070%-->
+    </dd>
+    <dt id="bib-plasma">[plasma]</dt>
+    <dd>
+      <a href="https://w3id.org/plasma"><cite>PLASMA: Policy Language for Solid's Metadata-based Access Control</cite></a>.
+      Beatriz Esteves; Harshvardhan J. Pandit. 29 September 2023. URL: 
+      <a href="https://w3id.org/plasma">
+        https://w3id.org/plasma
+      </a>
     </dd>
     <dt id="bib-rdf-schema">[rdf-schema<!---0.910070%-->]</dt>
     <dd>

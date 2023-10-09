@@ -1,47 +1,51 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX vann: <http://purl.org/vocab/vann/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dpv-tech: <https://w3id.org/dpv/dpv-tech#>
 PREFIX acl:  <http://www.w3.org/ns/auth/acl#>
 PREFIX profile: <http://www.w3.org/ns/dx/prof/>
 PREFIX role: <http://www.w3.org/ns/dx/prof/role/>
+PREFIX plasma: <https://w3id.org/plasma#>
 
 PREFIX oac: <https://w3id.org/oac#>
+
+# ------------ Ontology Metadata ------------------ #
 
 oac: a owl:Ontology, profile:Profile ;
 	profile:isProfileOf <http://www.w3.org/ns/odrl/2/core> ;
 	profile:hasResource oac:oac-html, oac:oac-ttl ;
-	dct:title "ODRL Profile for Access Control"@en ;
+	dcterms:title "ODRL Profile for Access Control"@en ;
 	vann:preferredNamespacePrefix "oac" ;
     vann:preferredNamespaceUri "https://w3id.org/oac#"^^xsd:string ;
 	rdfs:label "ODRL access control policies profile"@en ;
 	owl:versionInfo "0.2"^^xsd:string ;
-	dct:created "2021-04-12"^^xsd:date ;
-	dct:modified "2022-11-XX"^^xsd:date ;
-	dct:creator "Beatriz Esteves", "Harshvardhan J. Pandit", "Víctor Rodríguez-Doncel" ;
-	dct:abstract "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define ‘sticky policies’ that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
-	dct:description "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define ‘sticky policies’ that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
+	dcterms:created "2021-04-12"^^xsd:date ;
+	dcterms:modified "2023-10-09"^^xsd:date ;
+	dcterms:creator "Beatriz Esteves", "Harshvardhan J. Pandit", "Víctor Rodríguez-Doncel" ;
+	dcterms:abstract "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define 'sticky policies' that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
+	dcterms:description "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define 'sticky policies' that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
 	rdfs:comment "This is the RDF ontology for the ODRL Profile for Access Control."@en ;
-	dct:license <https://dalicc.net/licenselibrary/CC-BY_v4> .
+	dcterms:license <https://dalicc.net/licenselibrary/CC-BY_v4> .
 
 oac:oac-html a profile:ResourceDescriptor ;
     profile:hasRole role:specification ;
     profile:hasArtifact <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.html> ;
-    dct:title "ODRL Profile for Access Control HTML specification"@en ;
-    dct:format <https://www.iana.org/assignments/media-types/text/html> ;
-    dct:conformsTo <https://www.w3.org/TR/html/> .
+    dcterms:title "ODRL Profile for Access Control HTML specification"@en ;
+    dcterms:format <https://www.iana.org/assignments/media-types/text/html> ;
+    dcterms:conformsTo <https://www.w3.org/TR/html/> .
 
 oac:oac-ttl a profile:ResourceDescriptor ;
     profile:hasRole role:vocabulary ;
     profile:hasArtifact <https://protect.oeg.fi.upm.es/odrl-access-control-profile/oac.ttl> ;
-    dct:title "ODRL Profile for Access Control Turtle vocabulary"@en ;
-    dct:format <https://www.iana.org/assignments/media-types/text/turtle> ;
-    dct:conformsTo <https://www.w3.org/TR/turtle/> .
+    dcterms:title "ODRL Profile for Access Control Turtle vocabulary"@en ;
+    dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
+    dcterms:conformsTo <https://www.w3.org/TR/turtle/> .
 
 <https://w3id.org/oac#>
     a skos:Collection ;
@@ -55,12 +59,50 @@ oac:oac-ttl a profile:ResourceDescriptor ;
     skos:member oac:Purpose ;
 	skos:member oac:Recipient ;
 	skos:member oac:LegalBasis ;
+	skos:member oac:TechnicalOrganisationalMeasure;
+	skos:member oac:Technology ;
 	skos:member oac:Entity ;
 	skos:member oac:isNotA ;
 	skos:member oac:subclass ;
 	skos:member oac:semantic ;
 	skos:member oac:service ;
-	skos:member oac:application .
+	skos:member oac:application ;
+	skos:member odrl:Request ;
+	skos:member odrl:absolutePosition ;
+    skos:member odrl:absoluteSpatialPosition ;
+    skos:member odrl:absoluteTemporalPosition ;
+    skos:member odrl:absoluteSize ;
+    skos:member odrl:count ;
+    skos:member odrl:dateTime ;
+    skos:member odrl:delayPeriod ;
+    skos:member odrl:deliveryChannel ;
+    skos:member odrl:elapsedTime ;
+    skos:member odrl:event ;
+    skos:member odrl:fileFormat ;
+    skos:member odrl:industry ;
+    skos:member odrl:language ;
+    skos:member odrl:media ;
+    skos:member odrl:meteredTime ;
+    skos:member odrl:payAmount ;
+    skos:member odrl:percentage ;
+    skos:member odrl:product ;
+    skos:member odrl:purpose ;
+    skos:member odrl:recipient ;
+    skos:member odrl:relativePosition ;
+    skos:member odrl:relativeSpatialPosition ;
+    skos:member odrl:relativeTemporalPosition ;
+    skos:member odrl:relativeSize ;
+    skos:member odrl:resolution ;
+    skos:member odrl:spatial ;
+    skos:member odrl:spatialCoordinates ;
+    skos:member odrl:systemDevice ;
+    skos:member odrl:timeInterval ;
+    skos:member odrl:unitOfCount ;
+    skos:member odrl:version ;
+    skos:member odrl:virtualLocation ;
+	skos:member odrl:policyUsage .
+
+# ------------ Policy Concepts ------------------ #
 
 oac:PreferencePolicy rdfs:subClassOf odrl:Policy ;
 	owl:disjointWith odrl:Agreement, odrl:Offer, odrl:Privacy, odrl:Request, odrl:Ticket, odrl:Assertion, oac:RequirementPolicy ;
@@ -78,101 +120,142 @@ oac:RequirementPolicy rdfs:subClassOf odrl:Policy ;
 	skos:note "A Requirement Policy MUST contain at least one Permission or Prohibition rule, an Action, a target Asset and a Party with Assigner function (in the same Permission or Prohibition). The Requirement Policy MAY contain a Duty, Party with Assignee, Application and/or Service functions, but MUST not grant any privileges to those Parties."@en ;
 	skos:example "If a requirement policy set by a party A does not match a request policy from party B, the request must be denied even if party A accepts party B's request conditions."@en .
 
-oac:PersonalData a dpv:PersonalData, odrl:Asset, skos:Concept ;
+# ------------ Asset Concepts ------------------ #
+
+oac:PersonalData a odrl:Asset, skos:Concept ;
+	rdfs:subClassOf dpv:PersonalData ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Personal data"@en ;
 	skos:definition "Data directly or indirectly associated or related to an individual."@en ;
 	skos:example "Data assets related to an individual include financial data such as credit card or account numbers, social data such as marital status or friends, health data such as health records or blood type and so on."@en .
 
-oac:Entity a dpv:Entity, odrl:Party, skos:Concept ;
+# ------------ Party Concepts ------------------ #
+
+oac:Entity a odrl:Party, skos:Concept ;
+	rdfs:subClassOf dpv:Entity ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Entity"@en ;
 	skos:definition "A human or non-human party that constitutes an entity."@en ;
 	skos:example "Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications."@en .
 
-oac:Access a acl:Access, odrl:Action, skos:Concept ;
+# ------------ Action Concepts ------------------ #
+
+oac:Access a odrl:Action, skos:Concept ;
+	rdfs:subClassOf acl:Access ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Access"@en ;
-	skos:definition "Modes used to access resources, e.g. stored in Solid Pods."@en ;
+	skos:definition "Modes used to access resources, e.g., stored in Solid Pods."@en ;
 	skos:example "The ACL vocabulary includes Read, Write and Append access modes."@en .
 
-oac:Processing a dpv:Processing, odrl:Action, skos:Concept ;
+oac:Processing a odrl:Action, skos:Concept ;
+	rdfs:subClassOf dpv:Processing ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Processing"@en ;
 	skos:definition "Processing operations performed on personal data."@en ;
 	skos:example "DPV includes processing operations such as use, collect, adapt or infer."@en .
 
-oac:Purpose a dpv:Purpose, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
-  rdfs:isDefinedBy oac: ;
-  rdfs:label "Purpose"@en ;
-  skos:definition "Constraint on the purpose for which the processing of personal data is permitted or prohibited."@en ;
-  skos:example "DPV includes purposes such as academic research, customer care or identity verification."@en ;
-  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic operators SHOULD be used. 
-  Example: oac:Purpose odrl:isA dpv:ResearchAndDevelopment indicates that
-  the purpose for the processing of personal data is an instance of dpv:ResearchAndDevelopment.'''@en .
+# ------------ Left Operand Concepts ------------------ #
 
-oac:Recipient a dpv:Recipient, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
-  rdfs:isDefinedBy oac: ;
-  rdfs:label "Recipient"@en ;
-  skos:definition "Constraint on the recipients that may receive the results of the processing of personal data."@en ;
-  skos:example "A recipient can be any entity receiving personal data, including data subjects, controllers, non profit organisations or non governmental organisations."@en ;
-  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic operators SHOULD be used. 
-  Example: oac:Recipient odrl:neq ex:UniversityA indicates that
-  the recipient of the personal data cannot be ex:UniversityA.'''@en .
+oac:Purpose a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+	rdfs:subClassOf dpv:Purpose ;
+	rdfs:isDefinedBy oac: ;
+  	rdfs:label "Purpose"@en ;
+  	skos:definition "Constraint on the purpose for which the processing of personal data is permitted or prohibited."@en ;
+  	skos:example "DPV includes purposes such as academic research, customer care or identity verification."@en ;
+  	skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic operators SHOULD be used. Example:
+		<https://example.com/purposeConstraint> a odrl:Constraint ;
+			odrl:leftOperand oac:Purpose ;
+			odrl:operator odrl:isA ;
+			odrl:rightOperand dpv:ResearchAndDevelopment .
+		indicates that the purpose for the processing of personal data is an instance of dpv:ResearchAndDevelopment.'''@en .
 
-oac:LegalBasis a dpv:LegalBasis, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
-  rdfs:isDefinedBy oac: ;
-  rdfs:label "Legal Basis"@en ;
-  skos:definition "Constraint on the legal basis for which the processing of personal data is permitted or prohibited."@en ;
-  skos:example "A legal basis can be consent, legitimate interest or contract perfomance or jurisdiction specific legal basis such as the ones provided in GDPR Article 6."@en ;
-  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. 
-  Example: oac:LegalBasis odrl:isA dpv:Consent indicates that
-  the legal basis for the processing should be an instance of dpv:Consent.'''@en .
+oac:Recipient a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+	rdfs:subClassOf dpv:Recipient ;
+  	rdfs:isDefinedBy oac: ;
+  	rdfs:label "Recipient"@en ;
+  	skos:definition "Constraint on the recipients that may receive the results of the processing of personal data."@en ;
+  	skos:example "A recipient can be any entity receiving personal data, including data subjects, controllers, non profit organisations or non governmental organisations."@en ;
+  	skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic operators SHOULD be used. Example: 
+		<https://example.com/recipientConstraint> a odrl:Constraint ;
+			odrl:leftOperand oac:Recipient ;
+			odrl:operator odrl:neq ;
+			odrl:rightOperand ex:UniversityA .
+		indicates that the recipient of the personal data cannot be ex:UniversityA.'''@en .
 
-oac:TechnicalOrganisationalMeasure a dpv:TechnicalOrganisationalMeasure, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
-  rdfs:isDefinedBy oac: ;
-  rdfs:label "Technical and Organisational Measure"@en ;
-  skos:definition "Constraint on the technical and/or organisational measures used to ensure a secure processing of personal data."@en ;
-  skos:example "Technical measures include access control methods, encryption and other security protocols. Organisational measures include notices, guidelines, policies, agreements and other organisational procedures."@en ;
-  skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. 
-  Example: oac:TechnicalOrganisationalMeasure odrl:eq dpv:AccessControlMethod indicates that
-  an access control method should be implemented for the processing to occur.'''@en .
+oac:LegalBasis a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+	rdfs:subClassOf dpv:LegalBasis ;
+  	rdfs:isDefinedBy oac: ;
+  	rdfs:label "Legal Basis"@en ;
+  	skos:definition "Constraint on the legal basis for which the processing of personal data is permitted or prohibited."@en ;
+  	skos:example "A legal basis can be consent, legitimate interest or contract perfomance or jurisdiction specific legal basis such as the ones provided in GDPR Article 6."@en ;
+  	skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. Example: 
+		<https://example.com/legalBasisConstraint> a odrl:Constraint ;
+			odrl:leftOperand oac:LegalBasis ;
+			odrl:operator odrl:isA ;
+			odrl:rightOperand dpv:Consent .
+		indicates that the legal basis for the processing should be an instance of dpv:Consent.'''@en .
 
-oac:Technology a dpv:Technology, odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
-  rdfs:isDefinedBy oac: ;
-  rdfs:label "Technology"@en ;
-  skos:definition "Constraint on the technologies used for the processing of personal data."@en ;
-  skos:example """Technologies include communication mechanisms such as WiFi or Bluetooth, security technologies such as PETS, data technologies, 
-  operational technologies, identity technologies, and so on."""@en ;
-  skos:note """Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. 
-  Example: oac:Technology odrl:isA dpv-tech:PET indicates that a PET should be used for the processing to occur."""@en .
+oac:TechnicalOrganisationalMeasure a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+	rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
+  	rdfs:isDefinedBy oac: ;
+  	rdfs:label "Technical and Organisational Measure"@en ;
+  	skos:definition "Constraint on the technical and/or organisational measures used to ensure a secure processing of personal data."@en ;
+  	skos:example "Technical measures include access control methods, encryption and other security protocols. Organisational measures include notices, guidelines, policies, agreements and other organisational procedures."@en ;
+  	skos:note '''Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. Example: 
+		<https://example.com/tomConstraint> a odrl:Constraint ;
+			odrl:leftOperand oac:TechnicalOrganisationalMeasure ;
+			odrl:operator odrl:eq ;
+			odrl:rightOperand dpv:AccessControlMethod .
+		indicates that an access control method should be implemented for the processing to occur.'''@en .
 
-oac:isNotA a odrl:Operator ;
+oac:Technology a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+	rdfs:subClassOf dpv:Technology ;
+  	rdfs:isDefinedBy oac: ;
+  	rdfs:label "Technology"@en ;
+  	skos:definition "Constraint on the technologies used for the processing of personal data."@en ;
+  	skos:example "Technologies include communication mechanisms such as WiFi or Bluetooth, security technologies such as PETS, data technologies, operational technologies, identity technologies, and so on."@en ;
+  	skos:note """Only the odrl:isA, odrl:eq, odrl:neq, oac:isNotA, oac:subclass or oac:semantic SHOULD be used. Example:
+		<https://example.com/technologyConstraint> a odrl:Constraint ;
+			odrl:leftOperand oac:Technology ;
+			odrl:operator odrl:isA ;
+			odrl:rightOperand dpv-tech:PET .
+		oac: odrl: 
+		indicates that a PET should be used for the processing to occur."""@en .
+
+# ------------ Operator Concepts ------------------ #
+
+oac:isNotA a odrl:Operator, owl:NamedIndividual, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
     rdfs:label "Is not a"@en ;
 	skos:definition "Indicates that a given Left Operand is not an instance of the Right Operand of the Constraint."@en ;
-    skos:example "The purpose constraint of a rule can not be an instance of a academic research."@en .
+    skos:example "The purpose constraint of a rule can not be an instance of academic research purpose."@en .
 
-oac:subclass a odrl:Operator ;
+oac:subclass a odrl:Operator, owl:NamedIndividual, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
     rdfs:label "Subclass"@en ;
 	skos:definition "Indicates that a given Left Operand is a subclass of the Right Operand of the Constraint."@en ;
-    skos:example "The purpose constraint of a rule can be a subclass of research and development such as academic research, non-commercial research or commercial research."@en .
+    skos:example "The purpose constraint of a rule can be a subclass of DPV's research and development purpose such as academic research, non-commercial research or commercial research."@en .
 
-oac:semantic a odrl:Operator ;
+oac:semantic a odrl:Operator, owl:NamedIndividual, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
     rdfs:label "Semantic"@en ;
 	skos:definition "Indicates that a given Left Operand is equal to, an instance or a subclass of the Right Operand of the Constraint."@en ;
     skos:example "The purpose constraint of a rule can be research and development, an instance of research and development or one of its subclasses such as academic research, non-commercial research or commercial research."@en .
 
-oac:service rdfs:subPropertyOf odrl:function ;
+# ------------ App & Service Concepts ------------------ #
+
+oac:service a rdf:Property, owl:ObjectProperty, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Service"@en ;
-	skos:definition "The Party is the service used by the recipient of the Rule."@en ;
-	skos:example "Method used to interact with the data, e.g., identity verification service, query service."@en .
+	skos:definition "Service used by the recipient of the Rule."@en ;
+	skos:example "Method used to interact with the data, e.g., identity verification service, query service."@en ;
+	rdfs:domain odrl:Rule, odrl:Policy ;
+	rdfs:range plasma:Service .
 
-oac:application rdfs:subPropertyOf odrl:function ;
+oac:application a rdf:Property, owl:ObjectProperty, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Application"@en ;
-	skos:definition "The Party is the application used by the recipient of the Rule."@en ;
-	skos:example "Application used by the assignee to interact with the data, e.g., address book, game."@en .
+	skos:definition "Application used by the recipient of the Rule."@en ;
+	skos:example "Application used by the assignee to interact with the data, e.g., address book, game."@en ;
+	rdfs:domain odrl:Rule, odrl:Policy ;
+	rdfs:range plasma:App .
