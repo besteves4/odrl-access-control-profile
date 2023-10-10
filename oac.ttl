@@ -1,17 +1,17 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX acl: <http://www.w3.org/ns/auth/acl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX vann: <http://purl.org/vocab/vann/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dpv: <https://w3id.org/dpv#>
 PREFIX dpv-tech: <https://w3id.org/dpv/dpv-tech#>
-PREFIX acl:  <http://www.w3.org/ns/auth/acl#>
-PREFIX profile: <http://www.w3.org/ns/dx/prof/>
-PREFIX role: <http://www.w3.org/ns/dx/prof/role/>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX plasma: <https://w3id.org/plasma#>
+PREFIX profile: <http://www.w3.org/ns/dx/prof/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX role: <http://www.w3.org/ns/dx/prof/role/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 PREFIX oac: <https://w3id.org/oac#>
 
@@ -61,6 +61,7 @@ oac:oac-ttl a profile:ResourceDescriptor ;
 	skos:member oac:LegalBasis ;
 	skos:member oac:TechnicalOrganisationalMeasure;
 	skos:member oac:Technology ;
+	skos:member oac:IdentityProvider ;
 	skos:member oac:Entity ;
 	skos:member oac:isNotA ;
 	skos:member oac:subclass ;
@@ -145,7 +146,7 @@ oac:Access a odrl:Action, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Access"@en ;
 	skos:definition "Modes used to access resources, e.g., stored in Solid Pods."@en ;
-	skos:example "The ACL vocabulary includes Read, Write and Append access modes."@en .
+	skos:example "The ACL vocabulary includes Read, Write, Append and Control access modes."@en .
 
 oac:Processing a odrl:Action, skos:Concept ;
 	rdfs:subClassOf dpv:Processing ;
@@ -219,8 +220,19 @@ oac:Technology a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
 			odrl:leftOperand oac:Technology ;
 			odrl:operator odrl:isA ;
 			odrl:rightOperand dpv-tech:PET .
-		oac: odrl: 
 		indicates that a PET should be used for the processing to occur."""@en .
+
+oac:IdentityProvider a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+  	rdfs:isDefinedBy oac: ;
+  	rdfs:label "Identity Provider"@en ;
+  	skos:definition "Constraint on the identity provider service used to authenticate a user."@en ;
+  	skos:example "A list of active Solid identity providers is maintained at https://xxxx ."@en ;
+  	skos:note """Only the odrl:eq, odrl:neq, odrl:isAnyOf or odrl:isNoneOf SHOULD be used. Example:
+		<https://example.com/idpConstraint> a odrl:Constraint ;
+			odrl:leftOperand oac:IdentityProvider ;
+			odrl:operator odrl:isAnyOf ;
+			odrl:rightOperand <https://solidweb.me>, <https://login.inrupt.com/> .
+		indicates that used identity provider should be either the <https://solidweb.me> or <https://login.inrupt.com/> services."""@en .
 
 # ------------ Operator Concepts ------------------ #
 

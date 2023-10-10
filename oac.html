@@ -457,6 +457,11 @@
                   <bdi class="secno">2.5.5 </bdi>Technology
                 </a>
               </li>
+              <li class="tocline">
+                <a class="tocxref" href="./oac.html#x2-5-6-idp">
+                  <bdi class="secno">2.5.6 </bdi>Identity Provider
+                </a>
+              </li>
             </ol>
           </li>
         </ol>
@@ -1102,7 +1107,27 @@
           </tbody>
       </table>
     </section>
+    <section id="idp">
+      <h4 id="x2-5-6-idp">
+        <bdi class="secno">2.5.6 </bdi>Identity Provider
+        <a class="self-link" aria-label="§" href="./oac.html#x2-5-6-idp"></a>
+      </h4>
+      <table class="def propdef">
+          <tbody>
+            <tr><th>Label:</th> <td>Identity Provider</td></tr>
+            <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#IdentityProvider">https://w3id.org/oac#IdentityProvider</a></td></tr>
+            <tr><th>Definition:</th> <td>Constraint on the identity provider service used to authenticate a user.</td></tr>
+            <tr><th>Example:</th> <td>A list of active Solid identity providers is maintained at <a>https://xxxx</a>.</td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:eq</code>, <code>odrl:neq</code>, <code>odrl:isAnyOf</code> or <code>odrl:isNoneOf</code> operators SHOULD be used. Example: <br><code>ex:idpConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:IdentityProvider ;</code><br><code>odrl:operator odrl:isAnyOf ;</code><br><code>odrl:rightOperand &lt;https://solidweb.me>, &lt;https://login.inrupt.com/> .</code><br> indicates that used identity provider should be either the <code>&lt;https://solidweb.me></code> or <code>&lt;https://login.inrupt.com/></code> services.</td></tr>
+            <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></td></tr>
+          </tbody>
+      </table>
+    </section>
   </section>
+
+
+  ef="./oac.html#x2-5-6-idp">
+  <bdi class="secno">2.5.6 </bdi>Identity Provider
 
   <section id="validation">
     <h2>
