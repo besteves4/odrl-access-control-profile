@@ -4,7 +4,6 @@ PREFIX dpv: <https://w3id.org/dpv#>
 PREFIX dpv-tech: <https://w3id.org/dpv/dpv-tech#>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX plasma: <https://w3id.org/plasma#>
 PREFIX profile: <http://www.w3.org/ns/dx/prof/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -262,7 +261,7 @@ oac:service a rdf:Property, owl:ObjectProperty, skos:Concept ;
 	skos:definition "Service used by the recipient of the Rule."@en ;
 	skos:example "Method used to interact with the data, e.g., identity verification service, query service."@en ;
 	rdfs:domain odrl:Rule, odrl:Policy ;
-	rdfs:range plasma:Service .
+	rdfs:range dpv-tech:Service .
 
 oac:application a rdf:Property, owl:ObjectProperty, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
@@ -270,4 +269,4 @@ oac:application a rdf:Property, owl:ObjectProperty, skos:Concept ;
 	skos:definition "Application used by the recipient of the Rule."@en ;
 	skos:example "Application used by the assignee to interact with the data, e.g., address book, game."@en ;
 	rdfs:domain odrl:Rule, odrl:Policy ;
-	rdfs:range plasma:App .
+	rdfs:range dpv-tech:Application .
