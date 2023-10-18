@@ -225,13 +225,13 @@ oac:IdentityProvider a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
   	rdfs:isDefinedBy oac: ;
   	rdfs:label "Identity Provider"@en ;
   	skos:definition "Constraint on the identity provider service used to authenticate a user."@en ;
-  	skos:example "A list of active Solid identity providers is maintained at https://xxxx ."@en ;
+  	skos:example "<https://solidweb.me> or <https://login.inrupt.com> are examples of Solid identity providers."@en ;
   	skos:note """Only the odrl:eq, odrl:neq, odrl:isAnyOf or odrl:isNoneOf SHOULD be used. Example:
 		<https://example.com/idpConstraint> a odrl:Constraint ;
 			odrl:leftOperand oac:IdentityProvider ;
 			odrl:operator odrl:isAnyOf ;
-			odrl:rightOperand <https://solidweb.me>, <https://login.inrupt.com/> .
-		indicates that used identity provider should be either the <https://solidweb.me> or <https://login.inrupt.com/> services."""@en .
+			odrl:rightOperand <https://solidweb.me>, <https://login.inrupt.com> .
+		indicates that used identity provider should be either the <https://solidweb.me> or <https://login.inrupt.com> services."""@en .
 
 # ------------ Operator Concepts ------------------ #
 

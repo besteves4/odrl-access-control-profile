@@ -695,7 +695,7 @@
         The concepts specified by the ODRL Profile for Access Control are shown in the figure below.
       </p>
       <center>
-        <img src="./assets/oac_diagram.png" alt="ODRL Profile for Access Control" width="700px">
+        <img src="./assets/oac_diagram.png" alt="ODRL Profile for Access Control" width="800px">
       </center>
       </div>
 
@@ -798,8 +798,8 @@
     <p>
       This ODRL profile relies on the invocation of legal concepts using DPV and ACL for the reference to access mode operations.
       Its core concepts are the Preference and Requirement policies, a new set of operators to constraint the defined Purposes, Recipients, Legal Basis, 
-      Technical and Organisational Measures and Technology constraints (which will require the usage of DPV's taxonomies), new properties to specify policies for 
-      applications and services, Processing and Access actions, as well as Personal Data Categories, and Legal Entities.
+      Technical and Organisational Measures, Technology and Identity Provider constraints (which will require the usage of DPV's taxonomies), 
+      new properties to specify policies for applications and services, Processing and Access actions, as well as Personal Data Categories, and Legal Entities.
     </p>
     <section id="base-concepts">
       <h3 id="x2-1-base-concepts">
@@ -1112,17 +1112,13 @@
             <tr><th>Label:</th> <td>Identity Provider</td></tr>
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#IdentityProvider">https://w3id.org/oac#IdentityProvider</a></td></tr>
             <tr><th>Definition:</th> <td>Constraint on the identity provider service used to authenticate a user.</td></tr>
-            <tr><th>Example:</th> <td>A list of active Solid identity providers is maintained at <a>https://xxxx</a>.</td></tr>
-            <tr><th>Note:</th> <td>Only the <code>odrl:eq</code>, <code>odrl:neq</code>, <code>odrl:isAnyOf</code> or <code>odrl:isNoneOf</code> operators SHOULD be used. Example: <br><code>ex:idpConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:IdentityProvider ;</code><br><code>odrl:operator odrl:isAnyOf ;</code><br><code>odrl:rightOperand &lt;https://solidweb.me>, &lt;https://login.inrupt.com/> .</code><br> indicates that used identity provider should be either the <code>&lt;https://solidweb.me></code> or <code>&lt;https://login.inrupt.com/></code> services.</td></tr>
+            <tr><th>Example:</th> <td><a href="https://solidweb.me" target="_blank">https://solidweb.me</a> or <a href="https://login.inrupt.com" target="_blank">https://login.inrupt.com</a> are examples of Solid identity providers.</td></tr>
+            <tr><th>Note:</th> <td>Only the <code>odrl:eq</code>, <code>odrl:neq</code>, <code>odrl:isAnyOf</code> or <code>odrl:isNoneOf</code> operators SHOULD be used. Example: <br><code>ex:idpConstraint a odrl:Constraint ;</code><br><code>  odrl:leftOperand oac:IdentityProvider ;</code><br><code>odrl:operator odrl:isAnyOf ;</code><br><code>odrl:rightOperand &lt;https://solidweb.me>, &lt;https://login.inrupt.com> .</code><br> indicates that used identity provider should be either the <code>&lt;https://solidweb.me></code> or <code>&lt;https://login.inrupt.com></code> services.</td></tr>
             <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></td></tr>
           </tbody>
       </table>
     </section>
   </section>
-
-
-  ef="./oac.html#x2-5-6-idp">
-  <bdi class="secno">2.5.6 </bdi>Identity Provider
 
   <section id="validation">
     <h2>
