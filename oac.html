@@ -401,9 +401,16 @@
             </ol>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x2-2-personal-data">
-              <bdi class="secno">2.2 </bdi>Personal Data
+            <a class="tocxref" href="./oac.html#x2-2-assets">
+              <bdi class="secno">2.2 </bdi>Assets
             </a>
+            <ol class="toc">
+              <li class="tocline">
+                <a class="tocxref" href="./oac.html#x2-2-1-personal-data">
+                  <bdi class="secno">2.2.1 </bdi>Personal Data
+                </a>
+              </li>
+            </ol>
           </li>
           <li class="tocline">
             <a class="tocxref" href="./oac.html#x2-3-actions">
@@ -423,9 +430,16 @@
             </ol>
           </li>
           <li class="tocline">
-            <a class="tocxref" href="./oac.html#x2-4-entities">
-              <bdi class="secno">2.4 </bdi>Entities
+            <a class="tocxref" href="./oac.html#x2-4-parties">
+              <bdi class="secno">2.4 </bdi>Parties
             </a>
+            <ol class="toc">
+              <li class="tocline">
+                <a class="tocxref" href="./oac.html#x2-4-1-entity">
+                  <bdi class="secno">2.4.1 </bdi>Entity
+                </a>
+              </li>
+            </ol>
           </li>
           <li class="tocline">
             <a class="tocxref" href="./oac.html#x2-5-constraints">
@@ -941,11 +955,19 @@
         </tbody>
       </table>
     </section>
-    <section id="personal-data">
-      <h3 id="x2-2-personal-data">
-        <bdi class="secno">2.2 </bdi>Personal Data
-        <a class="self-link" aria-label="§" href="./oac.html#x2-2-personal-data"></a>
+    <section id="assets">
+      <h3 id="x2-2-assets">
+        <bdi class="secno">2.2 </bdi>Assets
+        <a class="self-link" aria-label="§" href="./oac.html#x2-2-assets"></a>
       </h3>
+      <p>
+        In this section, personal data is defined as an ODRL asset to define personal data-specific access policies.
+      </p>
+    </section>
+      <h4 id="x2-2-1-personal-data">
+        <bdi class="secno">2.2.1 </bdi>Personal Data
+        <a class="self-link" aria-label="§" href="./oac.html#x2-2-1-personal-data"></a>
+      </h4>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Personal Data</td></tr>
@@ -962,6 +984,9 @@
         <bdi class="secno">2.3 </bdi>Actions
         <a class="self-link" aria-label="§" href="./oac.html#x2-3-actions"></a>
       </h3>
+      <p>
+        In this section, access modes and processing operations are defined as ODRL actions to define access policies.
+      </p>
     </section>
     <section id="access">
       <h4 id="x2-3-1-access">
@@ -995,17 +1020,26 @@
           </tbody>
       </table>
     </section>
-    <section id="entities">
-      <h3 id="x2-4-entities">
-        <bdi class="secno">2.4 </bdi>Entities
-        <a class="self-link" aria-label="§" href="./oac.html#x2-4-entities"></a>
+    <section id="parties">
+      <h3 id="x2-4-parties">
+        <bdi class="secno">2.4 </bdi>Parties
+        <a class="self-link" aria-label="§" href="./oac.html#x2-4-parties"></a>
+      </h3>
+      <p>
+        In this section, human and non-human entities are defined as an ODRL party to define user-specific access policies.
+      </p>
+    </section>
+    <section id="entity">
+      <h3 id="x2-4-1-entity">
+        <bdi class="secno">2.4.1 </bdi>Entity
+        <a class="self-link" aria-label="§" href="./oac.html#x2-4-1-entity"></a>
       </h3>
       <table class="def propdef">
           <tbody>
             <tr><th>Label:</th> <td>Entity</td></tr>
             <tr><th>Identifier:</th> <td><a href="https://w3id.org/oac#Entity">https://w3id.org/oac#Entity</a></td></tr>
             <tr><th>Definition:</th> <td>A human or non-human party that constitutes an entity.</td></tr>
-            <tr><th>Example:</th> <td>Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications.</td></tr>
+            <tr><th>Example:</th> <td>Entities can refer to individuals, organisations, institutions, or authorities.</td></tr>
             <tr><th>Instance of:</th> <td><a href="http://www.w3.org/ns/odrl/2/Party">odrl:Party</a></td></tr>
             <tr><th>Parent class:</th> <td><a href="https://w3id.org/dpv#Entity">dpv:Entity</a></td></tr>
           </tbody>
@@ -1016,6 +1050,9 @@
         <bdi class="secno">2.5 </bdi>Constraints
         <a class="self-link" aria-label="§" href="./oac.html#x2-5-constraints"></a>
       </h3>
+      <p>
+        In this section, purposes, recipients, legal basis, technical and organisational measures, technologies and identity providers are defined as ODRL constraints to define constraint-restricted access policies.
+      </p>
     </section>
     <section id="purpose">
       <h4 id="x2-5-1-purpose">

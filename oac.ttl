@@ -138,7 +138,7 @@ oac:Entity a odrl:Party, skos:Concept ;
 	rdfs:isDefinedBy oac: ;
 	rdfs:label "Entity"@en ;
 	skos:definition "A human or non-human party that constitutes an entity."@en ;
-	skos:example "Entities can refer to individuals, organisations, institutions, authorities, or non-human parties such as services or applications."@en .
+	skos:example "Entities can refer to individuals, organisations, institutions, or authorities."@en .
 
 # ------------ Action Concepts ------------------ #
 
