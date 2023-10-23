@@ -27,6 +27,7 @@ oac: a owl:Ontology, profile:Profile ;
 	dcterms:created "2021-04-12"^^xsd:date ;
 	dcterms:modified "2023-10-09"^^xsd:date ;
 	dcterms:creator "Beatriz Esteves", "Harshvardhan J. Pandit", "Víctor Rodríguez-Doncel" ;
+	dcterms:publisher "Beatriz Esteves" ;
 	dcterms:abstract "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define 'sticky policies' that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
 	dcterms:description "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define 'sticky policies' that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
 	rdfs:comment "This is the RDF ontology for the ODRL Profile for Access Control."@en ;
