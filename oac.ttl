@@ -16,7 +16,7 @@ PREFIX oac: <https://w3id.org/oac#>
 
 # ------------ Ontology Metadata ------------------ #
 
-oac: a owl:Ontology, profile:Profile ;
+<https://w3id.org/oac> a owl:Ontology, profile:Profile ;
 	profile:isProfileOf <http://www.w3.org/ns/odrl/2/core> ;
 	profile:hasResource oac:oac-html, oac:oac-ttl ;
 	dcterms:title "ODRL Profile for Access Control"@en ;
