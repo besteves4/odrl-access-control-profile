@@ -24,6 +24,8 @@ PREFIX oac: <https://w3id.org/oac#>
     vann:preferredNamespaceUri "https://w3id.org/oac#"^^xsd:string ;
 	rdfs:label "ODRL access control policies profile"@en ;
 	owl:versionInfo "0.2"^^xsd:string ;
+	owl:versionIRI <https://w3id.org/oac/0.2> ;
+	owl:priorVersion <https://w3id.org/oac/0.1> ;
 	dcterms:created "2021-04-12"^^xsd:date ;
 	dcterms:modified "2023-10-09"^^xsd:date ;
 	dcterms:creator "Beatriz Esteves", "Harshvardhan J. Pandit", "Víctor Rodríguez-Doncel" ;
