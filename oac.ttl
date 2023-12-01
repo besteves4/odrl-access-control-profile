@@ -1,4 +1,5 @@
 PREFIX acl: <http://www.w3.org/ns/auth/acl#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dpv: <https://w3id.org/dpv#>
 PREFIX dpv-tech: <https://w3id.org/dpv/dpv-tech#>
@@ -33,7 +34,8 @@ PREFIX oac: <https://w3id.org/oac#>
 	dcterms:abstract "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define 'sticky policies' that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
 	dcterms:description "The ODRL Profile for Access Control (OAC) extends the WAC access control list mechanism by using the Open Digital Rights Language (ODRL) to define 'sticky policies' that express permissions and / or prohibitions associated with data stored in a decentralised storage environment and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
 	rdfs:comment "This is the RDF ontology for the ODRL Profile for Access Control."@en ;
-	dcterms:bibliographicCitation "Cite this vocabulary as: Esteves, B., Pandit, H. J. and Rodríguez-Doncel, V. ODRL Profile for Access Control 0.2."@en ;
+	dcterms:bibliographicCitation "Cite this vocabulary as: steves, B., Pandit, H. J., & Rodrı́guez-Doncel, V. (2023). ODRL Profile for Access Control 0.2. https://doi.org/10.5281/zenodo.10247115"@en ;
+	bibo:doi "10.5281/zenodo.10247115"@en ;
 	dcterms:license <https://dalicc.net/licenselibrary/CC-BY_v4> .
 
 oac:oac-html a profile:ResourceDescriptor ;
