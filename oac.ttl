@@ -42,7 +42,7 @@ PREFIX oac: <https://w3id.org/oac#>
 	foaf:logo <https://besteves4.github.io/odrl-access-control-profile/assets/folder.ico> ;
 	sw:status "stable"@en ;
 	dcterms:source <http://www.w3.org/ns/odrl/2/>, <https://w3id.org/dpv> ;
-	dcterms:license <https://dalicc.net/licenselibrary/CC-BY_v4> .
+	dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> .
 
 oac:oac-html a profile:ResourceDescriptor ;
     profile:hasRole role:specification ;
