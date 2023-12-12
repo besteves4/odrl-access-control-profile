@@ -40,7 +40,7 @@ PREFIX oac: <https://w3id.org/oac#>
 	dcterms:bibliographicCitation "Cite this vocabulary as: Esteves, B., Pandit, H. J., & Rodrı́guez-Doncel, V. (2023). ODRL Profile for Access Control 0.2. https://doi.org/10.5281/zenodo.10247115"@en ;
 	bibo:doi "10.5281/zenodo.10247115"@en ;
 	foaf:logo <https://besteves4.github.io/odrl-access-control-profile/assets/folder.ico> ;
-	sw:status "stable"@en ;
+	sw:term_status "stable"@en ;
 	dcterms:source <http://www.w3.org/ns/odrl/2/>, <https://w3id.org/dpv> ;
 	dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> .
 
